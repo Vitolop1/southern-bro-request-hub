@@ -40,7 +40,7 @@ export default function Hero() {
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <Link
-            href="#brands"
+            href="/brands"
             className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-[0_0_30px_rgba(193,41,255,0.35)] transition hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(255,79,216,0.45)]"
           >
             Explore Brands

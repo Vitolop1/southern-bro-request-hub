@@ -1,32 +1,40 @@
 import Link from "next/link";
-import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 export default function ThankYouPage() {
   return (
-    <main className="min-h-screen bg-white text-gray-900">
+    <main className="min-h-screen bg-[#090312] text-white">
       <Navbar />
 
-      <section className="mx-auto flex max-w-3xl flex-col items-center px-6 py-20 text-center">
-        <h1 className="text-4xl font-bold tracking-tight">Thank You</h1>
-        <p className="mt-4 text-gray-600">
-          Your request has been submitted successfully.
-        </p>
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,79,216,0.18),_transparent_24%),linear-gradient(180deg,_#090312_0%,_#14061f_50%,_#090312_100%)]" />
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-20 text-center md:py-28">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
+            Request Received
+          </p>
+          <h1 className="mt-4 text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
+            Thank you
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-[#ddd2eb]">
+            Your request has been submitted successfully. The Southern Bro team
+            can now review the details and follow up with next steps.
+          </p>
 
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-          <Link
-            href="/"
-            className="rounded-2xl bg-black px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
-          >
-            Back to Home
-          </Link>
-
-          <Link
-            href="/admin"
-            className="rounded-2xl border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-900 hover:bg-gray-100"
-          >
-            View Admin Demo
-          </Link>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <Link
+              href="/"
+              className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.02]"
+            >
+              Back to Home
+            </Link>
+            <Link
+              href="/services"
+              className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
+            >
+              Request Another Service
+            </Link>
+          </div>
         </div>
       </section>
 

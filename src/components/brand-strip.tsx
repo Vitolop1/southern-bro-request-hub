@@ -12,7 +12,7 @@ export default function BrandStrip({ hrefPrefix = "" }: BrandStripProps) {
       {brandProfiles.map((brand) => (
         <Link
           key={brand.id}
-          href={`${hrefPrefix}#${brand.id}`}
+          href={hrefPrefix ? `${hrefPrefix}#${brand.id}` : brand.pageHref}
           className="group rounded-[1.75rem] border border-white/10 bg-white/5 px-4 py-3 text-left backdrop-blur-sm transition hover:border-fuchsia-300/50 hover:bg-white/8"
         >
           <div className="flex items-center gap-3">

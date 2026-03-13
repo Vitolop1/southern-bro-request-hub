@@ -71,12 +71,20 @@ export default function ServiceCards() {
                 </p>
 
                 <div className="mt-6">
-                  <Link
-                    href={brand.href}
-                    className="inline-flex rounded-full border border-fuchsia-300/60 bg-white/8 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/14"
-                  >
-                    {brand.cta}
-                  </Link>
+                  <div className="flex flex-col gap-3 sm:flex-row">
+                    <Link
+                      href={brand.pageHref}
+                      className="inline-flex rounded-full border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
+                    >
+                      Learn More
+                    </Link>
+                    <Link
+                      href={brand.requestHref}
+                      className="inline-flex rounded-full border border-fuchsia-300/60 bg-white/8 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/14"
+                    >
+                      {brand.ctaLabel}
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

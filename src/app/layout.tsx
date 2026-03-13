@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Southern Bro Request Hub",
-  description: "Delivery, pickup, and service request platform for Southern Bro Enterprises.",
+  title: "Southern Bro Enterprises",
+  description:
+    "Professional multi-brand website for Southern Bro Enterprises, featuring business support, delivery, handyman services, landscaping, creations, ticketing, and community programs.",
 };
 
 export default function RootLayout({

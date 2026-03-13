@@ -22,7 +22,7 @@ export default function Navbar() {
             About
           </Link>
           <Link
-            href="/#brands"
+            href="/brands"
             className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
           >
             Brands

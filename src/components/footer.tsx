@@ -31,7 +31,7 @@ export default function Footer() {
           <div className="mt-3 flex flex-col gap-2 text-sm text-[#d9d1e8]">
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
-            <Link href="/#brands">Brands & Services</Link>
+            <Link href="/brands">Brands & Services</Link>
             <Link href="/services">Request Service</Link>
           </div>
         </div>
