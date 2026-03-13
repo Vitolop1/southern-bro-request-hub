@@ -31,6 +31,32 @@ VaBizHelp was mentioned in the company description, but it does not currently ap
 - Let each brand keep its own accent style from the logo while preserving one overall Southern Bro layout system.
 - Use bold CTA buttons consistently: `Request Service`, `Book Now`, `Get Help`, or `Contact Us`.
 
+## Supervisor Visual Direction
+
+Based on the reference graphics provided, the website design should follow this visual direction:
+
+- Dark, high-contrast background style instead of a plain white business layout
+- Strong purple and magenta glow effects that match the Southern Bro master branding
+- Accent colors drawn from the service logos, especially electric blue and gold
+- Large logo visibility on the homepage and service overview sections
+- A dramatic, premium, energetic look rather than a basic corporate template
+- Service sections that visually group each brand with its logo and a short service summary
+- Strong contrast between text and background so the site still feels readable and professional
+
+### Design interpretation for Squarespace
+
+The goal is not to copy the flyer exactly. The goal is to translate that same energy into a cleaner website version that is easier to read, easier to navigate, and better for customers using phones or desktops.
+
+### Recommended design rules
+
+- Use a deep black-purple background in hero and CTA sections
+- Use bright magenta or violet for buttons, highlights, dividers, and glow effects
+- Use blue as a supporting accent mainly for Ticket Vibez and secondary highlight areas
+- Use gold sparingly for premium borders, icons, thin dividers, or special emphasis
+- Keep body text white or light gray for readability
+- Avoid placing too much text directly over busy backgrounds
+- Use background overlays on image sections so content stays readable
+
 ## Current Website Snapshot
 
 ### Existing pages found in the project
@@ -57,6 +83,16 @@ VaBizHelp was mentioned in the company description, but it does not currently ap
 - `npm run build` passed on March 13, 2026.
 - Current internal navigation links point to existing routes.
 - Form submit buttons currently work as front-end demo actions only.
+
+## Immediate Priority Recommendations
+
+- Rebuild the homepage around the full Southern Bro Enterprises brand story instead of only request forms.
+- Create dedicated public pages for all seven active brands and services identified from the logo folder.
+- Replace the current `Delivery` and `Services` navigation with a clearer `Brands & Services` structure.
+- Remove internal admin access from public navigation and public confirmation pages.
+- Replace demo-only form handling with approved Squarespace forms, email routing, or CRM collection before launch.
+- Fix visible text-encoding issues and clean up public-facing copy before publishing.
+- Shift the site visuals to match the supervisor's preferred dark purple neon brand direction.
 
 ## 1. Website Audit Template
 
@@ -202,6 +238,9 @@ The homepage should act as the front door to the full company, not only the requ
    `Explore Brands`
    `Request a Service`
 
+   Recommended visual style:
+   Large parent logo, dark cosmic or gradient background, soft purple glow, and one short line about serving Lynchburg, VA and surrounding Virginia areas.
+
 2. **About Southern Bro Enterprises**
    Short overview of the parent company and its mission across business support, property help, delivery support, event services, and community programs.
 
@@ -214,6 +253,9 @@ The homepage should act as the front door to the full company, not only the requ
    - Southern Bro Landscaping
    - Ticket Vibez
    - VA Recovery Services
+
+   Recommended visual style:
+   Use card sections with logo on one side and 3 to 5 short service bullets on the other side, similar to the supervisor reference image but cleaner and easier to scan.
 
 4. **Core Services Overview**
    Group the brands into easy customer categories:
@@ -229,6 +271,9 @@ The homepage should act as the front door to the full company, not only the requ
 6. **Community Programs Section**
    Feature VA Recovery Services and the HOPE Grant initiative as a highlighted community impact section.
 
+   Recommended visual style:
+   Gold and navy accents can be added here because the VA Recovery Services logo supports a more formal community-program look.
+
 7. **Final Call to Action**
    End with a strong conversion section:
    `Need help from Southern Bro Enterprises? Start your request today.`
@@ -239,6 +284,99 @@ The homepage should act as the front door to the full company, not only the requ
 - Separate each brand without making the site feel disconnected.
 - Make the next action obvious for every visitor.
 - Keep the Southern Bro brand identity visible throughout the page.
+- Match the boss-approved purple neon brand aesthetic in a cleaner website format.
+
+## 5A. Homepage Section Draft Based on Supervisor Reference
+
+This is the closest website version of the flyer layout you were shown.
+
+### Section 1: Hero
+
+Headline:
+`Southern Bro Enterprises LLC`
+
+Subheadline:
+`Business services, property support, delivery solutions, event services, and community programs`
+
+Support line:
+`Serving Lynchburg, VA and the Virginia region`
+
+Buttons:
+- `Explore Brands`
+- `Request Service`
+
+### Section 2: Company Overview and Services Summary
+
+Short intro paragraph explaining that Southern Bro Enterprises is the parent company connecting multiple specialized brands under one trusted business umbrella.
+
+### Section 3: Brand Overview Grid
+
+Each block should include the logo, one-sentence description, and 3 to 5 bullet points.
+
+Recommended order:
+
+1. Southern Bro Enterprises
+   - Business start-ups
+   - Business consulting
+   - Operational support
+   - Logistics and management aid
+
+2. Southern Bro Delivery & Catering
+   - Event catering
+   - Personal shopping
+   - Logistics delivery
+   - Food and scheduled delivery services
+
+3. Southern Bro Handyman Services
+   - Furniture assembly
+   - Fixture installation
+   - Property maintenance
+   - Basic repair support
+
+4. Southern Bro Landscaping
+   - Lawn maintenance
+   - Seasonal cleanup
+   - Outdoor property maintenance
+   - Recurring service contracts
+
+5. Southern Bro Creations / Wax Melt Bros
+   - Wax melt products
+   - Custom fragrances
+   - Gift bundles
+   - Seasonal scent collections
+
+6. Ticket Vibez
+   - Event ticket support
+   - Ticket bundles
+   - Community event access support
+   - Promotional campaigns
+
+7. VA Recovery Services
+   - Community support
+   - Stability programs
+   - Recovery assistance
+   - Advocacy initiatives
+
+### Section 4: How to Get Started
+
+Use 3 simple columns:
+
+1. Choose a brand or service
+2. Submit a request or contact the team
+3. Receive confirmation and next steps
+
+### Section 5: Service Area and Contact
+
+Include:
+- Service area: Lynchburg, VA and Virginia service region
+- Phone number
+- Website
+- Contact form button
+
+### Section 6: Final Call To Action
+
+Recommended CTA:
+`Need help from Southern Bro Enterprises? Contact us today to get started.`
 
 ## 6. Navigation Structure Proposal
 
@@ -285,6 +423,46 @@ Keep the top navigation simple and easy to scan.
 - Replace generic `Services` with `Brands & Services`.
 - Add a visible `Request Service` button in the header.
 - Keep footer navigation consistent with the main pages.
+
+## 6A. Squarespace Style Guide
+
+### Suggested color palette
+
+These are recommended website colors based on the supervisor reference images and logo set.
+
+| Use | Suggested Color | Hex |
+| --- | --- | --- |
+| Primary background | Deep space black | `#090312` |
+| Secondary background | Dark purple | `#1A0830` |
+| Primary brand color | Neon magenta-purple | `#C129FF` |
+| Secondary brand color | Bright violet | `#8E2BFF` |
+| Highlight glow | Electric pink | `#FF4FD8` |
+| Accent blue | Ticket Vibez blue | `#1EA7FF` |
+| Premium accent | Soft gold | `#D4A84F` |
+| Main text | White | `#FFFFFF` |
+| Secondary text | Light lavender gray | `#D9D1E8` |
+
+### Suggested Squarespace usage
+
+- Header background: dark purple or near-black
+- Button color: neon purple with white text
+- Button hover: brighter pink-purple glow
+- Main page background: black-purple gradient
+- Card background: dark translucent purple
+- Card border: soft violet or gold line
+- Section dividers: glow lines or thin gold separators
+- Footer: dark background with high-contrast white text
+
+### Suggested font direction
+
+- Headings: bold, modern, high-impact sans serif
+- Body text: clean sans serif with strong readability
+- Avoid script fonts for main content blocks
+- Use all-caps sparingly for labels and section headers
+
+### Design warning
+
+Because the flyer is visually dense, the live website should use more spacing, fewer words per block, and stronger mobile readability than the graphic examples.
 
 ## 7. Weekly Internship Work Plan
 
