@@ -2,24 +2,42 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <header className="border-b border-violet-200 bg-white">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-xl font-bold tracking-tight text-violet-800">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#090312]/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4">
+        <Link href="/" className="text-lg font-black uppercase tracking-[0.16em] text-white md:text-xl">
           Southern Bro Request Hub
         </Link>
 
-        <nav className="hidden gap-6 md:flex">
-          <Link href="/" className="text-sm font-medium text-gray-700 hover:text-violet-700">
+        <nav className="flex flex-wrap items-center gap-4 md:gap-6">
+          <Link
+            href="/"
+            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
+          >
             Home
           </Link>
-          <Link href="/delivery" className="text-sm font-medium text-gray-700 hover:text-violet-700">
-            Delivery
+          <Link
+            href="#brands"
+            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
+          >
+            Brands
           </Link>
-          <Link href="/services" className="text-sm font-medium text-gray-700 hover:text-violet-700">
+          <Link
+            href="/services"
+            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
+          >
             Services
           </Link>
-          <Link href="/admin" className="text-sm font-medium text-gray-700 hover:text-violet-700">
-            Admin
+          <Link
+            href="#contact"
+            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
+          >
+            Contact
+          </Link>
+          <Link
+            href="/delivery"
+            className="rounded-full border border-fuchsia-300/60 bg-fuchsia-500/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-fuchsia-500/25"
+          >
+            Book Now
           </Link>
         </nav>
       </div>
