@@ -11,14 +11,18 @@ export default function Hero() {
       <div className="absolute bottom-8 right-0 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl" />
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center px-6 py-16 text-center md:py-24">
-        <Image
-          src="/LOGOS/SouthernBro-Enterprises-Logo.png"
-          alt="Southern Bro Enterprises logo"
-          width={280}
-          height={280}
-          priority
-          className="w-[180px] drop-shadow-[0_0_30px_rgba(255,79,216,0.5)] md:w-[240px] xl:w-[280px]"
-        />
+        <div className="relative flex items-center justify-center">
+          <div className="absolute h-52 w-52 rounded-full bg-fuchsia-500/25 blur-3xl md:h-72 md:w-72 xl:h-80 xl:w-80" />
+          <div className="absolute h-64 w-64 rounded-full border border-fuchsia-300/20 bg-white/5 blur-2xl md:h-80 md:w-80 xl:h-[26rem] xl:w-[26rem]" />
+          <Image
+            src="/LOGOS/SouthernBro-Enterprises-Logo.png"
+            alt="Southern Bro Enterprises logo"
+            width={420}
+            height={420}
+            priority
+            className="relative w-[240px] drop-shadow-[0_0_42px_rgba(255,79,216,0.58)] md:w-[320px] xl:w-[400px]"
+          />
+        </div>
 
         <p className="mt-5 text-xs font-semibold uppercase tracking-[0.38em] text-fuchsia-200 md:text-sm">
           Southern Bro Enterprises LLC
