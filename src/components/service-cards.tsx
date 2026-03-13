@@ -1,118 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-type BrandCard = {
-  name: string;
-  logo: string;
-  summary: string;
-  services: string[];
-  href: string;
-  cta: string;
-  accent: string;
-  featured?: boolean;
-};
-
-const brands: BrandCard[] = [
-  {
-    name: "Southern Bro Enterprises",
-    logo: "/LOGOS/SouthernBro-Enterprises-Logo.png",
-    summary: "Parent company support for business growth, operations, and logistics.",
-    services: [
-      "Business start-ups",
-      "Business consulting",
-      "Logistics and management aid",
-      "Operational support services",
-    ],
-    href: "/services",
-    cta: "Request Business Help",
-    accent: "from-fuchsia-500/35 via-violet-500/20 to-transparent",
-  },
-  {
-    name: "Southern Bro Delivery & Catering",
-    logo: "/LOGOS/SouthernBro-Delivery-Catering-Logo.png",
-    summary: "Fast delivery, event support, catering coordination, and transport help.",
-    services: [
-      "Event catering",
-      "Personal shopping",
-      "Logistics delivery",
-      "Equipment transport",
-    ],
-    href: "/delivery",
-    cta: "Book Delivery",
-    accent: "from-cyan-500/30 via-fuchsia-500/15 to-transparent",
-  },
-  {
-    name: "Southern Bro Handyman Services",
-    logo: "/LOGOS/SouthernBro-Handyman-Services-Logo.png",
-    summary: "Residential and commercial repair support with a practical service-first approach.",
-    services: [
-      "Simple repairs",
-      "Furniture assembly",
-      "Fixture installation",
-      "Property turnover inspections",
-    ],
-    href: "/services",
-    cta: "Request Handyman Help",
-    accent: "from-amber-400/25 via-fuchsia-500/18 to-transparent",
-  },
-  {
-    name: "Southern Bro Landscaping",
-    logo: "/LOGOS/SouthernBro-Landscaping-Logo.png",
-    summary: "Outdoor property care for homeowners, rentals, and recurring maintenance clients.",
-    services: [
-      "Lawn maintenance",
-      "Seasonal cleanup",
-      "Outdoor property maintenance",
-      "Recurring service contracts",
-    ],
-    href: "/services",
-    cta: "Book Landscaping",
-    accent: "from-emerald-400/18 via-fuchsia-500/20 to-transparent",
-  },
-  {
-    name: "Southern Bro Creations / Wax Melt Bros",
-    logo: "/LOGOS/SouthernBro-Creations-Logo.png",
-    summary: "Creative product line featuring wax melts, gift bundles, and custom fragrances.",
-    services: [
-      "Wax melt products",
-      "Warmer bundles",
-      "Gift sets",
-      "Seasonal and custom scents",
-    ],
-    href: "/services",
-    cta: "Shop or Inquire",
-    accent: "from-pink-500/35 via-violet-500/18 to-transparent",
-  },
-  {
-    name: "Ticket Vibez",
-    logo: "/LOGOS/TicketVibez-Logo.png",
-    summary: "Ticket access, promotional support, and event-facing service coordination.",
-    services: [
-      "Event ticketing support",
-      "Ticket bundles",
-      "Community event access programs",
-      "Promotional campaign support",
-    ],
-    href: "/services",
-    cta: "Request Event Support",
-    accent: "from-sky-500/35 via-blue-500/20 to-transparent",
-  },
-  {
-    name: "VA Recovery Services",
-    logo: "/LOGOS/VA-Recovery-Services-Logo.png",
-    summary: "Community-focused support services tied to recovery, advocacy, and stability programs.",
-    services: [
-      "Community support",
-      "Stability programs",
-      "Recovery assistance",
-      "Advocacy initiatives",
-    ],
-    href: "/services",
-    cta: "Request Community Support",
-    accent: "from-[#d4a84f]/35 via-[#1e3a8a]/20 to-transparent",
-    featured: true,
-  },
-];
+import { brandProfiles } from "@/lib/brand-data";
 
 export default function ServiceCards() {
   return (
@@ -135,9 +23,10 @@ export default function ServiceCards() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {brands.map((brand) => (
+        {brandProfiles.map((brand) => (
           <article
             key={brand.name}
+            id={brand.id}
             className={[
               "group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#13071f]/85 p-6 shadow-[0_0_60px_rgba(126,34,206,0.18)] backdrop-blur-sm",
               brand.featured ? "md:col-span-2" : "",
@@ -158,6 +47,9 @@ export default function ServiceCards() {
               </div>
 
               <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
+                  {brand.shortLabel}
+                </p>
                 <h3 className="text-2xl font-black uppercase tracking-[0.04em] text-white">
                   {brand.name}
                 </h3>
@@ -173,6 +65,10 @@ export default function ServiceCards() {
                     </li>
                   ))}
                 </ul>
+
+                <p className="mt-5 text-sm leading-6 text-[#d9d1e8]">
+                  {brand.audience}
+                </p>
 
                 <div className="mt-6">
                   <Link

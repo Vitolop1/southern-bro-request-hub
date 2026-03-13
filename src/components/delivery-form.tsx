@@ -6,6 +6,8 @@ import type { DeliveryFormData } from "@/types/requests";
 
 export default function DeliveryForm() {
   const router = useRouter();
+  const fieldClassName =
+    "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#aa9fc0] focus:border-fuchsia-300/70 focus:bg-white/10";
 
   const [formData, setFormData] = useState<DeliveryFormData>({
     fullName: "",
@@ -47,20 +49,24 @@ export default function DeliveryForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
+      className="space-y-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.94),rgba(10,4,18,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)]"
     >
       <div>
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+        <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]">
+          Delivery Booking
+        </p>
+        <h2 className="mt-3 text-2xl font-black uppercase tracking-[0.05em] text-white">
           Delivery / Pickup Request
         </h2>
-        <p className="mt-2 text-sm text-gray-600">
-          Fill out the form below to request a delivery or pickup service.
+        <p className="mt-3 text-sm leading-6 text-[#d9d1e8]">
+          Fill out the form below to request a delivery, pickup, or catering-related
+          service from Southern Bro Delivery & Catering.
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Full Name
           </label>
           <input
@@ -70,13 +76,13 @@ export default function DeliveryForm() {
             required
             value={formData.fullName}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
             placeholder="Enter your full name"
           />
         </div>
 
         <div>
-          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Phone Number
           </label>
           <input
@@ -86,13 +92,13 @@ export default function DeliveryForm() {
             required
             value={formData.phone}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
             placeholder="Enter your phone number"
           />
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Email Address
           </label>
           <input
@@ -102,13 +108,13 @@ export default function DeliveryForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
             placeholder="Enter your email"
           />
         </div>
 
         <div>
-          <label htmlFor="requestType" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="requestType" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Request Type
           </label>
           <select
@@ -116,15 +122,15 @@ export default function DeliveryForm() {
             name="requestType"
             value={formData.requestType}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
           >
-            <option value="delivery">Delivery</option>
-            <option value="pickup">Pickup</option>
+            <option value="delivery" className="bg-[#14061f] text-white">Delivery</option>
+            <option value="pickup" className="bg-[#14061f] text-white">Pickup</option>
           </select>
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="businessName" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="businessName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Store / Restaurant Name
           </label>
           <input
@@ -134,13 +140,13 @@ export default function DeliveryForm() {
             required
             value={formData.businessName}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
             placeholder="Where should we pick up from?"
           />
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="itemsRequested" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="itemsRequested" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Items Requested
           </label>
           <textarea
@@ -150,13 +156,13 @@ export default function DeliveryForm() {
             rows={4}
             value={formData.itemsRequested}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
             placeholder="List the items the customer wants"
           />
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="address" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="address" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Delivery Address
           </label>
           <input
@@ -166,13 +172,13 @@ export default function DeliveryForm() {
             required
             value={formData.address}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
             placeholder="Enter the delivery address"
           />
         </div>
 
         <div>
-          <label htmlFor="preferredTime" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="preferredTime" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Preferred Time
           </label>
           <input
@@ -181,13 +187,13 @@ export default function DeliveryForm() {
             type="text"
             value={formData.preferredTime}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
             placeholder="Example: Today at 6:30 PM"
           />
         </div>
 
         <div>
-          <label htmlFor="paymentMethod" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="paymentMethod" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Payment Method
           </label>
           <select
@@ -195,17 +201,17 @@ export default function DeliveryForm() {
             name="paymentMethod"
             value={formData.paymentMethod}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
           >
-            <option value="pay_on_delivery">Pay on Delivery</option>
-            <option value="cash">Cash</option>
-            <option value="card">Card</option>
-            <option value="other">Other</option>
+            <option value="pay_on_delivery" className="bg-[#14061f] text-white">Pay on Delivery</option>
+            <option value="cash" className="bg-[#14061f] text-white">Cash</option>
+            <option value="card" className="bg-[#14061f] text-white">Card</option>
+            <option value="other" className="bg-[#14061f] text-white">Other</option>
           </select>
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="instructions" className="mb-2 block text-sm font-medium text-gray-700">
+          <label htmlFor="instructions" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
             Special Instructions
           </label>
           <textarea
@@ -214,7 +220,7 @@ export default function DeliveryForm() {
             rows={4}
             value={formData.instructions}
             onChange={handleChange}
-            className="w-full rounded-2xl border border-gray-300 px-4 py-3 outline-none transition focus:border-black"
+            className={fieldClassName}
             placeholder="Add any additional notes or instructions"
           />
         </div>
@@ -223,7 +229,7 @@ export default function DeliveryForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-2xl bg-black px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? "Submitting..." : "Submit Request"}
       </button>

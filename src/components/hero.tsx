@@ -1,14 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-const highlights = [
-  "Business Support",
-  "Delivery & Catering",
-  "Handyman Services",
-  "Landscaping",
-  "Ticketing",
-  "Community Programs",
-];
+import BrandStrip from "@/components/brand-strip";
 
 export default function Hero() {
   return (
@@ -61,16 +53,7 @@ export default function Hero() {
           </Link>
         </div>
 
-        <div className="mt-12 grid w-full max-w-5xl gap-3 md:grid-cols-3 xl:grid-cols-6">
-          {highlights.map((highlight) => (
-            <div
-              key={highlight}
-              className="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-[#f1ddff] backdrop-blur-sm"
-            >
-              {highlight}
-            </div>
-          ))}
-        </div>
+        <BrandStrip />
       </div>
     </section>
   );

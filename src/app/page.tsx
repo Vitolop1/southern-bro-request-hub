@@ -1,3 +1,4 @@
+import AboutSection from "@/components/about-section";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
@@ -27,6 +28,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#090312] text-white">
       <Navbar />
       <Hero />
+      <AboutSection />
       <ServiceCards />
 
       <section className="mx-auto max-w-7xl px-6 py-6 md:py-10">
