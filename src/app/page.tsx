@@ -2,19 +2,21 @@ import AboutSection from "@/components/about-section";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
+import PriorityServices from "@/components/priority-services";
+import ResourcePreview from "@/components/resource-preview";
 import ServiceCards from "@/components/service-cards";
 import Link from "next/link";
 
 const steps = [
   {
-    title: "Choose a Brand",
+    title: "Choose a Priority Service",
     description:
-      "Pick the exact Southern Bro service line that matches what you need, from delivery to community support.",
+      "Start with consulting, detailing, ticketing, or the broader services directory if you need help choosing the right lane.",
   },
   {
-    title: "Send the Request",
+    title: "Send the Quote Request",
     description:
-      "Use the service request form to submit the details, timeline, and service location.",
+      "Use the request quote form to submit your service details, timeline, location, and contact information.",
   },
   {
     title: "Get Confirmed",
@@ -29,7 +31,9 @@ export default function Home() {
       <Navbar />
       <Hero />
       <AboutSection />
+      <PriorityServices />
       <ServiceCards />
+      <ResourcePreview />
 
       <section className="mx-auto max-w-7xl px-6 py-6 md:py-10">
         <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.96),rgba(12,4,23,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)] md:p-10">
@@ -73,9 +77,9 @@ export default function Home() {
                 Built for Lynchburg, VA and the wider Virginia region
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-[#e7dcf3]">
-                Southern Bro Enterprises connects customers with business support,
-                delivery, property services, event help, and community-focused
-                programs through one recognizable brand family.
+                Southern Bro Enterprises connects customers with consulting,
+                detailing, ticketing, delivery, brand services, and
+                community-focused programs through one recognizable brand family.
               </p>
             </div>
 
@@ -104,16 +108,16 @@ export default function Home() {
 
               <div className="mt-6 flex flex-col gap-4 sm:flex-row">
                 <Link
-                  href="/services"
+                  href="/request-quote"
                   className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.28)] transition hover:scale-[1.02]"
                 >
-                  Request Service
+                  Request Quote
                 </Link>
                 <Link
-                  href="/delivery"
+                  href="/resources"
                   className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
                 >
-                  Book Delivery
+                  View Resources
                 </Link>
               </div>
             </div>

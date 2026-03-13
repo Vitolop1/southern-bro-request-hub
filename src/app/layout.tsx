@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://southernbroenterprises.com"),
   title: "Southern Bro Enterprises",
   description:
-    "Professional multi-brand website for Southern Bro Enterprises, featuring business support, delivery, handyman services, landscaping, creations, ticketing, and community programs.",
+    "Professional Southern Bro website featuring business consulting, detailing, ticketing, delivery support, brand services, and community programs.",
+  keywords: [
+    "Southern Bro Enterprises",
+    "business consulting Lynchburg VA",
+    "detailing services Lynchburg VA",
+    "ticketing support Virginia",
+    "request quote Southern Bro",
+  ],
 };
 
 export default function RootLayout({

@@ -3,21 +3,40 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { ServiceFormData } from "@/types/requests";
-import { serviceCategoryOptions } from "@/lib/brand-data";
+import { requestCategoryOptions } from "@/lib/site-content";
 
-export default function ServiceForm() {
+type ServiceFormProps = {
+  title?: string;
+  description?: string;
+  sectionLabel?: string;
+  submitLabel?: string;
+  defaultCategory?: string;
+  lockCategory?: boolean;
+};
+
+export default function ServiceForm({
+  title = "Request a Quote",
+  description = "Fill out the form below to request support from Southern Bro Enterprises or one of the active services highlighted on the site.",
+  sectionLabel = "Service Request",
+  submitLabel = "Submit Quote Request",
+  defaultCategory = requestCategoryOptions[0],
+  lockCategory = false,
+}: ServiceFormProps) {
   const router = useRouter();
   const fieldClassName =
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#aa9fc0] focus:border-fuchsia-300/70 focus:bg-white/10";
 
   const [formData, setFormData] = useState<ServiceFormData>({
     fullName: "",
+    companyName: "",
     phone: "",
     email: "",
-    category: serviceCategoryOptions[0],
+    category: defaultCategory,
     description: "",
     address: "",
-    preferredDateTime: "",
+    timeline: "",
+    budget: "",
+    referralSource: "",
     urgency: "Normal",
   });
 
@@ -37,11 +56,14 @@ export default function ServiceForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    console.log("Service request submitted:", formData);
-
     setTimeout(() => {
       setIsSubmitting(false);
-      router.push("/thank-you");
+      const params = new URLSearchParams({
+        type: "quote",
+        request: `SBE-${Date.now().toString().slice(-6)}`,
+        service: formData.category,
+      });
+      router.push(`/thank-you?${params.toString()}`);
     }, 700);
   }
 
@@ -52,14 +74,13 @@ export default function ServiceForm() {
     >
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]">
-          Service Request
+          {sectionLabel}
         </p>
         <h2 className="mt-3 text-2xl font-black uppercase tracking-[0.05em] text-white">
-          Service Request
+          {title}
         </h2>
         <p className="mt-3 text-sm leading-6 text-[#d9d1e8]">
-          Fill out the form below to request support from Southern Bro Enterprises
-          or one of the active brands shown on the site.
+          {description}
         </p>
       </div>
 
@@ -77,6 +98,21 @@ export default function ServiceForm() {
             onChange={handleChange}
             className={fieldClassName}
             placeholder="Enter your full name"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="companyName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+            Company / Organization
+          </label>
+          <input
+            id="companyName"
+            name="companyName"
+            type="text"
+            value={formData.companyName}
+            onChange={handleChange}
+            className={fieldClassName}
+            placeholder="Enter your company name if applicable"
           />
         </div>
 
@@ -114,22 +150,27 @@ export default function ServiceForm() {
 
         <div>
           <label htmlFor="category" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Brand or Service
+            Service Category
           </label>
-          <select
-            id="category"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            className={fieldClassName}
-          >
-            {serviceCategoryOptions.map((option) => (
-              <option key={option} className="bg-[#14061f] text-white">
-                {option}
-              </option>
-            ))}
-            <option className="bg-[#14061f] text-white">Other</option>
-          </select>
+          {lockCategory ? (
+            <div className="rounded-[1.25rem] border border-fuchsia-300/40 bg-fuchsia-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white">
+              {formData.category}
+            </div>
+          ) : (
+            <select
+              id="category"
+              name="category"
+              value={formData.category}
+              onChange={handleChange}
+              className={fieldClassName}
+            >
+              {requestCategoryOptions.map((option) => (
+                <option key={option} value={option} className="bg-[#14061f] text-white">
+                  {option}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
 
         <div className="md:col-span-2">
@@ -164,20 +205,32 @@ export default function ServiceForm() {
         </div>
 
         <div>
-          <label
-            htmlFor="preferredDateTime"
-            className="mb-2 block text-sm font-medium text-[#f3e8ff]"
-          >
-            Preferred Date / Time
+          <label htmlFor="timeline" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+            Preferred Timeline
           </label>
           <input
-            id="preferredDateTime"
-            name="preferredDateTime"
+            id="timeline"
+            name="timeline"
             type="text"
-            value={formData.preferredDateTime}
+            value={formData.timeline}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Example: Monday at 2:00 PM"
+            placeholder="Example: This week or next month"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="budget" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+            Budget Range
+          </label>
+          <input
+            id="budget"
+            name="budget"
+            type="text"
+            value={formData.budget}
+            onChange={handleChange}
+            className={fieldClassName}
+            placeholder="Example: Under $500 or open to quote"
           />
         </div>
 
@@ -198,6 +251,21 @@ export default function ServiceForm() {
             <option className="bg-[#14061f] text-white">Urgent</option>
           </select>
         </div>
+
+        <div>
+          <label htmlFor="referralSource" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+            How Did You Hear About Us?
+          </label>
+          <input
+            id="referralSource"
+            name="referralSource"
+            type="text"
+            value={formData.referralSource}
+            onChange={handleChange}
+            className={fieldClassName}
+            placeholder="Google, flyer, referral, social media, etc."
+          />
+        </div>
       </div>
 
       <button
@@ -205,7 +273,7 @@ export default function ServiceForm() {
         disabled={isSubmitting}
         className="w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {isSubmitting ? "Submitting..." : "Submit Service Request"}
+        {isSubmitting ? "Submitting..." : submitLabel}
       </button>
     </form>
   );

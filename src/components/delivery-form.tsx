@@ -38,11 +38,14 @@ export default function DeliveryForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    console.log("Delivery request submitted:", formData);
-
     setTimeout(() => {
       setIsSubmitting(false);
-      router.push("/thank-you");
+      const params = new URLSearchParams({
+        type: "delivery",
+        request: `DEL-${Date.now().toString().slice(-6)}`,
+        service: "Southern Bro Delivery & Catering",
+      });
+      router.push(`/thank-you?${params.toString()}`);
     }, 700);
   }
 

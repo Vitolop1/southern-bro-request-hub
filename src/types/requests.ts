@@ -28,11 +28,14 @@ export type DeliveryFormData = {
 
 export type ServiceFormData = {
   fullName: string;
+  companyName: string;
   phone: string;
   email: string;
   category: string;
   description: string;
   address: string;
-  preferredDateTime: string;
+  timeline: string;
+  budget: string;
+  referralSource: string;
   urgency: string;
 };

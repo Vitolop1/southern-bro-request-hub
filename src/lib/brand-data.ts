@@ -11,6 +11,7 @@ export type BrandProfile = {
   requestHref: string;
   pageHref: string;
   accent: string;
+  priorityTier: "high" | "medium" | "low";
   featured?: boolean;
 };
 
@@ -33,9 +34,10 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "Built for business owners, start-ups, community partners, and customers who need organized operational support.",
     ctaLabel: "Request Business Help",
-    requestHref: "/services",
+    requestHref: "/consulting",
     pageHref: "/brands/southern-bro-enterprises",
     accent: "from-fuchsia-500/35 via-violet-500/20 to-transparent",
+    priorityTier: "high",
   },
   {
     id: "southern-bro-delivery-catering",
@@ -58,6 +60,7 @@ export const brandProfiles: BrandProfile[] = [
     requestHref: "/delivery",
     pageHref: "/brands/southern-bro-delivery-catering",
     accent: "from-cyan-500/30 via-fuchsia-500/15 to-transparent",
+    priorityTier: "medium",
   },
   {
     id: "southern-bro-handyman-services",
@@ -77,9 +80,10 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "Designed for homeowners, landlords, property managers, and businesses needing dependable maintenance support.",
     ctaLabel: "Request Handyman Help",
-    requestHref: "/services",
+    requestHref: "/request-quote?service=Handyman%20Services",
     pageHref: "/brands/southern-bro-handyman-services",
     accent: "from-amber-400/25 via-fuchsia-500/18 to-transparent",
+    priorityTier: "medium",
   },
   {
     id: "southern-bro-landscaping",
@@ -99,9 +103,10 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "A strong fit for homeowners, rental properties, community spaces, and clients with ongoing grounds maintenance needs.",
     ctaLabel: "Book Landscaping",
-    requestHref: "/services",
+    requestHref: "/request-quote?service=Landscaping%20Services",
     pageHref: "/brands/southern-bro-landscaping",
     accent: "from-emerald-400/18 via-fuchsia-500/20 to-transparent",
+    priorityTier: "low",
   },
   {
     id: "southern-bro-creations",
@@ -121,9 +126,10 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "Made for gift buyers, product shoppers, event gifting, and customers looking for branded lifestyle items.",
     ctaLabel: "Shop or Inquire",
-    requestHref: "/services",
+    requestHref: "/request-quote?service=Southern%20Bro%20Creations%20%2F%20Product%20Inquiries",
     pageHref: "/brands/southern-bro-creations",
     accent: "from-pink-500/35 via-violet-500/18 to-transparent",
+    priorityTier: "low",
   },
   {
     id: "ticket-vibez",
@@ -142,9 +148,10 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "Best for event customers, community organizations, and clients needing ticket-related promotional support.",
     ctaLabel: "Request Event Support",
-    requestHref: "/services",
+    requestHref: "/ticketing",
     pageHref: "/brands/ticket-vibez",
     accent: "from-sky-500/35 via-blue-500/20 to-transparent",
+    priorityTier: "high",
   },
   {
     id: "va-recovery-services",
@@ -164,9 +171,10 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "Created for community members, support partners, and individuals seeking structured help and service-oriented outreach.",
     ctaLabel: "Request Community Support",
-    requestHref: "/services",
+    requestHref: "/request-quote?service=VA%20Recovery%20Services%20%2F%20Community%20Support",
     pageHref: "/brands/va-recovery-services",
     accent: "from-[#d4a84f]/35 via-[#1e3a8a]/20 to-transparent",
+    priorityTier: "medium",
     featured: true,
   },
 ];

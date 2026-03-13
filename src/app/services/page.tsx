@@ -1,13 +1,9 @@
 import BrandDirectory from "@/components/brand-directory";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import PriorityServices from "@/components/priority-services";
 import ServiceForm from "@/components/service-form";
-
-const requestBenefits = [
-  "Choose the brand or service line that best matches your request.",
-  "Submit the details once through a clean branded intake form.",
-  "Let the Southern Bro team review and confirm the next step.",
-];
+import { quoteBenefits } from "@/lib/site-content";
 
 export default function ServicesPage() {
   return (
@@ -19,27 +15,29 @@ export default function ServicesPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              Brands & Services
+              Services Overview
             </p>
             <h1 className="mt-4 text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-              Request professional support from the right Southern Bro brand
+              Start with the services Southern Bro is prioritizing right now
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
-              This page brings together the active Southern Bro service brands so
-              customers can understand what each one offers before submitting a
-              request.
+              This page organizes the current service structure around consulting,
+              detailing, ticketing, and a cleaner quote process while still
+              keeping the full brand family available.
             </p>
           </div>
         </div>
       </section>
 
+      <PriorityServices compact />
+
       <section className="mx-auto max-w-7xl px-6 py-14 md:py-18">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-            Service Directory
+            Full Service Directory
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-            Every brand with its logo, focus, and service lineup
+            Every brand with its logo, focus, service lineup, and request path
           </h2>
         </div>
 
@@ -50,20 +48,19 @@ export default function ServicesPage() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.96),rgba(11,4,22,0.98))] p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              Request Support
+              Request Quote
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              One clean intake flow for multiple service lines
+              One central intake flow for higher-priority services
             </h2>
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              Use this form to request support from Southern Bro Enterprises,
-              Handyman Services, Landscaping, Creations, Ticket Vibez, or VA
-              Recovery Services. Delivery and catering can also be booked through
-              the dedicated delivery page.
+              Use this form for consulting, detailing, ticketing, handyman,
+              community support, and other non-delivery services. Delivery and
+              catering can still be booked through the dedicated delivery page.
             </p>
 
             <div className="mt-8 space-y-4">
-              {requestBenefits.map((benefit, index) => (
+              {quoteBenefits.map((benefit, index) => (
                 <div
                   key={benefit}
                   className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5"

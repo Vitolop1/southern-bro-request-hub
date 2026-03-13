@@ -3,6 +3,16 @@ import Link from "next/link";
 import { brandProfiles } from "@/lib/brand-data";
 
 export default function ServiceCards() {
+  const brandOrder = {
+    high: 0,
+    medium: 1,
+    low: 2,
+  } as const;
+
+  const sortedBrands = [...brandProfiles].sort(
+    (left, right) => brandOrder[left.priorityTier] - brandOrder[right.priorityTier]
+  );
+
   return (
     <section
       id="brands"
@@ -10,20 +20,20 @@ export default function ServiceCards() {
     >
       <div className="mx-auto mb-12 max-w-3xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-          Brands & Services
+          Full Brand Family
         </p>
         <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-5xl">
-          Integrated logos, clear services, one strong Southern Bro identity
+          Every active brand stays visible, even while the homepage pushes current priorities
         </h2>
         <p className="mt-5 text-lg leading-8 text-[#d9d1e8]">
-          Each block below mirrors the flyer direction your supervisor wants,
-          but in a cleaner website format that is easier to scan and easier to
-          build in Squarespace.
+          The cards below keep the flyer-style logo presentation your supervisor
+          wants, but organize it in a cleaner web structure that gives growth
+          services stronger positioning and keeps lower-priority brands available.
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        {brandProfiles.map((brand) => (
+        {sortedBrands.map((brand) => (
           <article
             key={brand.name}
             id={brand.id}
@@ -47,9 +57,18 @@ export default function ServiceCards() {
               </div>
 
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-                  {brand.shortLabel}
-                </p>
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
+                    {brand.shortLabel}
+                  </p>
+                  <span className="rounded-full border border-white/10 bg-white/8 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#f7dcff]">
+                    {brand.priorityTier === "high"
+                      ? "Priority Now"
+                      : brand.priorityTier === "medium"
+                        ? "Active Service"
+                        : "Secondary Focus"}
+                  </span>
+                </div>
                 <h3 className="text-2xl font-black uppercase tracking-[0.04em] text-white">
                   {brand.name}
                 </h3>

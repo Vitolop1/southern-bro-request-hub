@@ -18,17 +18,18 @@ export default function AboutSection({ compact = false }: AboutSectionProps) {
             About Us
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-5xl">
-            Southern Bro Enterprises is built to serve more than one lane
+            Southern Bro Enterprises is built to organize multiple service lanes professionally
           </h2>
           <p className="mt-5 text-lg leading-8 text-[#ddd2eb]">
-            Southern Bro Enterprises brings together business support, delivery,
-            handyman work, landscaping, product sales, event services, and
+            Southern Bro Enterprises brings together consulting, detailing,
+            ticketing, delivery, handyman work, product sales, and
             community-focused programs under one recognizable brand family.
           </p>
           <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
             The goal is simple: make it easier for customers, partners, and
-            community members to understand what services are available, who each
-            brand serves, and how to request help quickly and professionally.
+            community members to understand what services are available, what is
+            being prioritized right now, and how to request help quickly and
+            professionally.
           </p>
 
           {!compact && (
@@ -40,10 +41,10 @@ export default function AboutSection({ compact = false }: AboutSectionProps) {
                 Learn More About Us
               </Link>
               <Link
-                href="/services"
+                href="/request-quote"
                 className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
               >
-                Request Support
+                Request a Quote
               </Link>
             </div>
           )}
@@ -60,8 +61,9 @@ export default function AboutSection({ compact = false }: AboutSectionProps) {
             />
             <p className="mt-5 max-w-xl text-base leading-7 text-[#e7dcf3]">
               The company connects multiple service identities without losing the
-              core Southern Bro brand, giving the site a strong parent brand and
-              clearer customer paths.
+              core Southern Bro brand, which makes it possible to emphasize
+              high-priority services without abandoning the rest of the brand
+              family.
             </p>
           </div>
         </div>

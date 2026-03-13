@@ -18,8 +18,8 @@ export default function Footer() {
               Southern Bro Enterprises
             </p>
             <p className="mt-2 max-w-sm text-sm leading-6 text-[#d9d1e8]">
-              Professional support across business services, delivery,
-              property maintenance, event solutions, and community programs.
+              Professional support across consulting, detailing, ticketing,
+              delivery, brand services, and community programs.
             </p>
           </div>
         </div>
@@ -31,8 +31,10 @@ export default function Footer() {
           <div className="mt-3 flex flex-col gap-2 text-sm text-[#d9d1e8]">
             <Link href="/">Home</Link>
             <Link href="/about">About Us</Link>
-            <Link href="/brands">Brands & Services</Link>
-            <Link href="/services">Request Service</Link>
+            <Link href="/services">Services</Link>
+            <Link href="/request-quote">Request Quote</Link>
+            <Link href="/resources">Resources</Link>
+            <Link href="/customer-portal">Customer Portal</Link>
           </div>
         </div>
 
@@ -50,7 +52,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-4 text-center text-sm text-[#bcaed4]">
-          © 2026 Southern Bro Enterprises LLC
+          Copyright 2026 Southern Bro Enterprises LLC
         </div>
       </div>
     </footer>

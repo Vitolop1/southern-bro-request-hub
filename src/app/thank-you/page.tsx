@@ -2,7 +2,19 @@ import Link from "next/link";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
-export default function ThankYouPage() {
+type ThankYouPageProps = {
+  searchParams: Promise<{
+    request?: string;
+    service?: string;
+    type?: string;
+  }>;
+};
+
+export default async function ThankYouPage({
+  searchParams,
+}: ThankYouPageProps) {
+  const { request, service, type } = await searchParams;
+
   return (
     <main className="min-h-screen bg-[#090312] text-white">
       <Navbar />
@@ -17,9 +29,29 @@ export default function ThankYouPage() {
             Thank you
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-[#ddd2eb]">
-            Your request has been submitted successfully. The Southern Bro team
-            can now review the details and follow up with next steps.
+            Your {type === "delivery" ? "delivery request" : "quote request"} has
+            been submitted successfully. The Southern Bro team can now review the
+            details and follow up with next steps.
           </p>
+
+          {(request || service) && (
+            <div className="mt-8 w-full rounded-[1.75rem] border border-white/10 bg-white/5 p-6 text-left">
+              {request && (
+                <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[#ffb8f0]">
+                  Request ID: {request}
+                </p>
+              )}
+              {service && (
+                <p className="mt-3 text-sm leading-7 text-[#f5efff]">
+                  Service selected: <span className="font-semibold text-white">{service}</span>
+                </p>
+              )}
+              <p className="mt-3 text-sm leading-7 text-[#d9d1e8]">
+                Next step: a team member can review the request details and follow
+                up using the contact information submitted in the form.
+              </p>
+            </div>
+          )}
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Link
@@ -29,10 +61,10 @@ export default function ThankYouPage() {
               Back to Home
             </Link>
             <Link
-              href="/services"
+              href="/request-quote"
               className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
             >
-              Request Another Service
+              Submit Another Request
             </Link>
           </div>
         </div>

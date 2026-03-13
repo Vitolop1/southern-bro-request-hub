@@ -9,9 +9,19 @@ type BrandDirectoryProps = {
 export default function BrandDirectory({
   maxServices = 3,
 }: BrandDirectoryProps) {
+  const brandOrder = {
+    high: 0,
+    medium: 1,
+    low: 2,
+  } as const;
+
+  const sortedBrands = [...brandProfiles].sort(
+    (left, right) => brandOrder[left.priorityTier] - brandOrder[right.priorityTier]
+  );
+
   return (
     <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-      {brandProfiles.map((brand) => (
+      {sortedBrands.map((brand) => (
         <article
           key={brand.id}
           id={brand.id}
@@ -28,9 +38,14 @@ export default function BrandDirectory({
                 className="h-20 w-20 object-contain drop-shadow-[0_0_18px_rgba(255,79,216,0.28)]"
               />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ffb8f0]">
-                  {brand.shortLabel}
-                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ffb8f0]">
+                    {brand.shortLabel}
+                  </p>
+                  <span className="rounded-full border border-white/10 bg-white/8 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#f7dcff]">
+                    {brand.priorityTier}
+                  </span>
+                </div>
                 <h3 className="mt-1 text-lg font-black uppercase tracking-[0.04em] text-white">
                   {brand.name}
                 </h3>
