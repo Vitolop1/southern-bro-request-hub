@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 h-56 w-56 rounded-full bg-violet-600/15 blur-3xl" />
       <div className="absolute bottom-8 right-0 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl" />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-6 py-16 text-center md:py-24">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-14 text-center sm:px-6 md:py-24">
         <div className="relative flex items-center justify-center">
           <div className="absolute h-52 w-52 rounded-full bg-fuchsia-500/25 blur-3xl md:h-72 md:w-72 xl:h-80 xl:w-80" />
           <div className="absolute h-64 w-64 rounded-full border border-fuchsia-300/20 bg-white/5 blur-2xl md:h-80 md:w-80 xl:h-[26rem] xl:w-[26rem]" />
@@ -21,54 +21,54 @@ export default function Hero() {
             width={420}
             height={420}
             priority
-            className="relative w-[240px] drop-shadow-[0_0_42px_rgba(255,79,216,0.58)] md:w-[320px] xl:w-[400px]"
+            className="relative w-[190px] drop-shadow-[0_0_42px_rgba(255,79,216,0.58)] sm:w-[220px] md:w-[320px] xl:w-[400px]"
           />
         </div>
 
-        <p className="mt-5 text-xs font-semibold uppercase tracking-[0.38em] text-fuchsia-200 md:text-sm">
+        <p className="mt-5 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-fuchsia-200 sm:text-xs md:text-sm md:tracking-[0.38em]">
           Southern Bro Enterprises LLC
         </p>
 
-        <h1 className="mt-5 max-w-5xl text-4xl font-black uppercase tracking-[0.04em] text-white md:text-6xl">
+        <h1 className="mt-5 max-w-5xl text-3xl font-black uppercase tracking-[0.03em] text-white sm:text-4xl md:text-6xl">
           {companyOverview.heroTitle}
         </h1>
 
-        <div className="mt-7 max-w-6xl rounded-[2rem] border border-[#f5d483]/20 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] px-6 py-6 shadow-[0_0_60px_rgba(255,79,216,0.12)] md:px-10 md:py-8">
-          <p className="text-3xl font-black uppercase tracking-[0.04em] text-white md:text-5xl xl:text-6xl">
+        <div className="mt-7 max-w-6xl rounded-[1.5rem] border border-[#f5d483]/20 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] px-4 py-5 shadow-[0_0_60px_rgba(255,79,216,0.12)] sm:px-6 md:rounded-[2rem] md:px-10 md:py-8">
+          <p className="text-2xl font-black uppercase tracking-[0.03em] text-white sm:text-3xl md:text-5xl xl:text-6xl">
             {companyOverview.heroTagline}
           </p>
         </div>
 
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb] md:text-xl">
+        <p className="mt-5 max-w-3xl text-base leading-7 text-[#ddd2eb] sm:text-lg md:text-xl md:leading-8">
           {companyOverview.originalIntro}
         </p>
 
-        <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#ffb8f0]">
+        <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb8f0] sm:text-sm md:tracking-[0.2em]">
           Service Area: Lynchburg, VA & Virginia Region
         </p>
 
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
+        <div className="mt-8 flex w-full max-w-xl flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
           <Link
             href="/what-we-do"
-            className="rounded-full border border-white/15 bg-white/6 px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:bg-white/10"
+            className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/10"
           >
             What Do We Do?
           </Link>
           <Link
             href="/request-quote"
-            className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-[0_0_30px_rgba(193,41,255,0.35)] transition hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(255,79,216,0.45)]"
+            className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.35)] transition hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(255,79,216,0.45)]"
           >
             Request Our Services Here
           </Link>
           <Link
             href="tel:+17573001070"
-            className="rounded-full border border-[#d4a84f]/60 bg-white/5 px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-[#f7e2ff] transition hover:bg-white/10"
+            className="rounded-full border border-[#d4a84f]/60 bg-white/5 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-[#f7e2ff] transition hover:bg-white/10"
           >
             Call Us To Figure Out More
           </Link>
         </div>
 
-        <div className="mt-8 rounded-[1.5rem] border border-[#d4a84f]/30 bg-black/20 px-6 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-[#f7dfa1]">
+        <div className="mt-8 rounded-[1.25rem] border border-[#d4a84f]/30 bg-black/20 px-5 py-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#f7dfa1] sm:text-sm">
           {companyOverview.redesignNote}
         </div>
 
