@@ -25,9 +25,17 @@ export default function BrandDirectory({
         <article
           key={brand.id}
           id={brand.id}
-          className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#12071d]/90 p-6"
+          className={[
+            "relative overflow-hidden rounded-[1.75rem] border p-6",
+            brand.status === "coming-soon"
+              ? "border-white/5 bg-black/40"
+              : "border-white/10 bg-[#12071d]/90",
+          ].join(" ")}
         >
           <div className={`absolute inset-0 bg-gradient-to-br ${brand.accent}`} />
+          {brand.status === "coming-soon" && (
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,2,6,0.7),rgba(2,2,6,0.78))]" />
+          )}
           <div className="relative">
             <div className="flex items-center gap-4">
               <Image
@@ -35,7 +43,12 @@ export default function BrandDirectory({
                 alt={`${brand.name} logo`}
                 width={84}
                 height={84}
-                className="h-20 w-20 object-contain drop-shadow-[0_0_18px_rgba(255,79,216,0.28)]"
+                className={[
+                  "h-20 w-20 object-contain",
+                  brand.status === "coming-soon"
+                    ? "opacity-60 grayscale"
+                    : "drop-shadow-[0_0_18px_rgba(255,79,216,0.28)]",
+                ].join(" ")}
               />
               <div>
                 <div className="flex flex-wrap items-center gap-2">
@@ -45,6 +58,11 @@ export default function BrandDirectory({
                   <span className="rounded-full border border-white/10 bg-white/8 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#f7dcff]">
                     {brand.priorityTier}
                   </span>
+                  {brand.status === "coming-soon" && (
+                    <span className="rounded-full border border-[#d4a84f]/40 bg-[#d4a84f]/10 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#f7dfa1]">
+                      {brand.statusNote}
+                    </span>
+                  )}
                 </div>
                 <h3 className="mt-1 text-lg font-black uppercase tracking-[0.04em] text-white">
                   {brand.name}
@@ -65,18 +83,26 @@ export default function BrandDirectory({
               ))}
             </ul>
 
-            <Link
-              href={brand.pageHref}
-              className="mt-5 inline-flex rounded-full border border-white/15 bg-white/6 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
-            >
-              View Brand
-            </Link>
-            <Link
-              href={brand.requestHref}
-              className="mt-3 inline-flex rounded-full border border-fuchsia-300/60 bg-white/8 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/14"
-            >
-              {brand.ctaLabel}
-            </Link>
+            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={brand.pageHref}
+                className="inline-flex rounded-full border border-white/15 bg-white/6 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
+              >
+                View Brand
+              </Link>
+              {brand.status === "coming-soon" ? (
+                <span className="inline-flex rounded-full border border-[#d4a84f]/35 bg-black/30 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#f7dfa1]">
+                  {brand.statusNote}
+                </span>
+              ) : (
+                <Link
+                  href={brand.requestHref}
+                  className="inline-flex rounded-full border border-fuchsia-300/60 bg-white/8 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/14"
+                >
+                  {brand.ctaLabel}
+                </Link>
+              )}
+            </div>
           </div>
         </article>
       ))}

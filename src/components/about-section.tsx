@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BriefcaseBusiness, Handshake, MapPinned } from "lucide-react";
 import { aboutHighlights } from "@/lib/brand-data";
+import { companyOverview, communityNetworks } from "@/lib/company-data";
 
 const icons = [BriefcaseBusiness, Handshake, MapPinned];
 
@@ -21,9 +22,7 @@ export default function AboutSection({ compact = false }: AboutSectionProps) {
             Southern Bro Enterprises is built to organize multiple service lanes professionally
           </h2>
           <p className="mt-5 text-lg leading-8 text-[#ddd2eb]">
-            Southern Bro Enterprises brings together consulting, detailing,
-            ticketing, delivery, handyman work, product sales, and
-            community-focused programs under one recognizable brand family.
+            {companyOverview.servicesIntro}
           </p>
           <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
             The goal is simple: make it easier for customers, partners, and
@@ -32,13 +31,24 @@ export default function AboutSection({ compact = false }: AboutSectionProps) {
             professionally.
           </p>
 
+          <div className="mt-6 flex flex-wrap gap-3">
+            {communityNetworks.map((network) => (
+              <div
+                key={network.name}
+                className="rounded-full border border-white/10 bg-white/6 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#f7dcff]"
+              >
+                {network.name}
+              </div>
+            ))}
+          </div>
+
           {!compact && (
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/about"
+                href="/what-we-do"
                 className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_28px_rgba(193,41,255,0.25)] transition hover:scale-[1.02]"
               >
-                Learn More About Us
+                Learn What We Do
               </Link>
               <Link
                 href="/request-quote"
@@ -61,9 +71,9 @@ export default function AboutSection({ compact = false }: AboutSectionProps) {
             />
             <p className="mt-5 max-w-xl text-base leading-7 text-[#e7dcf3]">
               The company connects multiple service identities without losing the
-              core Southern Bro brand, which makes it possible to emphasize
-              high-priority services without abandoning the rest of the brand
-              family.
+              core Southern Bro brand. That makes it possible to keep the
+              original Squarespace service story, the team pages, and the
+              community mission visible in one cleaner experience.
             </p>
           </div>
         </div>

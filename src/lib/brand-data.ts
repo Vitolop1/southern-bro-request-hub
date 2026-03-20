@@ -12,6 +12,8 @@ export type BrandProfile = {
   pageHref: string;
   accent: string;
   priorityTier: "high" | "medium" | "low";
+  status?: "active" | "coming-soon";
+  statusNote?: string;
   featured?: boolean;
 };
 
@@ -61,6 +63,8 @@ export const brandProfiles: BrandProfile[] = [
     pageHref: "/brands/southern-bro-delivery-catering",
     accent: "from-cyan-500/30 via-fuchsia-500/15 to-transparent",
     priorityTier: "medium",
+    status: "coming-soon",
+    statusNote: "Coming Soon",
   },
   {
     id: "southern-bro-handyman-services",
@@ -107,6 +111,8 @@ export const brandProfiles: BrandProfile[] = [
     pageHref: "/brands/southern-bro-landscaping",
     accent: "from-emerald-400/18 via-fuchsia-500/20 to-transparent",
     priorityTier: "low",
+    status: "coming-soon",
+    statusNote: "Coming Soon",
   },
   {
     id: "southern-bro-creations",
@@ -130,6 +136,8 @@ export const brandProfiles: BrandProfile[] = [
     pageHref: "/brands/southern-bro-creations",
     accent: "from-pink-500/35 via-violet-500/18 to-transparent",
     priorityTier: "low",
+    status: "coming-soon",
+    statusNote: "Coming Soon",
   },
   {
     id: "ticket-vibez",

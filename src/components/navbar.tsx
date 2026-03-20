@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { mainNavigationLinks } from "@/lib/company-data";
 
 export default function Navbar() {
   return (
@@ -9,47 +10,20 @@ export default function Navbar() {
         </Link>
 
         <nav className="flex flex-wrap items-center gap-4 md:gap-6">
+          {mainNavigationLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
-            href="/"
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
-          >
-            About
-          </Link>
-          <Link
-            href="/services"
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
-          >
-            Services
-          </Link>
-          <Link
-            href="/request-quote"
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
-          >
-            Request Quote
-          </Link>
-          <Link
-            href="/resources"
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
-          >
-            Resources
-          </Link>
-          <Link
-            href="/#contact"
-            className="text-sm font-semibold uppercase tracking-[0.12em] text-[#ddd2eb] transition hover:text-white"
-          >
-            Contact
-          </Link>
-          <Link
-            href="/delivery"
+            href="/need-a-ride"
             className="rounded-full border border-fuchsia-300/60 bg-fuchsia-500/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-fuchsia-500/25"
           >
-            Book Delivery
+            Need A Ride?
           </Link>
         </nav>
       </div>

@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  businessHours,
+  contactLines,
+  mainNavigationLinks,
+  supportPageLinks,
+} from "@/lib/company-data";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#090312]">
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 md:grid-cols-[1.1fr_0.9fr_0.9fr]">
+      <div className="mx-auto grid max-w-7xl gap-8 px-6 py-10 md:grid-cols-[1.1fr_0.85fr_0.85fr_1fr]">
         <div className="flex items-start gap-4">
           <Image
             src="/LOGOS/SouthernBro-Enterprises-Logo.png"
@@ -18,23 +24,36 @@ export default function Footer() {
               Southern Bro Enterprises
             </p>
             <p className="mt-2 max-w-sm text-sm leading-6 text-[#d9d1e8]">
-              Professional support across consulting, detailing, ticketing,
-              delivery, brand services, and community programs.
+              Business support, service brands, delivery help, event support,
+              and community-focused programs for Lynchburg, Virginia and the
+              wider region.
             </p>
           </div>
         </div>
 
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ffb8f0]">
-            Quick Links
+            Main Pages
           </p>
           <div className="mt-3 flex flex-col gap-2 text-sm text-[#d9d1e8]">
-            <Link href="/">Home</Link>
-            <Link href="/about">About Us</Link>
-            <Link href="/services">Services</Link>
-            <Link href="/request-quote">Request Quote</Link>
-            <Link href="/resources">Resources</Link>
-            <Link href="/customer-portal">Customer Portal</Link>
+            {mainNavigationLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#ffb8f0]">
+            More Pages
+          </p>
+          <div className="mt-3 flex flex-col gap-2 text-sm text-[#d9d1e8]">
+            {supportPageLinks.map((link) => (
+              <Link key={link.href} href={link.href}>
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -44,8 +63,21 @@ export default function Footer() {
           </p>
           <div className="mt-3 space-y-2 text-sm leading-6 text-[#d9d1e8]">
             <p>Service Area: Lynchburg, VA & Virginia Region</p>
-            <p>(757) 300-1070</p>
-            <p>SouthernBroEnterprises.com</p>
+            {contactLines.map((line) => (
+              <p key={line.label}>
+                {line.label}:{" "}
+                {line.href ? (
+                  <Link href={line.href} className="text-[#f5e6ff]">
+                    {line.value}
+                  </Link>
+                ) : (
+                  line.value
+                )}
+              </p>
+            ))}
+            {businessHours.map((hours) => (
+              <p key={hours}>{hours}</p>
+            ))}
           </div>
         </div>
       </div>

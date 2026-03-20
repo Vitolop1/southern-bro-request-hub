@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import BrandStrip from "@/components/brand-strip";
+import { companyOverview } from "@/lib/company-data";
 
 export default function Hero() {
   return (
@@ -29,32 +30,46 @@ export default function Hero() {
         </p>
 
         <h1 className="mt-5 max-w-5xl text-4xl font-black uppercase tracking-[0.04em] text-white md:text-6xl">
-          Business consulting, detailing, ticketing, and multi-brand support
+          {companyOverview.heroTitle}
         </h1>
 
+        <div className="mt-7 max-w-6xl rounded-[2rem] border border-[#f5d483]/20 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] px-6 py-6 shadow-[0_0_60px_rgba(255,79,216,0.12)] md:px-10 md:py-8">
+          <p className="text-3xl font-black uppercase tracking-[0.04em] text-white md:text-5xl xl:text-6xl">
+            {companyOverview.heroTagline}
+          </p>
+        </div>
+
         <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb] md:text-xl">
-          A stronger Southern Bro website should push customers into the right
-          service quickly, with high visibility for consulting, detailing,
-          ticketing, quote requests, and the broader Southern Bro brand family.
+          {companyOverview.originalIntro}
         </p>
 
         <p className="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#ffb8f0]">
           Service Area: Lynchburg, VA & Virginia Region
         </p>
 
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:justify-center">
+          <Link
+            href="/what-we-do"
+            className="rounded-full border border-white/15 bg-white/6 px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white transition hover:bg-white/10"
+          >
+            What Do We Do?
+          </Link>
           <Link
             href="/request-quote"
             className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-white shadow-[0_0_30px_rgba(193,41,255,0.35)] transition hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(255,79,216,0.45)]"
           >
-            Request a Quote
+            Request Our Services Here
           </Link>
           <Link
-            href="/services"
+            href="tel:+17573001070"
             className="rounded-full border border-[#d4a84f]/60 bg-white/5 px-7 py-3 text-sm font-bold uppercase tracking-[0.18em] text-[#f7e2ff] transition hover:bg-white/10"
           >
-            Explore Services
+            Call Us To Figure Out More
           </Link>
+        </div>
+
+        <div className="mt-8 rounded-[1.5rem] border border-[#d4a84f]/30 bg-black/20 px-6 py-4 text-sm font-semibold uppercase tracking-[0.12em] text-[#f7dfa1]">
+          {companyOverview.redesignNote}
         </div>
 
         <BrandStrip />

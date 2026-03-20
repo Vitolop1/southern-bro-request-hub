@@ -1,0 +1,49 @@
+"use client";
+
+import Link from "next/link";
+import { leadershipTeam } from "@/lib/company-data";
+
+type TeamGridProps = {
+  compact?: boolean;
+};
+
+export default function TeamGrid({ compact = false }: TeamGridProps) {
+  const visibleMembers = compact ? leadershipTeam.slice(0, 3) : leadershipTeam;
+
+  return (
+    <div className="grid gap-5 md:grid-cols-3">
+      {visibleMembers.map((member) => (
+        <article
+          key={member.slug}
+          className="rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.95),rgba(11,4,22,0.98))] p-6 shadow-[0_0_40px_rgba(193,41,255,0.08)]"
+        >
+          <div className="flex items-center gap-4">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-fuchsia-300/40 bg-fuchsia-500/12 text-lg font-black uppercase tracking-[0.12em] text-white">
+              {member.initials}
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ffb8f0]">
+                {member.title}
+              </p>
+              <h3 className="mt-1 text-xl font-black uppercase tracking-[0.04em] text-white">
+                {member.name}
+              </h3>
+            </div>
+          </div>
+
+          <p className="mt-4 text-sm font-semibold uppercase tracking-[0.08em] text-[#f7dcff]">
+            {member.role}
+          </p>
+          <p className="mt-4 text-sm leading-7 text-[#ddd2eb]">{member.summary}</p>
+
+          <Link
+            href={`/meet-${member.slug}`}
+            className="mt-5 inline-flex rounded-full border border-white/15 bg-white/6 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
+          >
+            Learn More About Me Here
+          </Link>
+        </article>
+      ))}
+    </div>
+  );
+}

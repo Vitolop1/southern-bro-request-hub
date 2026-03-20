@@ -38,11 +38,17 @@ export default function ServiceCards() {
             key={brand.name}
             id={brand.id}
             className={[
-              "group relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#13071f]/85 p-6 shadow-[0_0_60px_rgba(126,34,206,0.18)] backdrop-blur-sm",
+              "group relative overflow-hidden rounded-[2rem] border p-6 shadow-[0_0_60px_rgba(126,34,206,0.18)] backdrop-blur-sm",
+              brand.status === "coming-soon"
+                ? "border-white/5 bg-black/45"
+                : "border-white/10 bg-[#13071f]/85",
               brand.featured ? "md:col-span-2" : "",
             ].join(" ")}
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${brand.accent}`} />
+            {brand.status === "coming-soon" && (
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,3,10,0.76),rgba(4,3,10,0.84))]" />
+            )}
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" />
 
             <div className="relative grid items-center gap-6 lg:grid-cols-[220px_1fr]">
@@ -52,7 +58,12 @@ export default function ServiceCards() {
                   alt={`${brand.name} logo`}
                   width={220}
                   height={220}
-                  className="h-auto w-[170px] drop-shadow-[0_0_25px_rgba(255,79,216,0.35)] transition duration-300 group-hover:scale-[1.03] md:w-[200px]"
+                  className={[
+                    "h-auto w-[170px] transition duration-300 md:w-[200px]",
+                    brand.status === "coming-soon"
+                      ? "grayscale opacity-65"
+                      : "drop-shadow-[0_0_25px_rgba(255,79,216,0.35)] group-hover:scale-[1.03]",
+                  ].join(" ")}
                 />
               </div>
 
@@ -68,6 +79,11 @@ export default function ServiceCards() {
                         ? "Active Service"
                         : "Secondary Focus"}
                   </span>
+                  {brand.status === "coming-soon" && (
+                    <span className="rounded-full border border-[#d4a84f]/35 bg-black/30 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#f7dfa1]">
+                      {brand.statusNote}
+                    </span>
+                  )}
                 </div>
                 <h3 className="text-2xl font-black uppercase tracking-[0.04em] text-white">
                   {brand.name}
@@ -97,12 +113,18 @@ export default function ServiceCards() {
                     >
                       Learn More
                     </Link>
-                    <Link
-                      href={brand.requestHref}
-                      className="inline-flex rounded-full border border-fuchsia-300/60 bg-white/8 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/14"
-                    >
-                      {brand.ctaLabel}
-                    </Link>
+                    {brand.status === "coming-soon" ? (
+                      <span className="inline-flex rounded-full border border-[#d4a84f]/35 bg-black/30 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#f7dfa1]">
+                        {brand.statusNote}
+                      </span>
+                    ) : (
+                      <Link
+                        href={brand.requestHref}
+                        className="inline-flex rounded-full border border-fuchsia-300/60 bg-white/8 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/14"
+                      >
+                        {brand.ctaLabel}
+                      </Link>
+                    )}
                   </div>
                 </div>
               </div>
