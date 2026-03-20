@@ -8,17 +8,17 @@ const principles = [
   {
     title: "Clarity",
     description:
-      "Customers should understand what each brand does and where to go for the right service without confusion.",
+      "Customers can quickly understand what each brand offers and where to go for the right service.",
   },
   {
     title: "Professionalism",
     description:
-      "The website should present Southern Bro Enterprises as a serious multi-service business with a consistent visual standard.",
+      "Southern Bro Enterprises is presented as a serious multi-service business with a consistent visual standard.",
   },
   {
     title: "Accessibility",
     description:
-      "Every important action should be easy to find on desktop and mobile, from learning about the company to requesting service.",
+      "Every important action is easy to find on desktop and mobile, from learning about the company to requesting service.",
   },
 ];
 
@@ -53,8 +53,7 @@ export default function AboutPage() {
               className="mx-auto w-[220px] drop-shadow-[0_0_30px_rgba(255,79,216,0.34)]"
             />
             <p className="mt-5 text-sm leading-7 text-[#d9d1e8]">
-              Service area currently emphasized across the site: Lynchburg,
-              Virginia and the wider Virginia region.
+              Service area: Lynchburg, Virginia and the wider Virginia region.
             </p>
           </div>
         </div>
@@ -68,7 +67,7 @@ export default function AboutPage() {
             Our Approach
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-            What this website should communicate professionally
+            What Southern Bro stands for
           </h2>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">

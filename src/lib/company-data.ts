@@ -38,9 +38,9 @@ export const mainNavigationLinks: NavigationLink[] = [
 
 export const supportPageLinks: NavigationLink[] = [
   { label: "Southern Bro Creations", href: "/brands/southern-bro-creations" },
-  { label: "Ticket Vibez Page", href: "/brands/ticket-vibez" },
-  { label: "Need A Ride?", href: "/need-a-ride" },
-  { label: "Product Information Page", href: "/product-information" },
+  { label: "Ticket Vibez", href: "/brands/ticket-vibez" },
+  { label: "Delivery Requests", href: "/need-a-ride" },
+  { label: "Product Information", href: "/product-information" },
   { label: "Meet William Soteria", href: "/meet-william-soteria" },
   { label: "Meet Antwan Hardin", href: "/meet-antwan-hardin" },
   { label: "Meet Ciera Tropp", href: "/meet-ciera-tropp" },
@@ -115,9 +115,7 @@ export const companyOverview = {
   whatWeOffer:
     "At Southern Bro Enterprises, we strive to support and lead our local businesses in our communities to success. We offer a bunch of brands that provide many services.",
   currentBrandsLine:
-    "Our Current Brands Include: The Southern Bro (Parent Company), VaBizHelp (Business Services), Va Recovery Services (Community Aid), and Va Ticket Vibez (Event / Ticket Store).",
-  redesignNote:
-    "The website is being redesigned so every service, team page, and support path is easier to find without losing the energy of the original Squarespace site.",
+    "Current brands include The Southern Bro parent company, VaBizHelp business services, VA Recovery Services community support, and Ticket Vibez event services.",
 };
 
 export const hopeGrantProgram = {
@@ -126,7 +124,7 @@ export const hopeGrantProgram = {
   summary:
     "The H.O.P.E. Grant Program, short for Help Operations Powering Equality, is presented as a Southern Bro Enterprises initiative created to promote educational access, economic opportunity, and community betterment.",
   description:
-    "The current Squarespace copy describes the program as support for people and community projects that demonstrate financial need and a real desire to pursue education, training, or betterment work that strengthens their communities.",
+    "The H.O.P.E. Grant Program supports people and community projects that demonstrate financial need and a strong desire to pursue education, training, or betterment work that strengthens their communities.",
   originalParagraphs: [
     "Southern Bro Enterprises LLC (the Parent Company) hereby establishes the HOPE Grant Program (Help Operations Powering Equality) founded by Equity Partner William Soteria, for the express purpose of promoting educational access, economic opportunity, and community betterment services.",
     "The program is intended to support individuals or community projects that demonstrate financial need and a desire to pursue education, betterment, or training that contributes to the advancement and strengthening of their communities and community members.",
@@ -152,7 +150,7 @@ export const communityNetworks: CommunityNetwork[] = [
   {
     name: "VaBizHelp",
     description:
-      "Business services and support network referenced on the current Squarespace site.",
+      "Business services and support network connected to the broader company structure.",
   },
   {
     name: "VA Recovery Services",
@@ -160,7 +158,7 @@ export const communityNetworks: CommunityNetwork[] = [
   },
   {
     name: "Va Ticket Vibez",
-    description: "Event and ticket support brand highlighted in the current site copy.",
+    description: "Event and ticket support brand focused on access, promotions, and customer support.",
   },
 ];
 

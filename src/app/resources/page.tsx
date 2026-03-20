@@ -23,7 +23,7 @@ export default function ResourcesPage() {
               Resources
             </p>
             <h1 className="mt-4 text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-              Content that supports SEO, trust, and cleaner customer requests
+              Helpful content that builds trust and supports better customer requests
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
               A stronger resource section helps customers understand what to ask
@@ -64,15 +64,15 @@ export default function ResourcesPage() {
       <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
         <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 md:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-            Next Content Step
+            Content Strategy
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-            Turn resources into lead generation
+            Turn useful content into stronger customer action
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-7 text-[#d9d1e8]">
-            Each future guide, FAQ, or update post should include a direct CTA to
+            Each guide, FAQ, or update post should include a direct CTA to
             request a quote, contact the company, or move into the right service
-            page. That makes the resource section useful for both customers and SEO.
+            page. That keeps the resource section useful for both customers and search visibility.
           </p>
         </div>
       </section>

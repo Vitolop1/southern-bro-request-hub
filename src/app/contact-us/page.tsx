@@ -18,8 +18,8 @@ export default function ContactUsPage() {
             Get in touch with the Southern Bro team
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
-            This page brings the current Squarespace contact details into the
-            redesigned layout without losing the direct email and phone paths.
+            Reach the team through direct email, phone, and service request paths
+            without digging through multiple pages.
           </p>
         </div>
       </section>
@@ -100,7 +100,7 @@ export default function ContactUsPage() {
                   href="tel:+17573001070"
                   className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
                 >
-                  Click Here To Call Us
+                  Call Us
                 </Link>
               </div>
             </div>

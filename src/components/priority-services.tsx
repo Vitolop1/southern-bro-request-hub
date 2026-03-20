@@ -13,14 +13,14 @@ export default function PriorityServices({
     <section className="mx-auto max-w-7xl px-6 py-14 md:py-18">
       <div className="mx-auto mb-10 max-w-3xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-          Current Growth Priorities
+          Featured Services
         </p>
         <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-5xl">
-          Consulting, detailing, and ticketing lead the new site structure
+          Consulting, detailing, and ticketing are highlighted front and center
         </h2>
         <p className="mt-5 text-lg leading-8 text-[#d9d1e8]">
-          These are the service lanes that should receive the strongest visibility,
-          clearest calls to action, and the fastest path into the quote flow.
+          These service lanes are positioned for quick action, clear visibility,
+          and a fast path into the request flow.
         </p>
       </div>
 

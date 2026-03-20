@@ -18,12 +18,11 @@ export default function ServicesPage() {
               Services Overview
             </p>
             <h1 className="mt-4 text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-              Start with the services Southern Bro is prioritizing right now
+              Explore the services Southern Bro offers today
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
-              This page organizes the current service structure around consulting,
-              detailing, ticketing, and a cleaner quote process while still
-              keeping the full brand family available.
+              Browse featured services, review the full brand directory, and
+              choose the request path that matches your needs.
             </p>
           </div>
         </div>
@@ -51,12 +50,12 @@ export default function ServicesPage() {
               Request Quote
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              One central intake flow for higher-priority services
+              One central intake flow for Southern Bro services
             </h2>
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
               Use this form for consulting, detailing, ticketing, handyman,
               community support, and other non-delivery services. Delivery and
-              catering can still be booked through the dedicated delivery page.
+              catering can be booked through the dedicated delivery page.
             </p>
 
             <div className="mt-8 space-y-4">

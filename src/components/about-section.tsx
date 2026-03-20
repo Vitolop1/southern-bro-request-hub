@@ -71,9 +71,9 @@ export default function AboutSection({ compact = false }: AboutSectionProps) {
             />
             <p className="mt-5 max-w-xl text-base leading-7 text-[#e7dcf3]">
               The company connects multiple service identities without losing the
-              core Southern Bro brand. That makes it possible to keep the
-              original Squarespace service story, the team pages, and the
-              community mission visible in one cleaner experience.
+              core Southern Bro brand. That creates one professional experience
+              for customers while keeping the full service family visible and
+              easy to understand.
             </p>
           </div>
         </div>

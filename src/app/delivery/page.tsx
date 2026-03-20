@@ -28,7 +28,7 @@ export default function DeliveryPage() {
               Delivery & Catering
             </p>
             <h1 className="mt-4 text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-              Southern Bro delivery services with a stronger presentation
+              Delivery, pickup, and catering support made simple
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#ddd2eb]">
               Use this page to request pickup, delivery, or catering-related help
@@ -84,8 +84,7 @@ export default function DeliveryPage() {
               ))}
             </ul>
             <p className="mt-6 text-sm leading-6 text-[#d9d1e8]">
-              Service area currently highlighted on the site: Lynchburg, VA and
-              the Virginia region.
+              Service area: Lynchburg, VA and the Virginia region.
             </p>
           </div>
 

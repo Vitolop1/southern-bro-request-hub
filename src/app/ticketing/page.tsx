@@ -30,12 +30,11 @@ export default function TicketingPage() {
               Request Ticketing Support
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              Event support should feel like a dedicated service, not an afterthought
+              Dedicated event and ticketing support
             </h2>
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              Ticket Vibez now has a cleaner path for event support inquiries,
-              helping customers and organizers send a focused request instead of
-              getting buried in a general contact page.
+              Ticket Vibez gives customers and organizers a direct path for
+              event support, community ticket requests, and promotional assistance.
             </p>
           </div>
 

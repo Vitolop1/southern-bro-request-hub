@@ -2,6 +2,7 @@
 
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/components/language-provider";
 
 type Theme = "dark" | "light";
 
@@ -26,6 +27,7 @@ function applyTheme(theme: Theme) {
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(() => getPreferredTheme());
+  const { messages } = useLanguage();
 
   useEffect(() => {
     applyTheme(theme);
@@ -49,7 +51,7 @@ export default function ThemeToggle() {
       title={isLight ? "Switch to dark mode" : "Switch to light mode"}
     >
       {isLight ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-      <span>{isLight ? "Dark" : "Light"}</span>
+      <span>{isLight ? messages.theme.dark : messages.theme.light}</span>
     </button>
   );
 }

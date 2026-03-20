@@ -16,12 +16,11 @@ export default function MeetOurTeamPage() {
               Meet Our Team
             </p>
             <h1 className="mt-4 text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-              Our people, our networks, and the leadership pages the site still needs
+              Meet the Southern Bro leadership team
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
-              The current Southern Bro site highlights a small leadership team
-              with big ideas. This page keeps that structure while giving each
-              person a cleaner profile and a direct contact path.
+              Learn who leads each part of the company and connect with the
+              right person through direct profile pages and contact paths.
             </p>
           </div>
         </div>

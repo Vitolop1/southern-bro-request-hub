@@ -45,15 +45,15 @@ export default function Home() {
               What Do We Do?
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-              Click here to find out what Southern Bro is building
+              Cleaner business support, service requests, and community access in one place
             </h2>
-            <p className="mt-5 text-lg leading-8 text-[#ddd2eb]">
-              {companyOverview.originalIntro}
+            <p className="mt-5 text-base leading-8 text-[#ddd2eb] md:text-lg">
+              {companyOverview.mission}
             </p>
-            <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
+            <p className="mt-4 text-sm leading-7 text-[#d9d1e8] md:text-base">
               {companyOverview.whatWeOffer}
             </p>
-            <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
+            <p className="mt-4 text-sm leading-7 text-[#d9d1e8] md:text-base">
               {companyOverview.currentBrandsLine}
             </p>
 
@@ -62,7 +62,7 @@ export default function Home() {
                 href="/what-we-do"
                 className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.02]"
               >
-                Click Here To Find Out
+                Learn More
               </Link>
               <Link
                 href="tel:+17573001070"
@@ -81,7 +81,7 @@ export default function Home() {
               {hopeGrantProgram.founderLine}
             </h2>
             <div className="mt-5 space-y-4">
-              {hopeGrantProgram.originalParagraphs.slice(0, 3).map((paragraph) => (
+              {hopeGrantProgram.originalParagraphs.slice(0, 2).map((paragraph) => (
                 <p key={paragraph} className="text-sm leading-7 text-[#efe5d0]">
                   {paragraph}
                 </p>
@@ -108,52 +108,6 @@ export default function Home() {
       </section>
 
       <AboutSection />
-
-      <section className="mx-auto max-w-7xl px-6 py-6 md:py-10">
-        <div className="rounded-[2rem] border border-[#d4a84f]/20 bg-[radial-gradient(circle_at_top,_rgba(212,168,79,0.14),_transparent_30%),linear-gradient(180deg,rgba(15,9,24,0.98),rgba(8,3,15,0.98))] p-8 md:p-10">
-          <div className="mx-auto max-w-4xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#f5d483]">
-              Original Mission Content
-            </p>
-            <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-              The home page now keeps the long H.O.P.E. and mission copy your boss already approved
-            </h2>
-          </div>
-
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#ffb8f0]">
-                Community Mission
-              </p>
-              <p className="mt-4 text-sm leading-7 text-[#ddd2eb]">
-                {companyOverview.originalIntro}
-              </p>
-              <p className="mt-4 text-sm leading-7 text-[#ddd2eb]">
-                {companyOverview.whatWeOffer}
-              </p>
-              <p className="mt-4 text-sm leading-7 text-[#f7dcff]">
-                {companyOverview.currentBrandsLine}
-              </p>
-            </div>
-
-            <div className="rounded-[1.75rem] border border-[#d4a84f]/20 bg-black/20 p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#f5d483]">
-                H.O.P.E. Grant Details
-              </p>
-              <div className="mt-4 space-y-4">
-                {hopeGrantProgram.originalParagraphs.map((paragraph) => (
-                  <p key={paragraph} className="text-sm leading-7 text-[#efe5d0]">
-                    {paragraph}
-                  </p>
-                ))}
-                <p className="text-sm leading-7 text-[#ddd2eb]">
-                  {hopeGrantProgram.legalNote}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <PriorityServices />
       <ServiceCards />
@@ -194,11 +148,11 @@ export default function Home() {
             Meet Our Team
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-            The people currently presented on the Southern Bro site
+            Leadership you can contact directly
           </h2>
           <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-            The redesigned site keeps the leadership pages visible so your boss
-            does not lose the team story that already exists in Squarespace.
+            Meet the people behind Southern Bro and use the direct team pages
+            for clearer outreach and follow-up.
           </p>
         </div>
 

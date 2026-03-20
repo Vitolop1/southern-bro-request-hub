@@ -23,12 +23,11 @@ export default function ServiceCards() {
           Full Brand Family
         </p>
         <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-5xl">
-          Every active brand stays visible, even while the homepage pushes current priorities
+          Every active brand stays visible in one organized directory
         </h2>
         <p className="mt-5 text-lg leading-8 text-[#d9d1e8]">
-          The cards below keep the flyer-style logo presentation your supervisor
-          wants, but organize it in a cleaner web structure that gives growth
-          services stronger positioning and keeps lower-priority brands available.
+          The cards below present each brand with its logo, service lineup,
+          audience, and request path in a more polished and customer-ready format.
         </p>
       </div>
 

@@ -41,9 +41,8 @@ export default async function RequestQuotePage({
               One professional intake page for Southern Bro services
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
-              This page centralizes quote requests and makes it easier to route
-              consulting, detailing, ticketing, delivery, and support inquiries
-              into a cleaner customer flow.
+              Submit one organized request for consulting, detailing, ticketing,
+              delivery support, and other Southern Bro service inquiries.
             </p>
           </div>
         </div>
@@ -59,7 +58,7 @@ export default async function RequestQuotePage({
                 Why This Page Matters
               </p>
               <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-                Quote capture should be clear and centralized
+                Clear and centralized quote capture
               </h2>
 
               <div className="mt-8 space-y-4">

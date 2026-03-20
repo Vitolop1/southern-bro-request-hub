@@ -54,8 +54,7 @@ export default function ServicePageTemplate({
               className="mx-auto w-[220px] drop-shadow-[0_0_30px_rgba(255,79,216,0.34)]"
             />
             <p className="mt-5 text-sm leading-7 text-[#d9d1e8]">
-              Service area currently highlighted on the website: Lynchburg, VA and
-              the wider Virginia region.
+              Service area: Lynchburg, VA and the wider Virginia region.
             </p>
           </div>
         </div>
@@ -68,7 +67,7 @@ export default function ServicePageTemplate({
               Services Offered
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              What this page should help customers request
+              What customers can request through this service
             </h2>
 
             <div className="mt-8 grid gap-4 md:grid-cols-2">

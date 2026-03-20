@@ -10,7 +10,7 @@ const detailingService = getPriorityService("detailing");
 export const metadata: Metadata = {
   title: "Detailing Services | Southern Bro Enterprises",
   description:
-    "Request detailing services through a cleaner Southern Bro quote flow with scheduling, location, and service detail capture built into the page.",
+    "Request detailing services through Southern Bro with scheduling, location, and service detail capture built into the page.",
 };
 
 export default function DetailingPage() {

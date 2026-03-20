@@ -7,7 +7,7 @@ const rideHighlights = [
   "Pickup and delivery requests",
   "Food, order, or logistics support",
   "Customer scheduling details in one place",
-  "A simpler public path while booking workflows are improved",
+  "Clear request details for faster follow-up",
 ];
 
 export default function NeedARidePage() {
@@ -19,14 +19,14 @@ export default function NeedARidePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(30,167,255,0.22),_transparent_24%),linear-gradient(180deg,_#090312_0%,_#14061f_55%,_#090312_100%)]" />
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#7dd3fc]">
-            Need A Ride?
+            Delivery Requests
           </p>
           <h1 className="mt-4 max-w-5xl text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-            Southern Bro Delivery & Catering intake in a cleaner layout
+            Request delivery, pickup, or catering support
           </h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-[#ddd2eb]">
-            This page keeps the Squarespace-style delivery lane visible while the
-            broader site moves into a more structured request system.
+            Use this page to submit delivery and pickup requests with a clear,
+            professional intake flow for timing, order details, and special instructions.
           </p>
         </div>
       </section>

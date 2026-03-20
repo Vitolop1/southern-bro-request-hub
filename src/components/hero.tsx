@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import BrandStrip from "@/components/brand-strip";
-import { companyOverview } from "@/lib/company-data";
+import { useLanguage } from "@/components/language-provider";
 
 export default function Hero() {
+  const { messages } = useLanguage();
+
   return (
     <section className="relative overflow-hidden border-b border-white/10 bg-[#090312]" id="top">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,79,216,0.35),_transparent_26%),radial-gradient(circle_at_20%_40%,_rgba(142,43,255,0.28),_transparent_30%),radial-gradient(circle_at_80%_30%,_rgba(30,167,255,0.16),_transparent_22%),linear-gradient(180deg,_#090312_0%,_#14061f_48%,_#090312_100%)]" />
@@ -26,25 +30,25 @@ export default function Hero() {
         </div>
 
         <p className="mt-5 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-fuchsia-200 sm:text-xs md:text-sm md:tracking-[0.38em]">
-          Southern Bro Enterprises LLC
+          {messages.hero.eyebrow}
         </p>
 
         <h1 className="mt-5 max-w-5xl text-3xl font-black uppercase tracking-[0.03em] text-white sm:text-4xl md:text-6xl">
-          {companyOverview.heroTitle}
+          {messages.hero.title}
         </h1>
 
         <div className="mt-7 max-w-6xl rounded-[1.5rem] border border-[#f5d483]/20 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] px-4 py-5 shadow-[0_0_60px_rgba(255,79,216,0.12)] sm:px-6 md:rounded-[2rem] md:px-10 md:py-8">
           <p className="text-2xl font-black uppercase tracking-[0.03em] text-white sm:text-3xl md:text-5xl xl:text-6xl">
-            {companyOverview.heroTagline}
+            {messages.hero.tagline}
           </p>
         </div>
 
         <p className="mt-5 max-w-3xl text-base leading-7 text-[#ddd2eb] sm:text-lg md:text-xl md:leading-8">
-          {companyOverview.originalIntro}
+          {messages.hero.intro}
         </p>
 
         <p className="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-[#ffb8f0] sm:text-sm md:tracking-[0.2em]">
-          Service Area: Lynchburg, VA & Virginia Region
+          {messages.hero.serviceArea}
         </p>
 
         <div className="mt-8 flex w-full max-w-xl flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-4">
@@ -52,24 +56,20 @@ export default function Hero() {
             href="/what-we-do"
             className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/10"
           >
-            What Do We Do?
+            {messages.hero.whatWeDo}
           </Link>
           <Link
             href="/request-quote"
             className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.35)] transition hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(255,79,216,0.45)]"
           >
-            Request Our Services Here
+            {messages.hero.requestServices}
           </Link>
           <Link
             href="tel:+17573001070"
             className="rounded-full border border-[#d4a84f]/60 bg-white/5 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-[#f7e2ff] transition hover:bg-white/10"
           >
-            Call Us To Figure Out More
+            {messages.hero.callUs}
           </Link>
-        </div>
-
-        <div className="mt-8 rounded-[1.25rem] border border-[#d4a84f]/30 bg-black/20 px-5 py-4 text-xs font-semibold uppercase tracking-[0.12em] text-[#f7dfa1] sm:text-sm">
-          {companyOverview.redesignNote}
         </div>
 
         <BrandStrip />

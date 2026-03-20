@@ -7,7 +7,7 @@ import { portalFeatures } from "@/lib/site-content";
 export const metadata: Metadata = {
   title: "Customer Portal | Southern Bro Enterprises",
   description:
-    "Preview the future Southern Bro customer portal experience and use the current quote and contact flow while portal access is being planned.",
+    "View the Southern Bro customer portal overview and use the quote and contact flow for support and follow-up.",
 };
 
 export default function CustomerPortalPage() {
@@ -23,12 +23,11 @@ export default function CustomerPortalPage() {
               Customer Portal
             </p>
             <h1 className="mt-4 text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-              Planned as a phase-two customer convenience layer
+              A central place for updates and shared information
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
-              The portal is included in the site structure because it may become
-              useful for status updates, shared files, and future client communication,
-              but it should not delay the launch of the core quote and service pages.
+              The customer portal is positioned to support request updates,
+              shared files, and organized client communication in one place.
             </p>
           </div>
         </div>
@@ -38,7 +37,7 @@ export default function CustomerPortalPage() {
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.95),rgba(11,4,22,0.98))] p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              Future Portal Features
+              Portal Features
             </p>
             <div className="mt-6 space-y-4">
               {portalFeatures.map((feature) => (
@@ -54,15 +53,15 @@ export default function CustomerPortalPage() {
 
           <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              Current Best Option
+              Best Current Path
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              Use the quote flow now, add portal access later
+              Start with the quote flow and direct service pages
             </h2>
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              The most professional current path is to focus on service pages,
-              request forms, and follow-up workflows first. Once those are stable,
-              the customer portal can be added without distracting from lead capture.
+              The strongest customer path today is through the service pages,
+              request forms, and direct follow-up workflow. Portal features can
+              support that experience as the platform continues to grow.
             </p>
 
             <div className="mt-8 flex flex-col gap-4">

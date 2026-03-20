@@ -30,12 +30,11 @@ export default function ConsultingPage() {
               Request Consulting
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              Start the intake professionally
+              Start your consulting request with confidence
             </h2>
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              This page is structured to push visitors into a cleaner consulting
-              request flow with clear business goals, timeline information, and a
-              professional first-touch intake.
+              This form helps business owners share goals, timelines, and support
+              needs in one clear consulting request flow.
             </p>
           </div>
 

@@ -26,7 +26,7 @@ export const priorityServices: PriorityService[] = [
     summary:
       "Operational support, startup planning, launch guidance, and structured business help under the Southern Bro Enterprises parent brand.",
     description:
-      "Business Consulting is one of the main service priorities for the rebuilt website. It should help business owners understand the support available, request help quickly, and move into a professional quote flow.",
+      "Business Consulting gives owners, founders, and operators a direct path to planning support, operational guidance, and practical next steps for growth.",
     bullets: [
       "Startup planning and launch support",
       "Operational support and process guidance",
@@ -57,9 +57,9 @@ export const priorityServices: PriorityService[] = [
     quoteCategory: "Detailing Services",
     logo: "/LOGOS/SouthernBro-Enterprises-Logo.png",
     summary:
-      "A dedicated detailing intake path gives Southern Bro a cleaner way to capture service requests and present a more serious local service offer.",
+      "Professional detailing support with a clear request path for service details, timing, location, and follow-up.",
     description:
-      "Detailing is being treated as a high-priority service line in the current website rebuild strategy. The website should make it easy to request service, describe the job, and move into a professional follow-up flow.",
+      "The detailing page is designed to help customers describe the job clearly, request service quickly, and move into a dependable follow-up process.",
     bullets: [
       "Detailing request intake",
       "Service description and scheduling support",
@@ -90,9 +90,9 @@ export const priorityServices: PriorityService[] = [
     quoteCategory: "Ticket Vibez / Event Support",
     logo: "/LOGOS/TicketVibez-Logo.png",
     summary:
-      "Ticket Vibez should stand out as a dedicated event and ticketing service line with clear requests, audience targeting, and promotional support positioning.",
+      "Ticket Vibez is presented as a dedicated event and ticketing service with clear support options for promotions, access, and event-related requests.",
     description:
-      "Ticket Vibez is one of the clearest branded growth opportunities on the site. The page should explain what the service does, who it serves, and how people can request event support.",
+      "The page explains what Ticket Vibez offers, who it serves, and how organizers or customers can request event support with confidence.",
     bullets: [
       "Event ticketing support",
       "Promotional campaign support",
@@ -149,7 +149,7 @@ export const resourceArticles = [
     title: "What to Include in a Detailing Request",
     category: "Detailing",
     description:
-      "A cleaner intake guide for customers requesting detailing work, location details, and scheduling preferences.",
+      "A simple guide for customers requesting detailing work, location details, and scheduling preferences.",
     href: "/detailing",
   },
   {
@@ -162,15 +162,15 @@ export const resourceArticles = [
 ];
 
 export const portalFeatures = [
-  "View request status once customer portal access is activated",
+  "View request status in one place",
   "Receive shared documents, follow-up details, or appointment notes",
-  "Centralize future customer communication in one place",
+  "Keep customer communication organized and easy to review",
 ];
 
 export const quoteBenefits = [
   "One central quote path for consulting, detailing, ticketing, and support services.",
-  "Cleaner lead capture that can later connect directly into HubSpot.",
-  "A more professional intake flow for both mobile and desktop visitors.",
+  "Organized lead capture ready for follow-up and CRM routing.",
+  "A professional intake flow for both mobile and desktop visitors.",
 ];
 
 export function getPriorityService(id: string) {

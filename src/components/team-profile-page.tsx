@@ -80,7 +80,7 @@ export default function TeamProfilePage({ member }: TeamProfilePageProps) {
               Contact Path
             </p>
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              Current direct contact listed on the site:
+              Direct contact:
             </p>
             <Link
               href={`mailto:${member.contactEmail}`}
@@ -89,8 +89,8 @@ export default function TeamProfilePage({ member }: TeamProfilePageProps) {
               {member.contactEmail}
             </Link>
             <p className="mt-6 text-sm leading-7 text-[#ddd2eb]">
-              These profile pages keep the team structure visible while the site
-              moves away from the more limited Squarespace layout.
+              These profile pages make it easier to learn each leader&apos;s role and
+              reach the right person directly.
             </p>
           </div>
         </div>

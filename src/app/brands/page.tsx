@@ -19,8 +19,8 @@ export default function BrandsPage() {
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
               Explore the full Southern Bro brand family, learn what each service
-              line offers, and move into the right request flow from a cleaner,
-              more professional directory.
+              line offers, and move into the right request flow from one
+              organized, professional directory.
             </p>
           </div>
         </div>

@@ -39,7 +39,7 @@ export default function WhatWeDoPage() {
             Current Networks
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-            The Squarespace site currently presents these company lanes
+            Southern Bro operates across these service lanes
           </h2>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -66,7 +66,7 @@ export default function WhatWeDoPage() {
             Our Branded Services
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-            Fully licensed and insured presentation with clearer structure
+            A licensed and insured brand family with clear structure
           </h2>
         </div>
 
