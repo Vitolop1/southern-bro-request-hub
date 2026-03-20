@@ -20,16 +20,16 @@ export default function ServiceCards() {
   return (
     <section
       id="brands"
-      className="relative mx-auto max-w-7xl px-6 py-16 md:py-20"
+      className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20"
     >
       <div className="mx-auto mb-12 max-w-3xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
           {messages.serviceCards.eyebrow}
         </p>
-        <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-5xl">
+        <h2 className="mt-4 text-2xl font-black uppercase tracking-[0.05em] text-white sm:text-3xl md:text-5xl">
           {messages.serviceCards.title}
         </h2>
-        <p className="mt-5 text-lg leading-8 text-[#d9d1e8]">
+        <p className="mt-5 text-base leading-7 text-[#d9d1e8] md:text-lg md:leading-8">
           {messages.serviceCards.intro}
         </p>
       </div>
@@ -40,7 +40,7 @@ export default function ServiceCards() {
             key={brand.name}
             id={brand.id}
             className={[
-              "group relative overflow-hidden rounded-[2rem] border p-6 shadow-[0_0_60px_rgba(126,34,206,0.18)] backdrop-blur-sm",
+              "group relative overflow-hidden rounded-[1.6rem] border p-5 shadow-[0_0_60px_rgba(126,34,206,0.18)] backdrop-blur-sm md:rounded-[2rem] md:p-6",
               brand.status === "coming-soon"
                 ? "border-white/5 bg-black/45"
                 : "border-white/10 bg-[#13071f]/85",
@@ -53,7 +53,7 @@ export default function ServiceCards() {
             )}
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" />
 
-            <div className="relative grid items-center gap-6 lg:grid-cols-[220px_1fr]">
+            <div className="relative grid items-center gap-5 lg:grid-cols-[220px_1fr]">
               <div className="flex justify-center">
                 <Image
                   src={brand.logo}
@@ -61,7 +61,7 @@ export default function ServiceCards() {
                   width={220}
                   height={220}
                   className={[
-                    "h-auto w-[170px] transition duration-300 md:w-[200px]",
+                    "h-auto w-[138px] transition duration-300 sm:w-[160px] md:w-[200px]",
                     brand.status === "coming-soon"
                       ? "grayscale opacity-65"
                       : "drop-shadow-[0_0_25px_rgba(255,79,216,0.35)] group-hover:scale-[1.03]",
@@ -87,14 +87,14 @@ export default function ServiceCards() {
                     </span>
                   )}
                 </div>
-                <h3 className="text-2xl font-black uppercase tracking-[0.04em] text-white">
+                <h3 className="text-xl font-black uppercase tracking-[0.04em] text-white sm:text-2xl">
                   {brand.name}
                 </h3>
-                <p className="mt-3 max-w-2xl text-base leading-7 text-[#e7dcf3]">
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-[#e7dcf3] sm:text-base">
                   {brand.summary}
                 </p>
 
-                <ul className="mt-5 grid gap-3 text-base text-[#fff8ff] md:grid-cols-2">
+                <ul className="mt-5 grid gap-3 text-sm text-[#fff8ff] sm:text-base md:grid-cols-2">
                   {brand.services.map((service) => (
                     <li key={service} className="flex items-start gap-3">
                       <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[#ff4fd8]" />

@@ -35,20 +35,20 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={closeMenu}
-            className="flex min-w-0 items-center gap-4 rounded-[1.75rem] border border-white/10 bg-white/4 px-4 py-3 transition hover:bg-white/8 md:mr-10 lg:mr-16"
+            className="flex min-w-0 max-w-[calc(100%-4.25rem)] items-center gap-3 rounded-[1.5rem] border border-white/10 bg-white/4 px-3 py-2.5 transition hover:bg-white/8 md:mr-10 md:max-w-none md:gap-4 md:rounded-[1.75rem] md:px-4 md:py-3 lg:mr-16"
           >
             <Image
               src="/LOGOS/SouthernBro-Enterprises-Logo.png"
               alt="Southern Bro Enterprises home"
               width={72}
               height={72}
-              className="h-14 w-14 shrink-0 object-contain drop-shadow-[0_0_26px_rgba(255,79,216,0.34)] md:h-[4.5rem] md:w-[4.5rem]"
+              className="h-12 w-12 shrink-0 object-contain drop-shadow-[0_0_26px_rgba(255,79,216,0.34)] md:h-[4.5rem] md:w-[4.5rem]"
             />
             <div className="min-w-0">
-              <p className="truncate text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-[#ffb8f0] md:text-[0.72rem]">
+              <p className="hidden truncate text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-[#ffb8f0] md:block md:text-[0.72rem]">
                 {messages.nav.brandLine}
               </p>
-              <p className="truncate text-sm font-black uppercase tracking-[0.08em] text-white md:text-lg">
+              <p className="truncate text-xs font-black uppercase tracking-[0.08em] text-white sm:text-sm md:text-lg">
                 {messages.nav.brand}
               </p>
             </div>
@@ -135,7 +135,7 @@ export default function Navbar() {
               >
                 {messages.nav.needRide}
               </Link>
-              <div className="mt-2 flex items-center gap-3 px-1">
+              <div className="mt-2 flex flex-wrap items-center gap-3 px-1">
                 <LanguageSwitcher />
                 <ThemeToggle />
               </div>

@@ -15,7 +15,7 @@ export default function MeetOurTeamPage() {
 
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,79,216,0.22),_transparent_24%),linear-gradient(180deg,_#090312_0%,_#14061f_55%,_#090312_100%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20">
+        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
               {messages.teamPage.eyebrow}
@@ -30,11 +30,11 @@ export default function MeetOurTeamPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-14 md:py-18">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-18">
         <TeamGrid />
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
         <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 md:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
             {messages.teamPage.networksEyebrow}

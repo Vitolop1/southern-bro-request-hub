@@ -15,7 +15,7 @@ export default function ContactUsPage() {
 
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,79,216,0.18),_transparent_24%),linear-gradient(180deg,_#090312_0%,_#14061f_55%,_#090312_100%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20">
+        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
             {messages.contactPage.eyebrow}
           </p>
@@ -28,7 +28,7 @@ export default function ContactUsPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-14 md:py-18">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 md:py-18">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.95),rgba(11,4,22,0.98))] p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">

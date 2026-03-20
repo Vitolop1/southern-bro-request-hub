@@ -23,7 +23,7 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      <section className="mx-auto max-w-7xl px-6 py-6 md:py-10">
+      <section className="mx-auto max-w-7xl px-4 py-5 sm:px-6 md:py-10">
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.96),rgba(12,4,23,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)] md:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
@@ -97,7 +97,7 @@ export default function Home() {
       <PriorityServices />
       <ServiceCards />
 
-      <section className="mx-auto max-w-7xl px-6 py-6 md:py-10">
+      <section className="mx-auto max-w-7xl px-4 py-5 sm:px-6 md:py-10">
         <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.96),rgba(12,4,23,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)] md:p-10">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
@@ -127,7 +127,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
             {messages.home.teamEyebrow}
@@ -154,7 +154,7 @@ export default function Home() {
 
       <ResourcePreview />
 
-      <section className="mx-auto max-w-7xl px-6 py-12 md:py-16" id="contact">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16" id="contact">
         <div className="relative overflow-hidden rounded-[2rem] border border-[#d4a84f]/35 bg-[radial-gradient(circle_at_top,_rgba(255,79,216,0.22),_transparent_28%),linear-gradient(135deg,_rgba(9,3,18,1)_0%,_rgba(26,8,48,0.98)_55%,_rgba(11,11,30,0.98)_100%)] p-8 shadow-[0_0_70px_rgba(212,168,79,0.12)] md:p-12">
           <div className="absolute right-0 top-0 h-52 w-52 rounded-full bg-sky-500/10 blur-3xl" />
           <div className="relative grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">

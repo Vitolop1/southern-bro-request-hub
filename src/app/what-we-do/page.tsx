@@ -19,7 +19,7 @@ export default function WhatWeDoPage() {
 
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,79,216,0.24),_transparent_24%),linear-gradient(180deg,_#090312_0%,_#14061f_55%,_#090312_100%)]" />
-        <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20">
+        <div className="relative mx-auto max-w-7xl px-4 py-14 sm:px-6 md:py-20">
           <div className="max-w-5xl">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
               {messages.whatWeDoPage.eyebrow}
@@ -36,7 +36,7 @@ export default function WhatWeDoPage() {
 
       <AboutSection compact />
 
-      <section className="mx-auto max-w-7xl px-6 py-8 md:py-10">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-10">
         <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.95),rgba(11,4,22,0.98))] p-8 md:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
             {messages.whatWeDoPage.currentNetworksEyebrow}
@@ -63,7 +63,7 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-12 md:py-16">
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 md:py-16">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
             {messages.whatWeDoPage.brandedServicesEyebrow}
@@ -76,7 +76,7 @@ export default function WhatWeDoPage() {
         <BrandDirectory />
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
+      <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 md:pb-20">
         <div className="rounded-[2rem] border border-[#d4a84f]/25 bg-[radial-gradient(circle_at_top,_rgba(212,168,79,0.16),_transparent_32%),linear-gradient(180deg,rgba(13,8,22,0.98),rgba(8,3,15,0.98))] p-8 md:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#f5d483]">
             {messages.whatWeDoPage.hopeEyebrow}

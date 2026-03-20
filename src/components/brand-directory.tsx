@@ -24,13 +24,13 @@ export default function BrandDirectory({
   );
 
   return (
-    <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       {sortedBrands.map((brand) => (
         <article
           key={brand.id}
           id={brand.id}
           className={[
-            "relative overflow-hidden rounded-[1.75rem] border p-6",
+            "relative overflow-hidden rounded-[1.5rem] border p-5 md:rounded-[1.75rem] md:p-6",
             brand.status === "coming-soon"
               ? "border-white/5 bg-black/40"
               : "border-white/10 bg-[#12071d]/90",
@@ -48,7 +48,7 @@ export default function BrandDirectory({
                 width={84}
                 height={84}
                 className={[
-                  "h-20 w-20 object-contain",
+                  "h-16 w-16 object-contain md:h-20 md:w-20",
                   brand.status === "coming-soon"
                     ? "opacity-60 grayscale"
                     : "drop-shadow-[0_0_18px_rgba(255,79,216,0.28)]",
