@@ -47,8 +47,8 @@ export default function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/6 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/10"
-      aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
-      title={isLight ? "Switch to dark mode" : "Switch to light mode"}
+      aria-label={isLight ? messages.theme.switchToDark : messages.theme.switchToLight}
+      title={isLight ? messages.theme.switchToDark : messages.theme.switchToLight}
     >
       {isLight ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
       <span>{isLight ? messages.theme.dark : messages.theme.light}</span>

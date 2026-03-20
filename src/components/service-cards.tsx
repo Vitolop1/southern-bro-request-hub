@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/components/language-provider";
 import { brandProfiles } from "@/lib/brand-data";
 
 export default function ServiceCards() {
+  const { messages } = useLanguage();
   const brandOrder = {
     high: 0,
     medium: 1,
@@ -20,14 +24,13 @@ export default function ServiceCards() {
     >
       <div className="mx-auto mb-12 max-w-3xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-          Full Brand Family
+          {messages.serviceCards.eyebrow}
         </p>
         <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-5xl">
-          Every active brand stays visible in one organized directory
+          {messages.serviceCards.title}
         </h2>
         <p className="mt-5 text-lg leading-8 text-[#d9d1e8]">
-          The cards below present each brand with its logo, service lineup,
-          audience, and request path in a more polished and customer-ready format.
+          {messages.serviceCards.intro}
         </p>
       </div>
 
@@ -73,14 +76,14 @@ export default function ServiceCards() {
                   </p>
                   <span className="rounded-full border border-white/10 bg-white/8 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#f7dcff]">
                     {brand.priorityTier === "high"
-                      ? "Priority Now"
+                      ? messages.serviceCards.priorityNow
                       : brand.priorityTier === "medium"
-                        ? "Active Service"
-                        : "Secondary Focus"}
+                        ? messages.serviceCards.activeService
+                        : messages.serviceCards.secondaryFocus}
                   </span>
                   {brand.status === "coming-soon" && (
                     <span className="rounded-full border border-[#d4a84f]/35 bg-black/30 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#f7dfa1]">
-                      {brand.statusNote}
+                      {messages.serviceCards.comingSoon}
                     </span>
                   )}
                 </div>
@@ -110,11 +113,11 @@ export default function ServiceCards() {
                       href={brand.pageHref}
                       className="inline-flex rounded-full border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
                     >
-                      Learn More
+                      {messages.serviceCards.learnMore}
                     </Link>
                     {brand.status === "coming-soon" ? (
                       <span className="inline-flex rounded-full border border-[#d4a84f]/35 bg-black/30 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#f7dfa1]">
-                        {brand.statusNote}
+                        {messages.serviceCards.comingSoon}
                       </span>
                     ) : (
                       <Link

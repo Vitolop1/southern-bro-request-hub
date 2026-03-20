@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/components/language-provider";
 import type { ServiceFormData } from "@/types/requests";
 import { requestCategoryOptions } from "@/lib/site-content";
 
@@ -15,16 +16,32 @@ type ServiceFormProps = {
 };
 
 export default function ServiceForm({
-  title = "Request a Quote",
-  description = "Fill out the form below to request support from Southern Bro Enterprises or one of the active services highlighted on the site.",
-  sectionLabel = "Service Request",
-  submitLabel = "Submit Quote Request",
+  title,
+  description,
+  sectionLabel,
+  submitLabel,
   defaultCategory = requestCategoryOptions[0],
   lockCategory = false,
 }: ServiceFormProps) {
   const router = useRouter();
+  const { messages } = useLanguage();
   const fieldClassName =
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#aa9fc0] focus:border-fuchsia-300/70 focus:bg-white/10";
+
+  const categoryOptions = requestCategoryOptions.map((value, index) => ({
+    value,
+    label: messages.requestQuotePage.categoryLabels[index] ?? value,
+  }));
+  const urgencyOptions = [
+    { value: "Low", label: messages.serviceForm.urgency[0] },
+    { value: "Normal", label: messages.serviceForm.urgency[1] },
+    { value: "High", label: messages.serviceForm.urgency[2] },
+    { value: "Urgent", label: messages.serviceForm.urgency[3] },
+  ];
+  const resolvedSectionLabel = sectionLabel ?? messages.serviceForm.sectionLabel;
+  const resolvedTitle = title ?? messages.serviceForm.title;
+  const resolvedDescription = description ?? messages.serviceForm.description;
+  const resolvedSubmitLabel = submitLabel ?? messages.serviceForm.submitLabel;
 
   const [formData, setFormData] = useState<ServiceFormData>({
     fullName: "",
@@ -74,20 +91,20 @@ export default function ServiceForm({
     >
       <div>
         <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]">
-          {sectionLabel}
+          {resolvedSectionLabel}
         </p>
         <h2 className="mt-3 text-2xl font-black uppercase tracking-[0.05em] text-white">
-          {title}
+          {resolvedTitle}
         </h2>
         <p className="mt-3 text-sm leading-6 text-[#d9d1e8]">
-          {description}
+          {resolvedDescription}
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Full Name
+            {messages.serviceForm.labels.fullName}
           </label>
           <input
             id="fullName"
@@ -97,13 +114,13 @@ export default function ServiceForm({
             value={formData.fullName}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Enter your full name"
+            placeholder={messages.serviceForm.placeholders.fullName}
           />
         </div>
 
         <div>
           <label htmlFor="companyName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Company / Organization
+            {messages.serviceForm.labels.companyName}
           </label>
           <input
             id="companyName"
@@ -112,13 +129,13 @@ export default function ServiceForm({
             value={formData.companyName}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Enter your company name if applicable"
+            placeholder={messages.serviceForm.placeholders.companyName}
           />
         </div>
 
         <div>
           <label htmlFor="phone" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Phone Number
+            {messages.serviceForm.labels.phone}
           </label>
           <input
             id="phone"
@@ -128,13 +145,13 @@ export default function ServiceForm({
             value={formData.phone}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Enter your phone number"
+            placeholder={messages.serviceForm.placeholders.phone}
           />
         </div>
 
         <div>
           <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Email Address
+            {messages.serviceForm.labels.email}
           </label>
           <input
             id="email"
@@ -144,17 +161,17 @@ export default function ServiceForm({
             value={formData.email}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Enter your email"
+            placeholder={messages.serviceForm.placeholders.email}
           />
         </div>
 
         <div>
           <label htmlFor="category" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Service Category
+            {messages.serviceForm.labels.category}
           </label>
           {lockCategory ? (
             <div className="rounded-[1.25rem] border border-fuchsia-300/40 bg-fuchsia-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white">
-              {formData.category}
+              {categoryOptions.find((option) => option.value === formData.category)?.label ?? formData.category}
             </div>
           ) : (
             <select
@@ -164,9 +181,9 @@ export default function ServiceForm({
               onChange={handleChange}
               className={fieldClassName}
             >
-              {requestCategoryOptions.map((option) => (
-                <option key={option} value={option} className="bg-[#14061f] text-white">
-                  {option}
+              {categoryOptions.map((option) => (
+                <option key={option.value} value={option.value} className="bg-[#14061f] text-white">
+                  {option.label}
                 </option>
               ))}
             </select>
@@ -175,7 +192,7 @@ export default function ServiceForm({
 
         <div className="md:col-span-2">
           <label htmlFor="description" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Description
+            {messages.serviceForm.labels.description}
           </label>
           <textarea
             id="description"
@@ -185,13 +202,13 @@ export default function ServiceForm({
             value={formData.description}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Describe the service needed"
+            placeholder={messages.serviceForm.placeholders.description}
           />
         </div>
 
         <div className="md:col-span-2">
           <label htmlFor="address" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Address
+            {messages.serviceForm.labels.address}
           </label>
           <input
             id="address"
@@ -200,13 +217,13 @@ export default function ServiceForm({
             value={formData.address}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Enter the service address if applicable"
+            placeholder={messages.serviceForm.placeholders.address}
           />
         </div>
 
         <div>
           <label htmlFor="timeline" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Preferred Timeline
+            {messages.serviceForm.labels.timeline}
           </label>
           <input
             id="timeline"
@@ -215,13 +232,13 @@ export default function ServiceForm({
             value={formData.timeline}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Example: This week or next month"
+            placeholder={messages.serviceForm.placeholders.timeline}
           />
         </div>
 
         <div>
           <label htmlFor="budget" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Budget Range
+            {messages.serviceForm.labels.budget}
           </label>
           <input
             id="budget"
@@ -230,13 +247,13 @@ export default function ServiceForm({
             value={formData.budget}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Example: Under $500 or open to quote"
+            placeholder={messages.serviceForm.placeholders.budget}
           />
         </div>
 
         <div>
           <label htmlFor="urgency" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            Urgency
+            {messages.serviceForm.labels.urgency}
           </label>
           <select
             id="urgency"
@@ -245,16 +262,17 @@ export default function ServiceForm({
             onChange={handleChange}
             className={fieldClassName}
           >
-            <option className="bg-[#14061f] text-white">Low</option>
-            <option className="bg-[#14061f] text-white">Normal</option>
-            <option className="bg-[#14061f] text-white">High</option>
-            <option className="bg-[#14061f] text-white">Urgent</option>
+            {urgencyOptions.map((option) => (
+              <option key={option.value} value={option.value} className="bg-[#14061f] text-white">
+                {option.label}
+              </option>
+            ))}
           </select>
         </div>
 
         <div>
           <label htmlFor="referralSource" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
-            How Did You Hear About Us?
+            {messages.serviceForm.labels.referralSource}
           </label>
           <input
             id="referralSource"
@@ -263,7 +281,7 @@ export default function ServiceForm({
             value={formData.referralSource}
             onChange={handleChange}
             className={fieldClassName}
-            placeholder="Google, flyer, referral, social media, etc."
+            placeholder={messages.serviceForm.placeholders.referralSource}
           />
         </div>
       </div>
@@ -273,7 +291,7 @@ export default function ServiceForm({
         disabled={isSubmitting}
         className="w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {isSubmitting ? "Submitting..." : submitLabel}
+        {isSubmitting ? messages.serviceForm.submitting : resolvedSubmitLabel}
       </button>
     </form>
   );

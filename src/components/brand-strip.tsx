@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/components/language-provider";
 import { brandProfiles } from "@/lib/brand-data";
 
 type BrandStripProps = {
@@ -7,6 +10,8 @@ type BrandStripProps = {
 };
 
 export default function BrandStrip({ hrefPrefix = "" }: BrandStripProps) {
+  const { messages } = useLanguage();
+
   return (
     <div className="mt-14 grid w-full max-w-7xl gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {brandProfiles.map((brand) => (
@@ -42,7 +47,7 @@ export default function BrandStrip({ hrefPrefix = "" }: BrandStripProps) {
               </p>
               {brand.status === "coming-soon" && (
                 <p className="mt-3 inline-flex rounded-full border border-[#d4a84f]/30 bg-[#d4a84f]/10 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#f7dfa1]">
-                  {brand.statusNote}
+                  {messages.brandStrip.comingSoon}
                 </p>
               )}
             </div>

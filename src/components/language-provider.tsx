@@ -8,9 +8,16 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { translations, type Language, type TranslationSet } from "@/lib/i18n";
+import {
+  defaultLanguage,
+  isLanguage,
+  translations,
+  type Language,
+  type TranslationSet,
+} from "@/lib/i18n";
 
 const storageKey = "southern-bro-language";
+const cookieKey = "southern-bro-language";
 
 type LanguageContextValue = {
   language: Language;
@@ -20,33 +27,32 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-function getInitialLanguage(): Language {
+function getInitialLanguage(fallback: Language): Language {
   if (typeof window === "undefined") {
-    return "en";
+    return fallback;
   }
 
   const storedLanguage = window.localStorage.getItem(storageKey);
-  if (
-    storedLanguage === "en" ||
-    storedLanguage === "es" ||
-    storedLanguage === "zh" ||
-    storedLanguage === "vi" ||
-    storedLanguage === "ar" ||
-    storedLanguage === "fr"
-  ) {
+  if (isLanguage(storedLanguage)) {
     return storedLanguage;
   }
 
-  return "en";
+  return fallback;
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>(() => getInitialLanguage());
+export function LanguageProvider({
+  children,
+  initialLanguage = defaultLanguage,
+}: {
+  children: ReactNode;
+  initialLanguage?: Language;
+}) {
+  const [language, setLanguage] = useState<Language>(() => getInitialLanguage(initialLanguage));
 
   useEffect(() => {
     document.documentElement.lang = language;
-    document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
     window.localStorage.setItem(storageKey, language);
+    document.cookie = `${cookieKey}=${language}; path=/; max-age=31536000; SameSite=Lax`;
   }, [language]);
 
   const value = useMemo(

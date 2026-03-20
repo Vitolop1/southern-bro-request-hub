@@ -35,21 +35,21 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={closeMenu}
-            className="flex min-w-0 items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-2 transition hover:bg-white/8 md:mr-8 lg:mr-12"
+            className="flex min-w-0 items-center gap-4 rounded-[1.75rem] border border-white/10 bg-white/4 px-4 py-3 transition hover:bg-white/8 md:mr-10 lg:mr-16"
           >
             <Image
               src="/LOGOS/SouthernBro-Enterprises-Logo.png"
               alt="Southern Bro Enterprises home"
-              width={48}
-              height={48}
-              className="h-11 w-11 shrink-0 object-contain drop-shadow-[0_0_18px_rgba(255,79,216,0.28)]"
+              width={72}
+              height={72}
+              className="h-14 w-14 shrink-0 object-contain drop-shadow-[0_0_26px_rgba(255,79,216,0.34)] md:h-[4.5rem] md:w-[4.5rem]"
             />
             <div className="min-w-0">
               <p className="truncate text-[0.65rem] font-semibold uppercase tracking-[0.22em] text-[#ffb8f0] md:text-[0.72rem]">
-                {messages.nav.home}
+                {messages.nav.brandLine}
               </p>
-              <p className="truncate text-sm font-black uppercase tracking-[0.08em] text-white md:text-base">
-                Southern Bro Enterprises
+              <p className="truncate text-sm font-black uppercase tracking-[0.08em] text-white md:text-lg">
+                {messages.nav.brand}
               </p>
             </div>
           </Link>
@@ -59,13 +59,13 @@ export default function Navbar() {
             onClick={() => setIsOpen((open) => !open)}
             className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/6 text-white transition hover:bg-white/10 md:hidden"
             aria-expanded={isOpen}
-            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={isOpen ? messages.nav.menuClose : messages.nav.menuOpen}
           >
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
 
-          <div className="hidden min-w-0 flex-1 flex-col items-end gap-3 md:flex">
-            <div className="flex items-center gap-3">
+          <div className="hidden min-w-0 flex-1 flex-col items-end gap-4 md:flex">
+            <div className="flex w-full items-center justify-end gap-3">
               <Link
                 href="/need-a-ride"
                 className="rounded-full border border-fuchsia-300/60 bg-fuchsia-500/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-fuchsia-500/25"
@@ -76,7 +76,7 @@ export default function Navbar() {
               <ThemeToggle />
             </div>
 
-            <nav className="flex flex-wrap items-start justify-end gap-x-6 gap-y-3 xl:gap-x-8">
+            <nav className="flex w-full flex-wrap items-start justify-end gap-x-7 gap-y-3 lg:gap-x-8 xl:gap-x-10">
               {localizedLinks.map((link) => {
                 const isActive =
                   pathname === link.href ||
@@ -97,7 +97,7 @@ export default function Navbar() {
                         isActive ? "bg-[#ff4fd8] shadow-[0_0_18px_rgba(255,79,216,0.5)]" : "bg-transparent",
                       ].join(" ")}
                     />
-                    <span className="max-w-[120px] leading-5">{link.label}</span>
+                    <span className="max-w-[132px] leading-5">{link.label}</span>
                   </Link>
                 );
               })}

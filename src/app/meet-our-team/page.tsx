@@ -1,9 +1,14 @@
+"use client";
+
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import TeamGrid from "@/components/team-grid";
+import { useLanguage } from "@/components/language-provider";
 import { communityNetworks } from "@/lib/company-data";
 
 export default function MeetOurTeamPage() {
+  const { messages } = useLanguage();
+
   return (
     <main className="min-h-screen bg-[#090312] text-white">
       <Navbar />
@@ -13,14 +18,13 @@ export default function MeetOurTeamPage() {
         <div className="relative mx-auto max-w-7xl px-6 py-16 md:py-20">
           <div className="max-w-4xl">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              Meet Our Team
+              {messages.teamPage.eyebrow}
             </p>
             <h1 className="mt-4 text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-              Meet the Southern Bro leadership team
+              {messages.teamPage.title}
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
-              Learn who leads each part of the company and connect with the
-              right person through direct profile pages and contact paths.
+              {messages.teamPage.intro}
             </p>
           </div>
         </div>
@@ -33,7 +37,7 @@ export default function MeetOurTeamPage() {
       <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
         <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 md:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-            Our Networks
+            {messages.teamPage.networksEyebrow}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             {communityNetworks.map((network) => (

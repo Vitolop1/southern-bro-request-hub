@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import Script from "next/script";
 import { LanguageProvider } from "@/components/language-provider";
+import { defaultLanguage, isLanguage } from "@/lib/i18n";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,13 +19,17 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const storedLanguage = cookieStore.get("southern-bro-language")?.value;
+  const initialLanguage = isLanguage(storedLanguage) ? storedLanguage : defaultLanguage;
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={initialLanguage} suppressHydrationWarning>
       <head>
         <Script id="theme-init" strategy="beforeInteractive">
           {`
@@ -38,7 +44,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider initialLanguage={initialLanguage}>{children}</LanguageProvider>
       </body>
     </html>
   );

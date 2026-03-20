@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/components/language-provider";
 import { brandProfiles } from "@/lib/brand-data";
 
 type BrandDirectoryProps = {
@@ -9,6 +12,7 @@ type BrandDirectoryProps = {
 export default function BrandDirectory({
   maxServices = 3,
 }: BrandDirectoryProps) {
+  const { messages } = useLanguage();
   const brandOrder = {
     high: 0,
     medium: 1,
@@ -56,11 +60,15 @@ export default function BrandDirectory({
                     {brand.shortLabel}
                   </p>
                   <span className="rounded-full border border-white/10 bg-white/8 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#f7dcff]">
-                    {brand.priorityTier}
+                    {brand.priorityTier === "high"
+                      ? messages.serviceCards.priorityNow
+                      : brand.priorityTier === "medium"
+                        ? messages.serviceCards.activeService
+                        : messages.serviceCards.secondaryFocus}
                   </span>
                   {brand.status === "coming-soon" && (
                     <span className="rounded-full border border-[#d4a84f]/40 bg-[#d4a84f]/10 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#f7dfa1]">
-                      {brand.statusNote}
+                      {messages.serviceCards.comingSoon}
                     </span>
                   )}
                 </div>
@@ -88,11 +96,11 @@ export default function BrandDirectory({
                 href={brand.pageHref}
                 className="inline-flex rounded-full border border-white/15 bg-white/6 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
               >
-                View Brand
+                {messages.serviceCards.viewBrand}
               </Link>
               {brand.status === "coming-soon" ? (
                 <span className="inline-flex rounded-full border border-[#d4a84f]/35 bg-black/30 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#f7dfa1]">
-                  {brand.statusNote}
+                  {messages.serviceCards.comingSoon}
                 </span>
               ) : (
                 <Link

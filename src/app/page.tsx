@@ -1,3 +1,5 @@
+"use client";
+
 import AboutSection from "@/components/about-section";
 import Footer from "@/components/footer";
 import Hero from "@/components/hero";
@@ -6,33 +8,16 @@ import PriorityServices from "@/components/priority-services";
 import ResourcePreview from "@/components/resource-preview";
 import ServiceCards from "@/components/service-cards";
 import TeamGrid from "@/components/team-grid";
+import { useLanguage } from "@/components/language-provider";
 import {
   businessHours,
-  companyOverview,
   contactLines,
-  hopeGrantProgram,
 } from "@/lib/company-data";
 import Link from "next/link";
 
-const steps = [
-  {
-    title: "Choose the Right Page",
-    description:
-      "Start with What We Do, Meet Our Team, Contact Us, H.O.P.E. Grant Aid, or the service request page depending on what you need.",
-  },
-  {
-    title: "Send the Right Request",
-    description:
-      "Use the quote form, delivery request, or community support path to submit the details, timing, and service needs.",
-  },
-  {
-    title: "Get Confirmed",
-    description:
-      "The Southern Bro team reviews the request, confirms next steps, and follows up with scheduling or support details.",
-  },
-];
-
 export default function Home() {
+  const { messages } = useLanguage();
+
   return (
     <main className="min-h-screen bg-[#090312] text-white">
       <Navbar />
@@ -42,19 +27,19 @@ export default function Home() {
         <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.96),rgba(12,4,23,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)] md:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              What Do We Do?
+              {messages.home.overviewEyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-              Cleaner business support, service requests, and community access in one place
+              {messages.home.overviewTitle}
             </h2>
             <p className="mt-5 text-base leading-8 text-[#ddd2eb] md:text-lg">
-              {companyOverview.mission}
+              {messages.home.overviewMission}
             </p>
             <p className="mt-4 text-sm leading-7 text-[#d9d1e8] md:text-base">
-              {companyOverview.whatWeOffer}
+              {messages.home.overviewOffer}
             </p>
             <p className="mt-4 text-sm leading-7 text-[#d9d1e8] md:text-base">
-              {companyOverview.currentBrandsLine}
+              {messages.home.overviewBrands}
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -62,31 +47,31 @@ export default function Home() {
                 href="/what-we-do"
                 className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.02]"
               >
-                Learn More
+                {messages.common.learnMore}
               </Link>
               <Link
                 href="tel:+17573001070"
                 className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
               >
-                Call Us To Figure Out More
+                {messages.hero.callUs}
               </Link>
             </div>
           </div>
 
           <div className="rounded-[2rem] border border-[#d4a84f]/30 bg-[radial-gradient(circle_at_top,_rgba(212,168,79,0.18),_transparent_28%),linear-gradient(180deg,rgba(13,8,22,0.98),rgba(8,3,15,0.98))] p-8 md:p-10">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#f5d483]">
-              {hopeGrantProgram.title}
+              {messages.home.hopeTitle}
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              {hopeGrantProgram.founderLine}
+              {messages.home.hopeFounder}
             </h2>
             <div className="mt-5 space-y-4">
-              {hopeGrantProgram.originalParagraphs.slice(0, 2).map((paragraph) => (
+              {messages.home.hopeParagraphs.map((paragraph) => (
                 <p key={paragraph} className="text-sm leading-7 text-[#efe5d0]">
                   {paragraph}
                 </p>
               ))}
-              <p className="text-sm leading-7 text-[#ddd2eb]">{hopeGrantProgram.legalNote}</p>
+              <p className="text-sm leading-7 text-[#ddd2eb]">{messages.home.hopeLegal}</p>
             </div>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -94,13 +79,13 @@ export default function Home() {
                 href="/request-hope-grant-aid"
                 className="rounded-full border border-[#d4a84f]/50 bg-[#d4a84f]/10 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-[#f7dfa1] transition hover:bg-[#d4a84f]/16"
               >
-                Request H.O.P.E. Grant Aid
+                {messages.nav.requestHope}
               </Link>
               <Link
                 href="/donate-for-hope"
                 className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
               >
-                Donate for H.O.P.E.
+                {messages.nav.donateHope}
               </Link>
             </div>
           </div>
@@ -116,15 +101,15 @@ export default function Home() {
         <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.96),rgba(12,4,23,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)] md:p-10">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              How the Request System Works
+              {messages.home.stepsEyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-              Clear steps for booking service
+              {messages.home.stepsTitle}
             </h2>
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {steps.map((step, index) => (
+            {messages.home.steps.map((step, index) => (
               <div
                 key={step.title}
                 className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6"
@@ -145,14 +130,13 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-6 py-12 md:py-16">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-            Meet Our Team
+            {messages.home.teamEyebrow}
           </p>
           <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-4xl">
-            Leadership you can contact directly
+            {messages.home.teamTitle}
           </h2>
           <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-            Meet the people behind Southern Bro and use the direct team pages
-            for clearer outreach and follow-up.
+            {messages.home.teamIntro}
           </p>
         </div>
 
@@ -163,7 +147,7 @@ export default function Home() {
             href="/meet-our-team"
             className="inline-flex rounded-full border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
           >
-            Meet Our Team
+            {messages.nav.meetTeam}
           </Link>
         </div>
       </section>
@@ -176,15 +160,13 @@ export default function Home() {
           <div className="relative grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#f5d483]">
-                Contact Us
+                {messages.home.contactEyebrow}
               </p>
               <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-5xl">
-                Built for Lynchburg, VA and the wider Virginia region
+                {messages.home.contactTitle}
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-[#e7dcf3]">
-                Southern Bro Enterprises connects customers with consulting,
-                detailing, ticketing, delivery, brand services, and
-                community-focused programs through one recognizable brand family.
+                {messages.home.contactIntro}
               </p>
             </div>
 
@@ -217,13 +199,13 @@ export default function Home() {
                   href="/contact-us"
                   className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.28)] transition hover:scale-[1.02]"
                 >
-                  Contact Us
+                  {messages.nav.contactUs}
                 </Link>
                 <Link
                   href="/request-quote"
                   className="rounded-full border border-white/15 bg-white/6 px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
                 >
-                  Request Service Here
+                  {messages.common.requestService}
                 </Link>
               </div>
             </div>

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/components/language-provider";
 import { priorityServices } from "@/lib/site-content";
 
 type PriorityServicesProps = {
@@ -9,23 +12,24 @@ type PriorityServicesProps = {
 export default function PriorityServices({
   compact = false,
 }: PriorityServicesProps) {
+  const { messages } = useLanguage();
+
   return (
     <section className="mx-auto max-w-7xl px-6 py-14 md:py-18">
       <div className="mx-auto mb-10 max-w-3xl text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-          Featured Services
+          {messages.priorityServices.eyebrow}
         </p>
         <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white md:text-5xl">
-          Consulting, detailing, and ticketing are highlighted front and center
+          {messages.priorityServices.title}
         </h2>
         <p className="mt-5 text-lg leading-8 text-[#d9d1e8]">
-          These service lanes are positioned for quick action, clear visibility,
-          and a fast path into the request flow.
+          {messages.priorityServices.intro}
         </p>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {priorityServices.map((service) => (
+        {priorityServices.map((service, index) => (
           <article
             key={service.id}
             className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#13071f]/90 p-7 shadow-[0_0_50px_rgba(193,41,255,0.12)]"
@@ -68,13 +72,13 @@ export default function PriorityServices({
                   href={service.href}
                   className="inline-flex rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_28px_rgba(193,41,255,0.22)] transition hover:scale-[1.02]"
                 >
-                  Explore Service
+                  {messages.priorityServices.exploreService}
                 </Link>
                 <Link
                   href={`/request-quote?service=${encodeURIComponent(service.quoteCategory)}`}
                   className="inline-flex rounded-full border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
                 >
-                  {service.ctaLabel}
+                  {messages.priorityServices.ctas[index] ?? service.ctaLabel}
                 </Link>
               </div>
             </div>
