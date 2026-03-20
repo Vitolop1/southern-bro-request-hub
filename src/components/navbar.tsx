@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { mainNavigationLinks } from "@/lib/company-data";
+import ThemeToggle from "@/components/theme-toggle";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,6 +66,7 @@ export default function Navbar() {
             >
               Need A Ride?
             </Link>
+            <ThemeToggle />
           </nav>
         </div>
 
@@ -93,6 +95,9 @@ export default function Navbar() {
               >
                 Need A Ride?
               </Link>
+              <div className="mt-2 px-1">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         </nav>
