@@ -28,9 +28,7 @@ export default function RootLayout({
           {`
             try {
               var storedTheme = localStorage.getItem("southern-bro-theme");
-              var resolvedTheme =
-                storedTheme ||
-                (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+              var resolvedTheme = storedTheme || "dark";
               document.documentElement.dataset.theme = resolvedTheme;
             } catch (error) {
               document.documentElement.dataset.theme = "dark";
