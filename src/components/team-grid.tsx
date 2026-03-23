@@ -25,6 +25,7 @@ export default function TeamGrid({ compact = false }: TeamGridProps) {
               name={member.name}
               initials={member.initials}
               photoPath={member.photoPath}
+              photoPosition={member.photoPosition}
               wrapperClassName="relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-[1.4rem] border border-fuchsia-300/30 bg-fuchsia-500/12 text-white shadow-[0_0_24px_rgba(255,79,216,0.16)]"
               imageClassName="object-cover"
               fallbackClassName="text-lg font-black uppercase tracking-[0.12em]"

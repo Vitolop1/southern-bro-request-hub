@@ -7,6 +7,7 @@ type TeamAvatarProps = {
   name: string;
   initials: string;
   photoPath?: string;
+  photoPosition?: string;
   wrapperClassName: string;
   imageClassName?: string;
   fallbackClassName?: string;
@@ -17,6 +18,7 @@ export default function TeamAvatar({
   name,
   initials,
   photoPath,
+  photoPosition = "50% 50%",
   wrapperClassName,
   imageClassName = "",
   fallbackClassName = "",
@@ -34,6 +36,7 @@ export default function TeamAvatar({
           fill
           sizes={sizes}
           className={imageClassName}
+          style={{ objectPosition: photoPosition }}
           onError={() => setPhotoUnavailable(true)}
         />
       ) : (

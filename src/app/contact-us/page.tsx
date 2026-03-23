@@ -46,6 +46,7 @@ export default function ContactUsPage() {
                       name={member.name}
                       initials={member.initials}
                       photoPath={member.photoPath}
+                      photoPosition={member.photoPosition}
                       wrapperClassName="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-[1.2rem] border border-fuchsia-300/30 bg-fuchsia-500/12 text-white"
                       imageClassName="object-cover"
                       fallbackClassName="text-base font-black uppercase tracking-[0.12em]"

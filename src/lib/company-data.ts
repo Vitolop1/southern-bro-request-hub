@@ -14,6 +14,7 @@ export type TeamMember = {
   focusAreas: string[];
   contactEmail: string;
   photoPath?: string;
+  photoPosition?: string;
 };
 
 export type ContactLine = {
@@ -84,6 +85,7 @@ export const leadershipTeam: TeamMember[] = [
     ],
     contactEmail: "Antwan.Hardin@SouthernBroEnterprises.com",
     photoPath: "/team/antwan-hardin.webp",
+    photoPosition: "50% 24%",
   },
   {
     slug: "ciera-tropp",

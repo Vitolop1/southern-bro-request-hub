@@ -21,6 +21,7 @@ export default function TeamProfilePage({ member }: TeamProfilePageProps) {
               name={member.name}
               initials={member.initials}
               photoPath={member.photoPath}
+              photoPosition={member.photoPosition}
               wrapperClassName="relative mx-auto flex h-44 w-44 items-center justify-center overflow-hidden rounded-[2rem] border border-fuchsia-300/35 bg-fuchsia-500/12 text-white shadow-[0_0_34px_rgba(193,41,255,0.22)]"
               imageClassName="object-cover"
               fallbackClassName="text-4xl font-black uppercase tracking-[0.12em]"
