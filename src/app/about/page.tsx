@@ -38,9 +38,9 @@ export default function AboutPage() {
               A multi-brand company built to serve customers in more than one way
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
-              Southern Bro Enterprises connects business services, delivery,
-              handyman support, landscaping, products, ticketing, and community
-              programs under one recognizable company identity.
+              Southern Bro Enterprises connects business services, auto detailing,
+              delivery, landscaping, ticketing, and community programs under one
+              recognizable company identity.
             </p>
           </div>
 

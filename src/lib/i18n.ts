@@ -131,7 +131,7 @@ export const translations = {
         {
           title: "Multi-Brand Support",
           description:
-            "One company structure connecting business services, property help, delivery solutions, products, events, and community initiatives.",
+            "One company structure connecting business services, auto detailing, delivery solutions, events, and community initiatives.",
         },
         {
           title: "Locally Grounded",
@@ -147,7 +147,7 @@ export const translations = {
     },
     priorityServices: {
       eyebrow: "Featured Services",
-      title: "Consulting, detailing, and ticketing are highlighted front and center",
+      title: "Consulting, auto detailing, and ticketing are highlighted front and center",
       intro:
         "These service lanes are positioned for quick action, clear visibility, and a fast path into the request flow.",
       exploreService: "Explore Service",
@@ -155,7 +155,7 @@ export const translations = {
     },
     serviceCards: {
       eyebrow: "Full Brand Family",
-      title: "Every active brand stays visible in one organized directory",
+      title: "Every current and upcoming brand stays visible in one organized directory",
       intro:
         "The cards below present each brand with its logo, service lineup, audience, and request path in a polished customer-ready format.",
       learnMore: "Learn More",
@@ -205,7 +205,7 @@ export const translations = {
       eyebrow: "Request Quote",
       title: "One professional intake page for Southern Bro services",
       intro:
-        "Submit one organized request for consulting, detailing, ticketing, delivery support, and other Southern Bro service inquiries.",
+        "Submit one organized request for consulting, detailing, ticketing, delivery and catering, community support, and other Southern Bro service inquiries.",
       benefits: [
         "One central quote path for consulting, detailing, ticketing, and support services.",
         "Organized lead capture ready for follow-up and CRM routing.",
@@ -215,11 +215,8 @@ export const translations = {
         "Business Consulting",
         "Detailing Services",
         "Ticket Vibez / Event Support",
-        "Delivery & Logistics Support",
-        "Handyman Services",
+        "Delivery & Catering Support",
         "VA Recovery Services / Community Support",
-        "Landscaping Services",
-        "Southern Bro Creations / Product Inquiries",
         "General Business Support",
         "Other",
       ],
@@ -282,13 +279,7 @@ export const translations = {
       title: "Get in touch with the Southern Bro team",
       intro:
         "Reach the team through direct email, phone, and service request paths without digging through multiple pages.",
-      contactLabels: [
-        "General Support",
-        "William Soteria",
-        "Antwan Hardin",
-        "Ciera Tropp",
-        "Call or Text",
-      ],
+      contactLabels: ["General Support", "Call or Text"],
     },
     teamPage: {
       eyebrow: "Meet Our Team",
@@ -416,7 +407,7 @@ export const translations = {
         {
           title: "Soporte de Múltiples Marcas",
           description:
-            "Una estructura de empresa que conecta servicios comerciales, ayuda para propiedades, delivery, productos, eventos e iniciativas comunitarias.",
+            "Una estructura que conecta servicios comerciales, auto detailing, delivery, eventos e iniciativas comunitarias.",
         },
         {
           title: "Con Raíces Locales",
@@ -432,7 +423,7 @@ export const translations = {
     },
     priorityServices: {
       eyebrow: "Servicios Destacados",
-      title: "Consultoría, detailing y ticketing aparecen al frente",
+      title: "Consultoría, auto detailing y ticketing aparecen al frente",
       intro:
         "Estas líneas de servicio están posicionadas para una acción rápida, visibilidad clara y un acceso ágil al flujo de solicitud.",
       exploreService: "Ver Servicio",
@@ -440,7 +431,7 @@ export const translations = {
     },
     serviceCards: {
       eyebrow: "Familia Completa de Marcas",
-      title: "Cada marca activa sigue visible en un directorio organizado",
+      title: "Cada marca actual y futura sigue visible en un directorio organizado",
       intro:
         "Las tarjetas presentan cada marca con su logo, servicios, público y vía de solicitud en un formato más pulido y listo para clientes.",
       learnMore: "Más Información",
@@ -486,7 +477,7 @@ export const translations = {
       eyebrow: "Solicitar Cotización",
       title: "Una página profesional de intake para los servicios de Southern Bro",
       intro:
-        "Envía una solicitud organizada para consultoría, detailing, ticketing, apoyo de delivery y otras consultas de servicio de Southern Bro.",
+        "Envía una solicitud organizada para consultoría, detailing, ticketing, delivery y catering, apoyo comunitario y otras consultas de servicio de Southern Bro.",
       benefits: [
         "Una ruta central de cotización para consultoría, detailing, ticketing y servicios de apoyo.",
         "Captura organizada de leads lista para seguimiento y CRM.",
@@ -496,11 +487,8 @@ export const translations = {
         "Consultoría de Negocios",
         "Servicios de Detailing",
         "Ticket Vibez / Soporte para Eventos",
-        "Delivery y Apoyo Logístico",
-        "Servicios de Handyman",
+        "Delivery y Catering",
         "VA Recovery Services / Apoyo Comunitario",
-        "Servicios de Paisajismo",
-        "Southern Bro Creations / Consultas de Productos",
         "Apoyo Comercial General",
         "Otro",
       ],
@@ -563,7 +551,7 @@ export const translations = {
       title: "Ponte en contacto con el equipo de Southern Bro",
       intro:
         "Llega al equipo mediante correo directo, teléfono y rutas de solicitud de servicio sin tener que buscar en múltiples páginas.",
-      contactLabels: ["Soporte General", "William Soteria", "Antwan Hardin", "Ciera Tropp", "Llamar o Escribir"],
+      contactLabels: ["Soporte General", "Llamar o Escribir"],
     },
     teamPage: {
       eyebrow: "Conoce al Equipo",
@@ -691,7 +679,7 @@ export const translations = {
         {
           title: "Soutien Multi-Marques",
           description:
-            "Une structure d'entreprise reliant les services aux entreprises, l'aide immobilière, la livraison, les produits, les événements et les initiatives communautaires.",
+            "Une structure d'entreprise reliant les services aux entreprises, l'auto detailing, la livraison, les événements et les initiatives communautaires.",
         },
         {
           title: "Ancrée Localement",
@@ -707,7 +695,7 @@ export const translations = {
     },
     priorityServices: {
       eyebrow: "Services Mis en Avant",
-      title: "Consultation, detailing et ticketing sont mis en avant",
+      title: "Consultation, auto detailing et ticketing sont mis en avant",
       intro:
         "Ces lignes de service sont positionnées pour une action rapide, une visibilité claire et un accès direct au parcours de demande.",
       exploreService: "Voir le Service",
@@ -715,7 +703,7 @@ export const translations = {
     },
     serviceCards: {
       eyebrow: "Famille Complète de Marques",
-      title: "Chaque marque active reste visible dans un répertoire organisé",
+      title: "Chaque marque actuelle et future reste visible dans un répertoire organisé",
       intro:
         "Les cartes présentent chaque marque avec son logo, ses services, son public et son parcours de demande dans un format plus soigné et prêt pour les clients.",
       learnMore: "En Savoir Plus",
@@ -761,7 +749,7 @@ export const translations = {
       eyebrow: "Demander un Devis",
       title: "Une page d'intake professionnelle pour les services Southern Bro",
       intro:
-        "Soumettez une demande organisée pour la consultation, le detailing, le ticketing, le support livraison et les autres demandes de service Southern Bro.",
+        "Soumettez une demande organisée pour la consultation, le detailing, le ticketing, la livraison et le catering, le soutien communautaire et les autres demandes de service Southern Bro.",
       benefits: [
         "Un parcours central de devis pour la consultation, le detailing, le ticketing et les services de soutien.",
         "Une capture de leads organisée, prête pour le suivi et l'orientation CRM.",
@@ -771,11 +759,8 @@ export const translations = {
         "Conseil aux Entreprises",
         "Services de Detailing",
         "Ticket Vibez / Support Événementiel",
-        "Livraison et Support Logistique",
-        "Services Handyman",
+        "Livraison et Catering",
         "VA Recovery Services / Soutien Communautaire",
-        "Services de Paysagisme",
-        "Southern Bro Creations / Demandes Produits",
         "Soutien Commercial Général",
         "Autre",
       ],
@@ -838,7 +823,7 @@ export const translations = {
       title: "Entrer en contact avec l'équipe Southern Bro",
       intro:
         "Contactez l'équipe par email direct, téléphone ou via les parcours de demande de service sans devoir fouiller plusieurs pages.",
-      contactLabels: ["Support Général", "William Soteria", "Antwan Hardin", "Ciera Tropp", "Appeler ou Écrire"],
+      contactLabels: ["Support Général", "Appeler ou Écrire"],
     },
     teamPage: {
       eyebrow: "Notre Équipe",

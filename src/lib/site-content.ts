@@ -55,22 +55,22 @@ export const priorityServices: PriorityService[] = [
     shortLabel: "Growth Priority",
     href: "/detailing",
     quoteCategory: "Detailing Services",
-    logo: "/LOGOS/SouthernBro-Enterprises-Logo.png",
+    logo: "/LOGOS/SouthernBro-Detailing-Specials-Logo.png",
     summary:
-      "Professional detailing support with a clear request path for service details, timing, location, and follow-up.",
+      "Professional auto detailing with a clear request path for vehicle details, timing, location, and follow-up.",
     description:
-      "The detailing page is designed to help customers describe the job clearly, request service quickly, and move into a dependable follow-up process.",
+      "The detailing page is designed to help customers describe vehicle needs clearly, request service quickly, and move into a dependable follow-up process.",
     bullets: [
-      "Detailing request intake",
-      "Service description and scheduling support",
+      "Interior and exterior detailing requests",
+      "Vehicle condition notes and scheduling support",
       "Customer-ready booking flow",
       "Professional quote and follow-up process",
     ],
     audience:
-      "Customers looking for local detailing support who need a clean, trustworthy intake process and a fast path to service.",
+      "Customers looking for local auto detailing support who need a clean, trustworthy intake process and a fast path to service.",
     steps: [
       "Review the detailing service overview.",
-      "Submit the quote form with timing, location, and job details.",
+      "Submit the quote form with timing, location, and vehicle details.",
       "Receive confirmation and a follow-up from the team.",
     ],
     deliverables: [
@@ -121,11 +121,8 @@ export const requestCategoryOptions = [
   "Business Consulting",
   "Detailing Services",
   "Ticket Vibez / Event Support",
-  "Delivery & Logistics Support",
-  "Handyman Services",
+  "Delivery & Catering Support",
   "VA Recovery Services / Community Support",
-  "Landscaping Services",
-  "Southern Bro Creations / Product Inquiries",
   "General Business Support",
   "Other",
 ];

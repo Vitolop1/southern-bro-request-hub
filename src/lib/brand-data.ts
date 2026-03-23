@@ -42,6 +42,30 @@ export const brandProfiles: BrandProfile[] = [
     priorityTier: "high",
   },
   {
+    id: "detailing-specials",
+    name: "Detailing Specials",
+    shortLabel: "Auto Detailing",
+    logo: "/LOGOS/SouthernBro-Detailing-Specials-Logo.png",
+    summary:
+      "Customer-ready auto detailing support with a clear path for interior, exterior, and specialty vehicle requests.",
+    description:
+      "Detailing Specials gives Southern Bro a dedicated lane for car detailing, cleanup packages, appearance refreshes, and appointment-based customer follow-up.",
+    services: [
+      "Interior detailing",
+      "Exterior wash and finish work",
+      "Vehicle refresh packages",
+      "Appointment-based detailing",
+      "Quote-based specialty requests",
+    ],
+    audience:
+      "Ideal for vehicle owners, families, rideshare drivers, and customers looking for a cleaner and more polished vehicle presentation.",
+    ctaLabel: "Request Detailing",
+    requestHref: "/detailing",
+    pageHref: "/brands/detailing-specials",
+    accent: "from-[#d4a84f]/30 via-fuchsia-500/18 to-transparent",
+    priorityTier: "high",
+  },
+  {
     id: "southern-bro-delivery-catering",
     name: "Southern Bro Delivery & Catering",
     shortLabel: "Delivery & Catering",
@@ -63,8 +87,6 @@ export const brandProfiles: BrandProfile[] = [
     pageHref: "/brands/southern-bro-delivery-catering",
     accent: "from-cyan-500/30 via-fuchsia-500/15 to-transparent",
     priorityTier: "medium",
-    status: "coming-soon",
-    statusNote: "Coming Soon",
   },
   {
     id: "southern-bro-handyman-services",
@@ -88,6 +110,8 @@ export const brandProfiles: BrandProfile[] = [
     pageHref: "/brands/southern-bro-handyman-services",
     accent: "from-amber-400/25 via-fuchsia-500/18 to-transparent",
     priorityTier: "medium",
+    status: "coming-soon",
+    statusNote: "Coming Soon",
   },
   {
     id: "southern-bro-landscaping",
@@ -110,31 +134,6 @@ export const brandProfiles: BrandProfile[] = [
     requestHref: "/request-quote?service=Landscaping%20Services",
     pageHref: "/brands/southern-bro-landscaping",
     accent: "from-emerald-400/18 via-fuchsia-500/20 to-transparent",
-    priorityTier: "low",
-    status: "coming-soon",
-    statusNote: "Coming Soon",
-  },
-  {
-    id: "southern-bro-creations",
-    name: "Southern Bro Creations / Wax Melt Bros",
-    shortLabel: "Creations",
-    logo: "/LOGOS/SouthernBro-Creations-Logo.png",
-    summary: "Creative products and gift-ready wax melt collections with seasonal and custom fragrance options.",
-    description:
-      "Southern Bro Creations adds a product and gifting side to the business through wax melts, bundles, gift sets, and branded scent collections.",
-    services: [
-      "Wax melt products",
-      "Warmer bundles",
-      "Gift sets",
-      "E-gift cards",
-      "Seasonal and custom scents",
-    ],
-    audience:
-      "Made for gift buyers, product shoppers, event gifting, and customers looking for branded lifestyle items.",
-    ctaLabel: "Shop or Inquire",
-    requestHref: "/request-quote?service=Southern%20Bro%20Creations%20%2F%20Product%20Inquiries",
-    pageHref: "/brands/southern-bro-creations",
-    accent: "from-pink-500/35 via-violet-500/18 to-transparent",
     priorityTier: "low",
     status: "coming-soon",
     statusNote: "Coming Soon",
@@ -193,7 +192,7 @@ export const aboutHighlights = [
   {
     title: "Multi-Brand Support",
     description:
-      "One company structure connecting business services, property help, delivery solutions, products, events, and community initiatives.",
+      "One company structure connecting business services, auto detailing, delivery solutions, events, and community initiatives.",
   },
   {
     title: "Locally Grounded",

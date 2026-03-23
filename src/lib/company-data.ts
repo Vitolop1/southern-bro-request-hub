@@ -13,6 +13,7 @@ export type TeamMember = {
   description: string;
   focusAreas: string[];
   contactEmail: string;
+  photoPath?: string;
 };
 
 export type ContactLine = {
@@ -37,10 +38,9 @@ export const mainNavigationLinks: NavigationLink[] = [
 ];
 
 export const supportPageLinks: NavigationLink[] = [
-  { label: "Southern Bro Creations", href: "/brands/southern-bro-creations" },
+  { label: "Detailing Specials", href: "/brands/detailing-specials" },
   { label: "Ticket Vibez", href: "/brands/ticket-vibez" },
   { label: "Delivery Requests", href: "/need-a-ride" },
-  { label: "Product Information", href: "/product-information" },
   { label: "Meet William Soteria", href: "/meet-william-soteria" },
   { label: "Meet Antwan Hardin", href: "/meet-antwan-hardin" },
   { label: "Meet Ciera Tropp", href: "/meet-ciera-tropp" },
@@ -64,6 +64,7 @@ export const leadershipTeam: TeamMember[] = [
       "Partnership and brand expansion strategy",
     ],
     contactEmail: "William.Soteria@SouthernBroEnterprises.com",
+    photoPath: "/team/william-soteria.jpg",
   },
   {
     slug: "antwan-hardin",
@@ -82,6 +83,7 @@ export const leadershipTeam: TeamMember[] = [
       "Revenue and opportunity development",
     ],
     contactEmail: "Antwan.Hardin@SouthernBroEnterprises.com",
+    photoPath: "/team/antwan-hardin.jpg",
   },
   {
     slug: "ciera-tropp",
@@ -100,6 +102,7 @@ export const leadershipTeam: TeamMember[] = [
       "Cross-brand execution support",
     ],
     contactEmail: "Ciera.Tropp@SouthernBroEnterprises.com",
+    photoPath: "/team/ciera-tropp.jpg",
   },
 ];
 
@@ -167,21 +170,6 @@ export const contactLines: ContactLine[] = [
     label: "General Support",
     value: "Info@SouthernBroEnterprises.com",
     href: "mailto:Info@SouthernBroEnterprises.com",
-  },
-  {
-    label: "William Soteria",
-    value: "William.Soteria@SouthernBroEnterprises.com",
-    href: "mailto:William.Soteria@SouthernBroEnterprises.com",
-  },
-  {
-    label: "Antwan Hardin",
-    value: "Antwan.Hardin@SouthernBroEnterprises.com",
-    href: "mailto:Antwan.Hardin@SouthernBroEnterprises.com",
-  },
-  {
-    label: "Ciera Tropp",
-    value: "Ciera.Tropp@SouthernBroEnterprises.com",
-    href: "mailto:Ciera.Tropp@SouthernBroEnterprises.com",
   },
   {
     label: "Call or Text",

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import TeamAvatar from "@/components/team-avatar";
 import type { TeamMember } from "@/lib/company-data";
 
 type TeamProfilePageProps = {
@@ -16,9 +17,15 @@ export default function TeamProfilePage({ member }: TeamProfilePageProps) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,79,216,0.22),_transparent_24%),linear-gradient(180deg,_#090312_0%,_#14061f_60%,_#090312_100%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-8 px-6 py-16 md:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.94),rgba(10,4,18,0.98))] p-8 text-center">
-            <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-full border border-fuchsia-300/40 bg-fuchsia-500/12 text-4xl font-black uppercase tracking-[0.12em] text-white shadow-[0_0_30px_rgba(193,41,255,0.22)]">
-              {member.initials}
-            </div>
+            <TeamAvatar
+              name={member.name}
+              initials={member.initials}
+              photoPath={member.photoPath}
+              wrapperClassName="relative mx-auto flex h-44 w-44 items-center justify-center overflow-hidden rounded-[2rem] border border-fuchsia-300/35 bg-fuchsia-500/12 text-white shadow-[0_0_34px_rgba(193,41,255,0.22)]"
+              imageClassName="object-cover"
+              fallbackClassName="text-4xl font-black uppercase tracking-[0.12em]"
+              sizes="176px"
+            />
             <p className="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-[#ffb8f0]">
               {member.title}
             </p>

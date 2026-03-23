@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://southernbroenterprises.com"),
   title: "Southern Bro Enterprises",
   description:
-    "Professional Southern Bro website featuring business consulting, detailing, ticketing, delivery support, brand services, and community programs.",
+    "Professional Southern Bro website featuring business consulting, auto detailing, ticketing, delivery support, and community programs.",
   keywords: [
     "Southern Bro Enterprises",
     "business consulting Lynchburg VA",
-    "detailing services Lynchburg VA",
+    "auto detailing Lynchburg VA",
     "ticketing support Virginia",
     "request quote Southern Bro",
   ],

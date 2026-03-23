@@ -10,7 +10,7 @@ const detailingService = getPriorityService("detailing");
 export const metadata: Metadata = {
   title: "Detailing Services | Southern Bro Enterprises",
   description:
-    "Request detailing services through Southern Bro with scheduling, location, and service detail capture built into the page.",
+    "Request auto detailing services through Southern Bro with scheduling, location, and vehicle-detail capture built into the page.",
 };
 
 export default function DetailingPage() {
@@ -33,8 +33,8 @@ export default function DetailingPage() {
               Give customers a direct path into service
             </h2>
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              This intake flow supports a more serious detailing presentation by
-              collecting the job description, service location, urgency, and
+              This intake flow supports a more serious auto detailing presentation by
+              collecting the vehicle details, service location, urgency, and
               budget expectations in one place.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function DetailingPage() {
             defaultCategory={detailingService.quoteCategory}
             lockCategory
             title="Request Detailing Services"
-            description="Use this quote form to request detailing support with a preferred timeline, service location, and project details."
+            description="Use this quote form to request auto detailing support with a preferred timeline, service location, and vehicle details."
             submitLabel="Submit Detailing Request"
           />
         </div>

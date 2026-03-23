@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import TeamAvatar from "@/components/team-avatar";
 import { useLanguage } from "@/components/language-provider";
 import { leadershipTeam } from "@/lib/company-data";
 
@@ -20,9 +21,15 @@ export default function TeamGrid({ compact = false }: TeamGridProps) {
           className="rounded-[1.75rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.95),rgba(11,4,22,0.98))] p-6 shadow-[0_0_40px_rgba(193,41,255,0.08)]"
         >
           <div className="flex items-center gap-4">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full border border-fuchsia-300/40 bg-fuchsia-500/12 text-lg font-black uppercase tracking-[0.12em] text-white">
-              {member.initials}
-            </div>
+            <TeamAvatar
+              name={member.name}
+              initials={member.initials}
+              photoPath={member.photoPath}
+              wrapperClassName="relative flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-[1.4rem] border border-fuchsia-300/30 bg-fuchsia-500/12 text-white shadow-[0_0_24px_rgba(255,79,216,0.16)]"
+              imageClassName="object-cover"
+              fallbackClassName="text-lg font-black uppercase tracking-[0.12em]"
+              sizes="80px"
+            />
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ffb8f0]">
                 {messages.teamGrid.titles[index] ?? member.title}

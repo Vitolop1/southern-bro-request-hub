@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import TeamAvatar from "@/components/team-avatar";
 import { useLanguage } from "@/components/language-provider";
 import { businessHours, contactLines, leadershipTeam } from "@/lib/company-data";
 
@@ -40,16 +41,37 @@ export default function ContactUsPage() {
                   key={member.slug}
                   className="rounded-[1.5rem] border border-white/10 bg-white/5 p-5"
                 >
-                  <p className="text-sm font-bold uppercase tracking-[0.12em] text-white">
-                    {member.name}
-                  </p>
-                  <p className="mt-1 text-sm text-[#f7dcff]">{member.role}</p>
-                  <Link
-                    href={`mailto:${member.contactEmail}`}
-                    className="mt-3 inline-flex text-sm text-[#ddd2eb] underline decoration-fuchsia-300/50 underline-offset-4"
-                  >
-                    {member.contactEmail}
-                  </Link>
+                  <div className="flex items-center gap-4">
+                    <TeamAvatar
+                      name={member.name}
+                      initials={member.initials}
+                      photoPath={member.photoPath}
+                      wrapperClassName="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-[1.2rem] border border-fuchsia-300/30 bg-fuchsia-500/12 text-white"
+                      imageClassName="object-cover"
+                      fallbackClassName="text-base font-black uppercase tracking-[0.12em]"
+                      sizes="64px"
+                    />
+                    <div className="min-w-0">
+                      <p className="text-sm font-bold uppercase tracking-[0.12em] text-white">
+                        {member.name}
+                      </p>
+                      <p className="mt-1 text-sm text-[#f7dcff]">{member.role}</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+                    <Link
+                      href={`mailto:${member.contactEmail}`}
+                      className="inline-flex rounded-full border border-white/15 bg-white/6 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-white/12"
+                    >
+                      {member.contactEmail}
+                    </Link>
+                    <Link
+                      href={`/meet-${member.slug}`}
+                      className="inline-flex rounded-full border border-fuchsia-300/45 bg-fuchsia-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-fuchsia-500/18"
+                    >
+                      View Profile
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>

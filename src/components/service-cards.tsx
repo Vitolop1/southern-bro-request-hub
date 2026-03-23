@@ -14,7 +14,9 @@ export default function ServiceCards() {
   } as const;
 
   const sortedBrands = [...brandProfiles].sort(
-    (left, right) => brandOrder[left.priorityTier] - brandOrder[right.priorityTier]
+    (left, right) =>
+      brandOrder[left.priorityTier] - brandOrder[right.priorityTier] ||
+      Number(left.status === "coming-soon") - Number(right.status === "coming-soon")
   );
 
   return (
@@ -74,13 +76,6 @@ export default function ServiceCards() {
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
                     {brand.shortLabel}
                   </p>
-                  <span className="rounded-full border border-white/10 bg-white/8 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#f7dcff]">
-                    {brand.priorityTier === "high"
-                      ? messages.serviceCards.priorityNow
-                      : brand.priorityTier === "medium"
-                        ? messages.serviceCards.activeService
-                        : messages.serviceCards.secondaryFocus}
-                  </span>
                   {brand.status === "coming-soon" && (
                     <span className="rounded-full border border-[#d4a84f]/35 bg-black/30 px-3 py-1 text-[0.65rem] font-bold uppercase tracking-[0.14em] text-[#f7dfa1]">
                       {messages.serviceCards.comingSoon}

@@ -20,7 +20,9 @@ export default function BrandDirectory({
   } as const;
 
   const sortedBrands = [...brandProfiles].sort(
-    (left, right) => brandOrder[left.priorityTier] - brandOrder[right.priorityTier]
+    (left, right) =>
+      brandOrder[left.priorityTier] - brandOrder[right.priorityTier] ||
+      Number(left.status === "coming-soon") - Number(right.status === "coming-soon")
   );
 
   return (
@@ -59,13 +61,6 @@ export default function BrandDirectory({
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ffb8f0]">
                     {brand.shortLabel}
                   </p>
-                  <span className="rounded-full border border-white/10 bg-white/8 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#f7dcff]">
-                    {brand.priorityTier === "high"
-                      ? messages.serviceCards.priorityNow
-                      : brand.priorityTier === "medium"
-                        ? messages.serviceCards.activeService
-                        : messages.serviceCards.secondaryFocus}
-                  </span>
                   {brand.status === "coming-soon" && (
                     <span className="rounded-full border border-[#d4a84f]/40 bg-[#d4a84f]/10 px-2.5 py-1 text-[0.6rem] font-bold uppercase tracking-[0.12em] text-[#f7dfa1]">
                       {messages.serviceCards.comingSoon}
