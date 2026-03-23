@@ -64,7 +64,7 @@ export const leadershipTeam: TeamMember[] = [
       "Partnership and brand expansion strategy",
     ],
     contactEmail: "William.Soteria@SouthernBroEnterprises.com",
-    photoPath: "/team/william-soteria.jpg",
+    photoPath: "/team/william-soteria.webp",
   },
   {
     slug: "antwan-hardin",
@@ -83,7 +83,7 @@ export const leadershipTeam: TeamMember[] = [
       "Revenue and opportunity development",
     ],
     contactEmail: "Antwan.Hardin@SouthernBroEnterprises.com",
-    photoPath: "/team/antwan-hardin.jpg",
+    photoPath: "/team/antwan-hardin.webp",
   },
   {
     slug: "ciera-tropp",
@@ -102,7 +102,7 @@ export const leadershipTeam: TeamMember[] = [
       "Cross-brand execution support",
     ],
     contactEmail: "Ciera.Tropp@SouthernBroEnterprises.com",
-    photoPath: "/team/ciera-tropp.jpg",
+    photoPath: "/team/ciera-tropp.webp",
   },
 ];
 
