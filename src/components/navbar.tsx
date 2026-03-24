@@ -66,12 +66,6 @@ export default function Navbar() {
 
           <div className="hidden min-w-0 flex-1 flex-col items-end gap-4 md:flex">
             <div className="flex w-full items-center justify-end gap-3">
-              <Link
-                href="/need-a-ride"
-                className="rounded-full border border-fuchsia-300/60 bg-fuchsia-500/15 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white transition hover:bg-fuchsia-500/25"
-              >
-                {messages.nav.needRide}
-              </Link>
               <LanguageSwitcher />
               <ThemeToggle />
             </div>
@@ -128,13 +122,6 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/need-a-ride"
-                onClick={closeMenu}
-                className="mt-2 rounded-xl border border-fuchsia-300/40 bg-fuchsia-500/12 px-4 py-3 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-fuchsia-500/20"
-              >
-                {messages.nav.needRide}
-              </Link>
               <div className="mt-2 flex flex-wrap items-center gap-3 px-1">
                 <LanguageSwitcher />
                 <ThemeToggle />
