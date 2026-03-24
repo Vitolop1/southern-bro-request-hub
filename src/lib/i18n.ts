@@ -198,7 +198,7 @@ export const translations = {
       summaries: [
         "Founder and lead operator guiding Southern Bro Enterprises, the H.O.P.E. Grant mission, and the broader business support direction.",
         "Business development lead focused on partnerships, outreach, and strengthening the Southern Bro service network.",
-        "Operations-focused leadership helping organize delivery, follow-up, and the internal systems that keep the company moving.",
+        "Service-driven professional with healthcare, hospitality, and customer experience roots, helping Southern Bro pair strong operations with community-centered care.",
       ],
     },
     requestQuotePage: {
@@ -470,7 +470,7 @@ export const translations = {
       summaries: [
         "Fundador y operador principal que guía Southern Bro Enterprises, la misión de H.O.P.E. y la dirección general del apoyo comercial.",
         "Líder de desarrollo comercial enfocado en alianzas, alcance y fortalecimiento de la red de servicios de Southern Bro.",
-        "Liderazgo enfocado en operaciones que ayuda a organizar entregas, seguimiento y sistemas internos que mantienen la empresa en movimiento.",
+        "Profesional orientada al servicio con experiencia en salud, hospitalidad y atención al cliente, ayudando a Southern Bro a unir operaciones sólidas con cuidado comunitario.",
       ],
     },
     requestQuotePage: {
@@ -742,7 +742,7 @@ export const translations = {
       summaries: [
         "Fondateur et opérateur principal guidant Southern Bro Enterprises, la mission H.O.P.E. et la direction générale du soutien commercial.",
         "Responsable du développement commercial axé sur les partenariats, l'action de terrain et le renforcement du réseau de services Southern Bro.",
-        "Direction orientée opérations pour organiser la livraison, le suivi et les systèmes internes qui font avancer l'entreprise.",
+        "Professionnelle orientée service avec une expérience en santé, hospitalité et relation client, aidant Southern Bro à allier opérations solides et soutien communautaire.",
       ],
     },
     requestQuotePage: {

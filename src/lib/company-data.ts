@@ -94,17 +94,17 @@ export const leadershipTeam: TeamMember[] = [
     title: "Equity Partner",
     initials: "CT",
     summary:
-      "Operations-focused leadership helping organize delivery, follow-up, and the internal systems that keep the company moving.",
+      "Service-driven professional with a background in healthcare, hospitality, and customer experience, bringing adaptability and operational excellence to Southern Bro.",
     description:
-      "Ciera Tropp is shown as the operations lead and an equity partner. Her lane supports structure, execution, and the day-to-day systems that help Southern Bro deliver on its customer and community commitments.",
+      "Ciera Tropp is a service-driven professional whose background spans healthcare, hospitality, food service, bartending, and high-level customer experience. As a certified medical assistant, she has developed a strong ability to perform in fast-paced environments while staying grounded in adaptability, operational excellence, and responsive customer care. She is also deeply committed to community outreach, including three years of volunteer work in a hospital emergency room, and brings a strong passion for supporting underprivileged communities through equality, access, and opportunity.",
     focusAreas: [
-      "Operations and service coordination",
-      "Internal process support",
-      "Customer follow-up workflows",
-      "Cross-brand execution support",
+      "Operations and customer experience",
+      "Healthcare and service coordination",
+      "Hospitality and fast-paced support",
+      "Community outreach, equality, and access",
     ],
     contactEmail: "Ciera.Tropp@SouthernBroEnterprises.com",
-    photoPath: "/team/ciera-tropp.webp",
+    photoPath: "/team/ciera-tropp.jpeg",
   },
 ];
 
