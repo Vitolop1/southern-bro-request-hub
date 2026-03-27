@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { brandProfiles } from "@/lib/brand-data";
@@ -19,6 +19,11 @@ export function generateStaticParams() {
 
 export default async function BrandPage({ params }: BrandPageProps) {
   const { id } = await params;
+
+  if (id === "southern-bro-delivery-catering") {
+    redirect("/brands/southern-bro-delivery");
+  }
+
   const brand = brandProfiles.find((entry) => entry.id === id);
 
   if (!brand) {

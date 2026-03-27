@@ -2,12 +2,46 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { DeliveryFormData } from "@/types/requests";
+import type {
+  DeliveryFormData,
+  DeliveryRequestPayload,
+  RequestSubmissionResult,
+} from "@/types/requests";
+import type { RequestFormTheme } from "@/components/service-form";
 
-export default function DeliveryForm() {
+type DeliveryFormProps = {
+  title?: string;
+  description?: string;
+  sectionLabel?: string;
+  submitLabel?: string;
+  serviceLabel?: string;
+  theme?: RequestFormTheme;
+};
+
+export default function DeliveryForm({
+  title = "Delivery / Pickup Request",
+  description = "Fill out the form below to request a delivery or pickup service from Southern Bro Delivery.",
+  sectionLabel = "Delivery Booking",
+  submitLabel = "Submit Request",
+  serviceLabel = "Southern Bro Delivery",
+  theme,
+}: DeliveryFormProps) {
   const router = useRouter();
   const fieldClassName =
+    theme?.inputClassName ??
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#aa9fc0] focus:border-fuchsia-300/70 focus:bg-white/10";
+  const formClassName =
+    theme?.formClassName ??
+    "space-y-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.94),rgba(10,4,18,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)]";
+  const sectionLabelClassName =
+    theme?.sectionLabelClassName ??
+    "text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]";
+  const buttonClassName =
+    theme?.buttonClassName ??
+    "w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60";
+  const errorClassName =
+    theme?.errorClassName ??
+    "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100";
 
   const [formData, setFormData] = useState<DeliveryFormData>({
     fullName: "",
@@ -23,6 +57,7 @@ export default function DeliveryForm() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -37,33 +72,63 @@ export default function DeliveryForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError("");
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      const params = new URLSearchParams({
-        type: "delivery",
-        request: `DEL-${Date.now().toString().slice(-6)}`,
-        service: "Southern Bro Delivery & Catering",
+    try {
+      const payload: DeliveryRequestPayload = {
+        kind: "delivery",
+        serviceLabel,
+        ...formData,
+      };
+
+      const response = await fetch("/api/service-requests", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
-      router.push(`/thank-you?${params.toString()}`);
-    }, 700);
+
+      const result = (await response.json()) as
+        | RequestSubmissionResult
+        | { error?: string };
+
+      if (!response.ok) {
+        throw new Error(
+          ("error" in result && result.error) || "Unable to submit the request."
+        );
+      }
+
+      const submissionResult = result as RequestSubmissionResult;
+
+      router.push(
+        `/thank-you?type=delivery&request=${encodeURIComponent(submissionResult.requestId)}&service=${encodeURIComponent(submissionResult.service)}`
+      );
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Unable to submit the request right now."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.94),rgba(10,4,18,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)]"
+      className={formClassName}
     >
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]">
-          Delivery Booking
+        <p className={sectionLabelClassName}>
+          {sectionLabel}
         </p>
         <h2 className="mt-3 text-2xl font-black uppercase tracking-[0.05em] text-white">
-          Delivery / Pickup Request
+          {title}
         </h2>
         <p className="mt-3 text-sm leading-6 text-[#d9d1e8]">
-          Fill out the form below to request a delivery, pickup, or catering-related
-          service from Southern Bro Delivery & Catering.
+          {description}
         </p>
       </div>
 
@@ -229,12 +294,14 @@ export default function DeliveryForm() {
         </div>
       </div>
 
+      {submitError && <p className={errorClassName}>{submitError}</p>}
+
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60"
+        className={buttonClassName}
       >
-        {isSubmitting ? "Submitting..." : "Submit Request"}
+        {isSubmitting ? "Submitting..." : submitLabel}
       </button>
     </form>
   );

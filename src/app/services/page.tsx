@@ -55,7 +55,7 @@ export default function ServicesPage() {
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
               Use this form for consulting, auto detailing, ticketing,
               community support, and other general Southern Bro inquiries.
-              Delivery and catering can be booked through the dedicated delivery page.
+              Delivery can be booked through the dedicated delivery page.
             </p>
 
             <div className="mt-8 space-y-4">

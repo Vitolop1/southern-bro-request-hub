@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getRequestRouteForCategory } from "@/lib/brand-data";
 import type { PriorityService } from "@/lib/site-content";
 
 type ServicePageTemplateProps = {
@@ -31,7 +32,7 @@ export default function ServicePageTemplate({
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href={`/request-quote?service=${encodeURIComponent(service.quoteCategory)}`}
+                href={getRequestRouteForCategory(service.quoteCategory)}
                 className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_28px_rgba(193,41,255,0.24)] transition hover:scale-[1.02]"
               >
                 {service.ctaLabel}

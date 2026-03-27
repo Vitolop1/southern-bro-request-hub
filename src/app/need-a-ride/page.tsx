@@ -22,7 +22,7 @@ export default function NeedARidePage() {
             Delivery Requests
           </p>
           <h1 className="mt-4 max-w-5xl text-4xl font-black uppercase tracking-[0.05em] text-white md:text-6xl">
-            Request delivery, pickup, or catering support
+            Request delivery or pickup support
           </h1>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-[#ddd2eb]">
             Use this page to submit delivery and pickup requests with a clear,

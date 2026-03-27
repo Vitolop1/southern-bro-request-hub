@@ -205,7 +205,7 @@ export const translations = {
       eyebrow: "Request Quote",
       title: "One professional intake page for Southern Bro services",
       intro:
-        "Submit one organized request for consulting, detailing, ticketing, delivery and catering, community support, and other Southern Bro service inquiries.",
+        "Submit one organized request for consulting, detailing, ticketing, delivery, community support, and other Southern Bro service inquiries.",
       benefits: [
         "One central quote path for consulting, detailing, ticketing, and support services.",
         "Organized lead capture ready for follow-up and CRM routing.",
@@ -215,7 +215,7 @@ export const translations = {
         "Business Consulting",
         "Detailing Services",
         "Ticket Vibez / Event Support",
-        "Delivery & Catering Support",
+        "Delivery Support",
         "VA Recovery Services / Community Support",
         "General Business Support",
         "Other",
@@ -477,7 +477,7 @@ export const translations = {
       eyebrow: "Solicitar Cotización",
       title: "Una página profesional de intake para los servicios de Southern Bro",
       intro:
-        "Envía una solicitud organizada para consultoría, detailing, ticketing, delivery y catering, apoyo comunitario y otras consultas de servicio de Southern Bro.",
+        "Envía una solicitud organizada para consultoría, detailing, ticketing, delivery, apoyo comunitario y otras consultas de servicio de Southern Bro.",
       benefits: [
         "Una ruta central de cotización para consultoría, detailing, ticketing y servicios de apoyo.",
         "Captura organizada de leads lista para seguimiento y CRM.",
@@ -487,7 +487,7 @@ export const translations = {
         "Consultoría de Negocios",
         "Servicios de Detailing",
         "Ticket Vibez / Soporte para Eventos",
-        "Delivery y Catering",
+        "Delivery",
         "VA Recovery Services / Apoyo Comunitario",
         "Apoyo Comercial General",
         "Otro",
@@ -749,7 +749,7 @@ export const translations = {
       eyebrow: "Demander un Devis",
       title: "Une page d'intake professionnelle pour les services Southern Bro",
       intro:
-        "Soumettez une demande organisée pour la consultation, le detailing, le ticketing, la livraison et le catering, le soutien communautaire et les autres demandes de service Southern Bro.",
+        "Soumettez une demande organisée pour la consultation, le detailing, le ticketing, la livraison, le soutien communautaire et les autres demandes de service Southern Bro.",
       benefits: [
         "Un parcours central de devis pour la consultation, le detailing, le ticketing et les services de soutien.",
         "Une capture de leads organisée, prête pour le suivi et l'orientation CRM.",
@@ -759,7 +759,7 @@ export const translations = {
         "Conseil aux Entreprises",
         "Services de Detailing",
         "Ticket Vibez / Support Événementiel",
-        "Livraison et Catering",
+        "Livraison",
         "VA Recovery Services / Soutien Communautaire",
         "Soutien Commercial Général",
         "Autre",

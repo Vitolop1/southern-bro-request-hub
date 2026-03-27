@@ -2,6 +2,7 @@ export type BrandProfile = {
   id: string;
   name: string;
   shortLabel: string;
+  requestCategory: string;
   logo: string;
   summary: string;
   description: string;
@@ -22,6 +23,7 @@ export const brandProfiles: BrandProfile[] = [
     id: "southern-bro-enterprises",
     name: "Southern Bro Enterprises",
     shortLabel: "Business Support",
+    requestCategory: "Business Consulting",
     logo: "/LOGOS/SouthernBro-Enterprises-Logo.png",
     summary: "Parent company support for business growth, operations, logistics, and launch strategy.",
     description:
@@ -45,6 +47,7 @@ export const brandProfiles: BrandProfile[] = [
     id: "detailing-specials",
     name: "Detailing Specials",
     shortLabel: "Auto Detailing",
+    requestCategory: "Detailing Services",
     logo: "/LOGOS/SouthernBro-Detailing-Specials-Logo.png",
     summary:
       "Customer-ready auto detailing support with a clear path for interior, exterior, and specialty vehicle requests.",
@@ -66,25 +69,26 @@ export const brandProfiles: BrandProfile[] = [
     priorityTier: "high",
   },
   {
-    id: "southern-bro-delivery-catering",
-    name: "Southern Bro Delivery & Catering",
-    shortLabel: "Delivery & Catering",
-    logo: "/LOGOS/SouthernBro-Delivery-Catering-Logo.png",
-    summary: "Fast delivery, catering coordination, logistics help, and scheduled pickup support.",
+    id: "southern-bro-delivery",
+    name: "Southern Bro Delivery",
+    shortLabel: "Delivery",
+    requestCategory: "Delivery Support",
+    logo: "/LOGOS/SouthernBro-Delivery-Logo.png",
+    summary: "Fast delivery, logistics help, and scheduled pickup support.",
     description:
-      "Southern Bro Delivery & Catering focuses on movement, timing, and convenience for customers who need reliable delivery, catering coordination, or personal shopping support.",
+      "Southern Bro Delivery focuses on movement, timing, and convenience for customers who need reliable delivery, pickup coordination, or personal shopping support.",
     services: [
-      "Event catering",
       "Personal shopping",
       "Logistics delivery",
       "Equipment transport",
-      "Scheduled food and order delivery",
+      "Scheduled pickup coordination",
+      "Food and order delivery",
     ],
     audience:
-      "Ideal for households, events, small businesses, and clients who need quick and organized delivery support.",
+      "Ideal for households, small businesses, and clients who need quick and organized delivery support.",
     ctaLabel: "Book Delivery",
     requestHref: "/delivery",
-    pageHref: "/brands/southern-bro-delivery-catering",
+    pageHref: "/brands/southern-bro-delivery",
     accent: "from-cyan-500/30 via-fuchsia-500/15 to-transparent",
     priorityTier: "medium",
   },
@@ -92,6 +96,7 @@ export const brandProfiles: BrandProfile[] = [
     id: "southern-bro-handyman-services",
     name: "Southern Bro Handyman Services",
     shortLabel: "Handyman Services",
+    requestCategory: "Handyman Services",
     logo: "/LOGOS/SouthernBro-Handyman-Services-Logo.png",
     summary: "Reliable repair, installation, and property support for residential and commercial needs.",
     description:
@@ -106,7 +111,7 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "Designed for homeowners, landlords, property managers, and businesses needing dependable maintenance support.",
     ctaLabel: "Request Handyman Help",
-    requestHref: "/request-quote?service=Handyman%20Services",
+    requestHref: "/handyman",
     pageHref: "/brands/southern-bro-handyman-services",
     accent: "from-amber-400/25 via-fuchsia-500/18 to-transparent",
     priorityTier: "medium",
@@ -117,6 +122,7 @@ export const brandProfiles: BrandProfile[] = [
     id: "southern-bro-landscaping",
     name: "Southern Bro Landscaping",
     shortLabel: "Landscaping",
+    requestCategory: "Landscaping Services",
     logo: "/LOGOS/SouthernBro-Landscaping-Logo.png",
     summary: "Outdoor property care with lawn maintenance, cleanup, and recurring service support.",
     description:
@@ -131,17 +137,16 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "A strong fit for homeowners, rental properties, community spaces, and clients with ongoing grounds maintenance needs.",
     ctaLabel: "Book Landscaping",
-    requestHref: "/request-quote?service=Landscaping%20Services",
+    requestHref: "/landscaping",
     pageHref: "/brands/southern-bro-landscaping",
     accent: "from-emerald-400/18 via-fuchsia-500/20 to-transparent",
     priorityTier: "low",
-    status: "coming-soon",
-    statusNote: "Coming Soon",
   },
   {
     id: "ticket-vibez",
     name: "Ticket Vibez",
     shortLabel: "Ticketing",
+    requestCategory: "Ticket Vibez / Event Support",
     logo: "/LOGOS/TicketVibez-Logo.png",
     summary: "Ticketing support, bundle promotion, and event-facing access services under a distinct brand.",
     description:
@@ -164,6 +169,7 @@ export const brandProfiles: BrandProfile[] = [
     id: "va-recovery-services",
     name: "VA Recovery Services",
     shortLabel: "Community Programs",
+    requestCategory: "VA Recovery Services / Community Support",
     logo: "/LOGOS/VA-Recovery-Services-Logo.png",
     summary: "Community-focused support tied to advocacy, stability, recovery assistance, and the HOPE Grant mission.",
     description:
@@ -178,7 +184,7 @@ export const brandProfiles: BrandProfile[] = [
     audience:
       "Created for community members, support partners, and individuals seeking structured help and service-oriented outreach.",
     ctaLabel: "Request Community Support",
-    requestHref: "/request-quote?service=VA%20Recovery%20Services%20%2F%20Community%20Support",
+    requestHref: "/community-support",
     pageHref: "/brands/va-recovery-services",
     accent: "from-[#d4a84f]/35 via-[#1e3a8a]/20 to-transparent",
     priorityTier: "medium",
@@ -187,6 +193,20 @@ export const brandProfiles: BrandProfile[] = [
 ];
 
 export const serviceCategoryOptions = brandProfiles.map((brand) => brand.name);
+
+export function getBrandProfile(id: string) {
+  return brandProfiles.find((brand) => brand.id === id);
+}
+
+export function getRequestRouteForCategory(category: string) {
+  const matchingBrand = brandProfiles.find((brand) => brand.requestCategory === category);
+
+  if (matchingBrand) {
+    return matchingBrand.requestHref;
+  }
+
+  return `/request-quote?service=${encodeURIComponent(category)}`;
+}
 
 export const aboutHighlights = [
   {

@@ -1,0 +1,53 @@
+INTERNSHIP WEEK 2 - EVIDENCE SUMMARY
+Student: Vito Loprestti
+Major: Computer Science
+Company: Southern Bro Enterprises LLC
+
+Purpose
+This document summarizes the main evidence of the technical work completed during Week 2 of the internship preparation phase.
+
+Verified Hours
+- Week 2 covers Monday, March 16, 2026 through Sunday, March 22, 2026.
+- The screenshot-based timesheet totals 25 hours if the Sunday, March 22, 2026 documentation session is included.
+- The verified completed hours through Saturday, March 21, 2026 total 22 hours.
+
+Live Website Evidence
+- Production domain connected and serving the public site:
+  https://southernbroenterprises.com/
+- Preview / staging domain created for review before production:
+  https://preview.southernbroenterprises.com/
+
+Deployment and Workflow Evidence
+- Production workflow organized through Git and Vercel.
+- Separate staging branch created to test and review new features before moving them to the main public site.
+- Domain and DNS configuration updated so the website could be deployed through the company's public domain.
+
+Git Commit Evidence
+- 68e9b92 - Add Squarespace-inspired pages and coming soon states
+- 14d2277 - Improve mobile navigation and desktop home logo
+- 096faf2 - Default the site to dark theme
+- b2dfb24 - Refine staging UI and add multilingual navigation
+- 6350420 - Refine staging header and core translations
+- 7f795dc - Polish preview mobile layout
+
+Technical Work Evidence
+- Website restructuring and navigation improvements
+- Responsive layout improvements for desktop and mobile
+- Theme support improvements
+- Multilingual support work for English, Spanish, and French
+- Public copy cleanup and professionalization
+- Preview workflow for supervisor review and staged approval
+- Ongoing planning for a stronger database structure to support service requests, content organization, and future integrations
+
+Computer Science Relevance
+This work reflects Computer Science responsibilities related to front-end development, system organization, deployment workflows, platform integration planning, and data-management strategy. In addition to interface development, part of this week's work involved thinking about how a well-designed database could later support scalable service management, customer request handling, and structured business operations.
+
+Suggested Supporting Attachments
+- Screenshots of the production site
+- Screenshots of the preview site
+- Screenshots of Vercel deployment status / domains
+- Weekly report document
+- Timesheet for Week 2
+
+Prepared by:
+Vito Loprestti

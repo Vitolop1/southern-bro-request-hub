@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import RequestPageShell from "@/components/request-page-shell";
 import ServiceForm from "@/components/service-form";
-import ServicePageTemplate from "@/components/service-page-template";
-import { getPriorityService } from "@/lib/site-content";
+import { getBrandProfile } from "@/lib/brand-data";
+import { consultingRequestTheme } from "@/lib/request-page-themes";
 
-const consultingService = getPriorityService("consulting");
+const consultingBrand = getBrandProfile("southern-bro-enterprises");
 
 export const metadata: Metadata = {
   title: "Business Consulting | Southern Bro Enterprises",
@@ -14,39 +15,48 @@ export const metadata: Metadata = {
 };
 
 export default function ConsultingPage() {
-  if (!consultingService) {
+  if (!consultingBrand) {
     return null;
   }
 
   return (
     <main className="min-h-screen bg-[#090312] text-white">
       <Navbar />
-      <ServicePageTemplate service={consultingService} />
-
-      <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.96),rgba(11,4,22,0.98))] p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              Request Consulting
-            </p>
-            <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              Start your consulting request with confidence
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              This form helps business owners share goals, timelines, and support
-              needs in one clear consulting request flow.
-            </p>
-          </div>
-
-          <ServiceForm
-            defaultCategory={consultingService.quoteCategory}
-            lockCategory
-            title="Request Business Consulting"
-            description="Use this quote form to request startup support, consulting, launch guidance, or operational help from Southern Bro Enterprises."
-            submitLabel="Submit Consulting Request"
-          />
-        </div>
-      </section>
+      <RequestPageShell
+        eyebrow="Business Consulting"
+        title="Request business consulting"
+        intro="You are on the dedicated consulting request page for Southern Bro Enterprises. This intake flow is built to make it obvious that you are requesting business support, startup help, or operational guidance."
+        brandName={consultingBrand.name}
+        brandSummary={consultingBrand.description}
+        logoSrc={consultingBrand.logo}
+        logoAlt={`${consultingBrand.name} logo`}
+        highlights={[
+          "Startup planning and launch support",
+          "Operational guidance and organization",
+          "Business goals and timeline capture",
+          "Professional quote request flow",
+        ]}
+        checklistTitle="What To Include"
+        checklist={[
+          "Tell us what kind of business support you need.",
+          "Share your timeline and where you are in the process.",
+          "Add location, budget, or scope details if they matter.",
+          "Include the clearest next step you want help with.",
+        ]}
+        audience={consultingBrand.audience}
+        requestNote="This page sends a consulting request so the team can review your business goals, contact you, and prepare the right follow-up."
+        theme={consultingRequestTheme}
+      >
+        <ServiceForm
+          defaultCategory={consultingBrand.requestCategory}
+          lockCategory
+          title="Request Business Consulting"
+          description="Use this form to request startup support, consulting, launch guidance, or operational help from Southern Bro Enterprises."
+          submitLabel="Submit Consulting Request"
+          sectionLabel="Consulting Request"
+          theme={consultingRequestTheme.formTheme}
+        />
+      </RequestPageShell>
 
       <Footer />
     </main>

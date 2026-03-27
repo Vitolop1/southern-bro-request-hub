@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
+import { getRequestRouteForCategory } from "@/lib/brand-data";
 import { priorityServices } from "@/lib/site-content";
 
 type PriorityServicesProps = {
@@ -75,7 +76,7 @@ export default function PriorityServices({
                   {messages.priorityServices.exploreService}
                 </Link>
                 <Link
-                  href={`/request-quote?service=${encodeURIComponent(service.quoteCategory)}`}
+                  href={getRequestRouteForCategory(service.quoteCategory)}
                   className="inline-flex rounded-full border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
                 >
                   {messages.priorityServices.ctas[index] ?? service.ctaLabel}

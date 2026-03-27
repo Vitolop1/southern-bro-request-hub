@@ -121,7 +121,7 @@ export const requestCategoryOptions = [
   "Business Consulting",
   "Detailing Services",
   "Ticket Vibez / Event Support",
-  "Delivery & Catering Support",
+  "Delivery Support",
   "VA Recovery Services / Community Support",
   "General Business Support",
   "Other",

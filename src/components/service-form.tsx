@@ -3,8 +3,21 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/components/language-provider";
-import type { ServiceFormData } from "@/types/requests";
+import type {
+  RequestSubmissionResult,
+  ServiceFormData,
+  ServiceRequestPayload,
+} from "@/types/requests";
 import { requestCategoryOptions } from "@/lib/site-content";
+
+export type RequestFormTheme = {
+  formClassName?: string;
+  inputClassName?: string;
+  sectionLabelClassName?: string;
+  lockedCategoryClassName?: string;
+  buttonClassName?: string;
+  errorClassName?: string;
+};
 
 type ServiceFormProps = {
   title?: string;
@@ -13,6 +26,7 @@ type ServiceFormProps = {
   submitLabel?: string;
   defaultCategory?: string;
   lockCategory?: boolean;
+  theme?: RequestFormTheme;
 };
 
 export default function ServiceForm({
@@ -22,11 +36,28 @@ export default function ServiceForm({
   submitLabel,
   defaultCategory = requestCategoryOptions[0],
   lockCategory = false,
+  theme,
 }: ServiceFormProps) {
   const router = useRouter();
   const { messages } = useLanguage();
   const fieldClassName =
+    theme?.inputClassName ??
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#aa9fc0] focus:border-fuchsia-300/70 focus:bg-white/10";
+  const formClassName =
+    theme?.formClassName ??
+    "space-y-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.94),rgba(10,4,18,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)]";
+  const sectionLabelClassName =
+    theme?.sectionLabelClassName ??
+    "text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]";
+  const lockedCategoryClassName =
+    theme?.lockedCategoryClassName ??
+    "rounded-[1.25rem] border border-fuchsia-300/40 bg-fuchsia-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white";
+  const buttonClassName =
+    theme?.buttonClassName ??
+    "w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60";
+  const errorClassName =
+    theme?.errorClassName ??
+    "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100";
 
   const categoryOptions = requestCategoryOptions.map((value, index) => ({
     value,
@@ -58,6 +89,7 @@ export default function ServiceForm({
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -72,25 +104,55 @@ export default function ServiceForm({
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError("");
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      const params = new URLSearchParams({
-        type: "quote",
-        request: `SBE-${Date.now().toString().slice(-6)}`,
-        service: formData.category,
+    try {
+      const payload: ServiceRequestPayload = {
+        kind: "service",
+        ...formData,
+      };
+
+      const response = await fetch("/api/service-requests", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
-      router.push(`/thank-you?${params.toString()}`);
-    }, 700);
+
+      const result = (await response.json()) as
+        | RequestSubmissionResult
+        | { error?: string };
+
+      if (!response.ok) {
+        throw new Error(
+          ("error" in result && result.error) || "Unable to submit the request."
+        );
+      }
+
+      const submissionResult = result as RequestSubmissionResult;
+
+      router.push(
+        `/thank-you?type=quote&request=${encodeURIComponent(submissionResult.requestId)}&service=${encodeURIComponent(submissionResult.service)}`
+      );
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Unable to submit the request right now."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.94),rgba(10,4,18,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.12)]"
+      className={formClassName}
     >
       <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]">
+        <p className={sectionLabelClassName}>
           {resolvedSectionLabel}
         </p>
         <h2 className="mt-3 text-2xl font-black uppercase tracking-[0.05em] text-white">
@@ -170,7 +232,7 @@ export default function ServiceForm({
             {messages.serviceForm.labels.category}
           </label>
           {lockCategory ? (
-            <div className="rounded-[1.25rem] border border-fuchsia-300/40 bg-fuchsia-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white">
+            <div className={lockedCategoryClassName}>
               {categoryOptions.find((option) => option.value === formData.category)?.label ?? formData.category}
             </div>
           ) : (
@@ -286,10 +348,12 @@ export default function ServiceForm({
         </div>
       </div>
 
+      {submitError && <p className={errorClassName}>{submitError}</p>}
+
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60"
+        className={buttonClassName}
       >
         {isSubmitting ? messages.serviceForm.submitting : resolvedSubmitLabel}
       </button>

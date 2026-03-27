@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import RequestPageShell from "@/components/request-page-shell";
 import ServiceForm from "@/components/service-form";
-import ServicePageTemplate from "@/components/service-page-template";
-import { getPriorityService } from "@/lib/site-content";
+import { getBrandProfile } from "@/lib/brand-data";
+import { detailingRequestTheme } from "@/lib/request-page-themes";
 
-const detailingService = getPriorityService("detailing");
+const detailingBrand = getBrandProfile("detailing-specials");
 
 export const metadata: Metadata = {
   title: "Detailing Services | Southern Bro Enterprises",
@@ -14,40 +15,48 @@ export const metadata: Metadata = {
 };
 
 export default function DetailingPage() {
-  if (!detailingService) {
+  if (!detailingBrand) {
     return null;
   }
 
   return (
-    <main className="min-h-screen bg-[#090312] text-white">
+    <main className="min-h-screen bg-[#080814] text-white">
       <Navbar />
-      <ServicePageTemplate service={detailingService} />
-
-      <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(26,8,48,0.96),rgba(11,4,22,0.98))] p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
-              Request Detailing
-            </p>
-            <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              Give customers a direct path into service
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              This intake flow supports a more serious auto detailing presentation by
-              collecting the vehicle details, service location, urgency, and
-              budget expectations in one place.
-            </p>
-          </div>
-
-          <ServiceForm
-            defaultCategory={detailingService.quoteCategory}
-            lockCategory
-            title="Request Detailing Services"
-            description="Use this quote form to request auto detailing support with a preferred timeline, service location, and vehicle details."
-            submitLabel="Submit Detailing Request"
-          />
-        </div>
-      </section>
+      <RequestPageShell
+        eyebrow="Detailing Specials"
+        title="Request detailing services"
+        intro="This page is specifically for auto detailing requests, so customers can immediately see they are booking the detailing lane and not a general Southern Bro form."
+        brandName={detailingBrand.name}
+        brandSummary={detailingBrand.description}
+        logoSrc={detailingBrand.logo}
+        logoAlt={`${detailingBrand.name} logo`}
+        highlights={[
+          "Interior and exterior detailing requests",
+          "Vehicle-specific notes and cleanup needs",
+          "Service location and timing details",
+          "Cleaner booking flow for mobile and desktop",
+        ]}
+        checklistTitle="What To Include"
+        checklist={[
+          "Describe the vehicle and the service needed.",
+          "Add the address or service location if applicable.",
+          "Share your timeline and any urgency.",
+          "Include budget expectations or special conditions.",
+        ]}
+        audience={detailingBrand.audience}
+        requestNote="Customers on this page are clearly inside the Detailing Specials request flow, with the service logo and form tied directly to detailing."
+        theme={detailingRequestTheme}
+      >
+        <ServiceForm
+          defaultCategory={detailingBrand.requestCategory}
+          lockCategory
+          title="Request Detailing Services"
+          description="Use this form to request auto detailing support with a preferred timeline, service location, and vehicle details."
+          submitLabel="Submit Detailing Request"
+          sectionLabel="Detailing Request"
+          theme={detailingRequestTheme.formTheme}
+        />
+      </RequestPageShell>
 
       <Footer />
     </main>

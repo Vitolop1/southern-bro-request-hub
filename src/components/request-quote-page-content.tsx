@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import PriorityServices from "@/components/priority-services";
 import ServiceForm from "@/components/service-form";
 import { useLanguage } from "@/components/language-provider";
+import { getRequestRouteForCategory } from "@/lib/brand-data";
 import { requestCategoryOptions } from "@/lib/site-content";
 
 type RequestQuotePageContentProps = {
@@ -72,11 +73,15 @@ export default function RequestQuotePageContent({
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#ffb8f0]">
                 {messages.common.quickAccess}
               </p>
+              <p className="mt-4 text-sm leading-6 text-[#d9d1e8]">
+                Open a service-specific request page when you already know which
+                Southern Bro service you need.
+              </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 {requestCategoryOptions.slice(0, 6).map((option, index) => (
                   <Link
                     key={option}
-                    href={`/request-quote?service=${encodeURIComponent(option)}`}
+                    href={getRequestRouteForCategory(option)}
                     className="rounded-full border border-white/15 bg-white/6 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-white transition hover:bg-white/12"
                   >
                     {messages.requestQuotePage.categoryLabels[index] ?? option}

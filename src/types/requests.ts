@@ -39,3 +39,24 @@ export type ServiceFormData = {
   referralSource: string;
   urgency: string;
 };
+
+export type RequestKind = "service" | "delivery";
+
+export type ServiceRequestPayload = ServiceFormData & {
+  kind: "service";
+};
+
+export type DeliveryRequestPayload = DeliveryFormData & {
+  kind: "delivery";
+  serviceLabel: string;
+};
+
+export type RequestSubmissionPayload =
+  | ServiceRequestPayload
+  | DeliveryRequestPayload;
+
+export type RequestSubmissionResult = {
+  requestId: string;
+  service: string;
+  type: RequestKind;
+};

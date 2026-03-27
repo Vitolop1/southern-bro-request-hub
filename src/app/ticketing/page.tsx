@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import RequestPageShell from "@/components/request-page-shell";
 import ServiceForm from "@/components/service-form";
-import ServicePageTemplate from "@/components/service-page-template";
-import { getPriorityService } from "@/lib/site-content";
+import { getBrandProfile } from "@/lib/brand-data";
+import { ticketingRequestTheme } from "@/lib/request-page-themes";
 
-const ticketingService = getPriorityService("ticketing");
+const ticketingBrand = getBrandProfile("ticket-vibez");
 
 export const metadata: Metadata = {
   title: "Ticket Vibez Event Support | Southern Bro Enterprises",
@@ -14,39 +15,48 @@ export const metadata: Metadata = {
 };
 
 export default function TicketingPage() {
-  if (!ticketingService) {
+  if (!ticketingBrand) {
     return null;
   }
 
   return (
-    <main className="min-h-screen bg-[#090312] text-white">
+    <main className="min-h-screen bg-[#071120] text-white">
       <Navbar />
-      <ServicePageTemplate service={ticketingService} />
-
-      <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <div className="rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(10,18,38,0.96),rgba(11,4,22,0.98))] p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#7dd3fc]">
-              Request Ticketing Support
-            </p>
-            <h2 className="mt-4 text-3xl font-black uppercase tracking-[0.05em] text-white">
-              Dedicated event and ticketing support
-            </h2>
-            <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              Ticket Vibez gives customers and organizers a direct path for
-              event support, community ticket requests, and promotional assistance.
-            </p>
-          </div>
-
-          <ServiceForm
-            defaultCategory={ticketingService.quoteCategory}
-            lockCategory
-            title="Request Ticket Vibez Support"
-            description="Use this quote form to request ticketing support, event access help, promotional support, or bundled event services."
-            submitLabel="Submit Event Request"
-          />
-        </div>
-      </section>
+      <RequestPageShell
+        eyebrow="Ticket Vibez"
+        title="Request ticketing and event support"
+        intro="This request page makes it clear that customers are inside Ticket Vibez, so event inquiries, access help, and promotional support stay separate from the rest of the company intake."
+        brandName={ticketingBrand.name}
+        brandSummary={ticketingBrand.description}
+        logoSrc={ticketingBrand.logo}
+        logoAlt={`${ticketingBrand.name} logo`}
+        highlights={[
+          "Event ticketing and access support",
+          "Community and promotional event requests",
+          "Organizer-friendly intake details",
+          "Dedicated Ticket Vibez branding and follow-up",
+        ]}
+        checklistTitle="What To Include"
+        checklist={[
+          "Share the event or ticket support you need.",
+          "Add timing, dates, or campaign details.",
+          "Tell us if this is for a customer, organizer, or community event.",
+          "Include any budget or urgency notes that matter.",
+        ]}
+        audience={ticketingBrand.audience}
+        requestNote="This page is designed so a customer immediately understands they are requesting Ticket Vibez support and not a general company quote."
+        theme={ticketingRequestTheme}
+      >
+        <ServiceForm
+          defaultCategory={ticketingBrand.requestCategory}
+          lockCategory
+          title="Request Ticket Vibez Support"
+          description="Use this form to request ticketing support, event access help, promotional support, or bundled event services."
+          submitLabel="Submit Event Request"
+          sectionLabel="Ticketing Request"
+          theme={ticketingRequestTheme.formTheme}
+        />
+      </RequestPageShell>
 
       <Footer />
     </main>
