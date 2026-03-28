@@ -138,8 +138,8 @@ export const brandProfiles: BrandProfile[] = [
       "A strong fit for homeowners, rental properties, community spaces, and clients with ongoing grounds maintenance needs.",
     ctaLabel: "Book Landscaping",
     requestHref: "/landscaping",
-    pageHref: "/brands/southern-bro-landscaping",
-    accent: "from-emerald-400/18 via-fuchsia-500/20 to-transparent",
+    pageHref: "/landscaping",
+    accent: "from-emerald-400/24 via-lime-400/14 to-transparent",
     priorityTier: "low",
   },
   {

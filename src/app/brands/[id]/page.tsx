@@ -24,6 +24,10 @@ export default async function BrandPage({ params }: BrandPageProps) {
     redirect("/brands/southern-bro-delivery");
   }
 
+  if (id === "southern-bro-landscaping") {
+    redirect("/landscaping");
+  }
+
   const brand = brandProfiles.find((entry) => entry.id === id);
 
   if (!brand) {
