@@ -13,7 +13,10 @@ import { requestCategoryOptions } from "@/lib/site-content";
 export type RequestFormTheme = {
   formClassName?: string;
   inputClassName?: string;
+  optionClassName?: string;
   sectionLabelClassName?: string;
+  fieldLabelClassName?: string;
+  descriptionClassName?: string;
   lockedCategoryClassName?: string;
   buttonClassName?: string;
   errorClassName?: string;
@@ -49,9 +52,17 @@ export default function ServiceForm({
   const sectionLabelClassName =
     theme?.sectionLabelClassName ??
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]";
+  const fieldLabelClassName =
+    theme?.fieldLabelClassName ??
+    "mb-2 block text-sm font-medium text-[#f3e8ff]";
+  const descriptionClassName =
+    theme?.descriptionClassName ??
+    "mt-3 text-sm leading-6 text-[#d9d1e8]";
   const lockedCategoryClassName =
     theme?.lockedCategoryClassName ??
     "rounded-[1.25rem] border border-fuchsia-300/40 bg-fuchsia-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white";
+  const optionClassName =
+    theme?.optionClassName ?? "bg-[#14061f] text-white";
   const buttonClassName =
     theme?.buttonClassName ??
     "w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60";
@@ -158,14 +169,14 @@ export default function ServiceForm({
         <h2 className="mt-3 text-2xl font-black uppercase tracking-[0.05em] text-white">
           {resolvedTitle}
         </h2>
-        <p className="mt-3 text-sm leading-6 text-[#d9d1e8]">
+        <p className={descriptionClassName}>
           {resolvedDescription}
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="fullName" className={fieldLabelClassName}>
             {messages.serviceForm.labels.fullName}
           </label>
           <input
@@ -181,7 +192,7 @@ export default function ServiceForm({
         </div>
 
         <div>
-          <label htmlFor="companyName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="companyName" className={fieldLabelClassName}>
             {messages.serviceForm.labels.companyName}
           </label>
           <input
@@ -196,7 +207,7 @@ export default function ServiceForm({
         </div>
 
         <div>
-          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="phone" className={fieldLabelClassName}>
             {messages.serviceForm.labels.phone}
           </label>
           <input
@@ -212,7 +223,7 @@ export default function ServiceForm({
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="email" className={fieldLabelClassName}>
             {messages.serviceForm.labels.email}
           </label>
           <input
@@ -228,7 +239,7 @@ export default function ServiceForm({
         </div>
 
         <div>
-          <label htmlFor="category" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="category" className={fieldLabelClassName}>
             {messages.serviceForm.labels.category}
           </label>
           {lockCategory ? (
@@ -244,7 +255,7 @@ export default function ServiceForm({
               className={fieldClassName}
             >
               {categoryOptions.map((option) => (
-                <option key={option.value} value={option.value} className="bg-[#14061f] text-white">
+                <option key={option.value} value={option.value} className={optionClassName}>
                   {option.label}
                 </option>
               ))}
@@ -253,7 +264,7 @@ export default function ServiceForm({
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="description" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="description" className={fieldLabelClassName}>
             {messages.serviceForm.labels.description}
           </label>
           <textarea
@@ -269,7 +280,7 @@ export default function ServiceForm({
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="address" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="address" className={fieldLabelClassName}>
             {messages.serviceForm.labels.address}
           </label>
           <input
@@ -284,7 +295,7 @@ export default function ServiceForm({
         </div>
 
         <div>
-          <label htmlFor="timeline" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="timeline" className={fieldLabelClassName}>
             {messages.serviceForm.labels.timeline}
           </label>
           <input
@@ -299,7 +310,7 @@ export default function ServiceForm({
         </div>
 
         <div>
-          <label htmlFor="budget" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="budget" className={fieldLabelClassName}>
             {messages.serviceForm.labels.budget}
           </label>
           <input
@@ -314,7 +325,7 @@ export default function ServiceForm({
         </div>
 
         <div>
-          <label htmlFor="urgency" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="urgency" className={fieldLabelClassName}>
             {messages.serviceForm.labels.urgency}
           </label>
           <select
@@ -325,7 +336,7 @@ export default function ServiceForm({
             className={fieldClassName}
           >
             {urgencyOptions.map((option) => (
-              <option key={option.value} value={option.value} className="bg-[#14061f] text-white">
+              <option key={option.value} value={option.value} className={optionClassName}>
                 {option.label}
               </option>
             ))}
@@ -333,7 +344,7 @@ export default function ServiceForm({
         </div>
 
         <div>
-          <label htmlFor="referralSource" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="referralSource" className={fieldLabelClassName}>
             {messages.serviceForm.labels.referralSource}
           </label>
           <input

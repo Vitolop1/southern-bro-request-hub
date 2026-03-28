@@ -14,7 +14,10 @@ export type RequestPageTheme = {
 function buildFormTheme(
   formClassName: string,
   inputClassName: string,
+  optionClassName: string,
   sectionLabelClassName: string,
+  fieldLabelClassName: string,
+  descriptionClassName: string,
   lockedCategoryClassName: string,
   buttonClassName: string,
   errorClassName: string
@@ -22,7 +25,10 @@ function buildFormTheme(
   return {
     formClassName,
     inputClassName,
+    optionClassName,
     sectionLabelClassName,
+    fieldLabelClassName,
+    descriptionClassName,
     lockedCategoryClassName,
     buttonClassName,
     errorClassName,
@@ -42,7 +48,10 @@ export const consultingRequestTheme: RequestPageTheme = {
   formTheme: buildFormTheme(
     "space-y-6 rounded-[2rem] border border-fuchsia-300/20 bg-[linear-gradient(180deg,rgba(31,8,49,0.98),rgba(10,4,20,0.98))] p-8 shadow-[0_0_60px_rgba(193,41,255,0.16)]",
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#aa9fc0] focus:border-fuchsia-300/70 focus:bg-white/10",
+    "bg-[#14061f] text-white",
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]",
+    "mb-2 block text-sm font-medium text-[#f3e8ff]",
+    "mt-3 text-sm leading-6 text-[#d9d1e8]",
     "rounded-[1.25rem] border border-fuchsia-300/40 bg-fuchsia-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white",
     "w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60",
     "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100"
@@ -62,7 +71,10 @@ export const detailingRequestTheme: RequestPageTheme = {
   formTheme: buildFormTheme(
     "space-y-6 rounded-[2rem] border border-[#d4a84f]/18 bg-[linear-gradient(180deg,rgba(12,18,37,0.98),rgba(10,5,18,0.98))] p-8 shadow-[0_0_60px_rgba(212,168,79,0.14)]",
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#b8b2c9] focus:border-[#d4a84f]/70 focus:bg-white/10",
+    "bg-[#140f09] text-white",
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#f6d596]",
+    "mb-2 block text-sm font-medium text-[#f8eacc]",
+    "mt-3 text-sm leading-6 text-[#ded7c8]",
     "rounded-[1.25rem] border border-[#d4a84f]/40 bg-[#d4a84f]/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white",
     "w-full rounded-full border border-[#d4a84f]/55 bg-[linear-gradient(90deg,_rgba(212,168,79,0.95),_rgba(30,167,255,0.92))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#08111f] shadow-[0_0_30px_rgba(212,168,79,0.22)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60",
     "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100"
@@ -82,7 +94,10 @@ export const deliveryRequestTheme: RequestPageTheme = {
   formTheme: buildFormTheme(
     "space-y-6 rounded-[2rem] border border-cyan-300/18 bg-[linear-gradient(180deg,rgba(10,20,38,0.98),rgba(6,11,22,0.98))] p-8 shadow-[0_0_60px_rgba(34,211,238,0.12)]",
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#9bb8c8] focus:border-cyan-300/70 focus:bg-white/10",
+    "bg-[#071521] text-white",
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#7dd3fc]",
+    "mb-2 block text-sm font-medium text-[#dff7ff]",
+    "mt-3 text-sm leading-6 text-[#c8dde8]",
     "rounded-[1.25rem] border border-cyan-300/35 bg-cyan-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white",
     "w-full rounded-full border border-cyan-300/55 bg-[linear-gradient(90deg,_rgba(30,167,255,0.95),_rgba(34,211,238,0.92))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#06121b] shadow-[0_0_30px_rgba(34,211,238,0.18)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60",
     "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100"
@@ -102,7 +117,10 @@ export const ticketingRequestTheme: RequestPageTheme = {
   formTheme: buildFormTheme(
     "space-y-6 rounded-[2rem] border border-sky-300/16 bg-[linear-gradient(180deg,rgba(8,20,40,0.98),rgba(5,10,22,0.98))] p-8 shadow-[0_0_60px_rgba(56,189,248,0.12)]",
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#a9bbd8] focus:border-sky-300/70 focus:bg-white/10",
+    "bg-[#08172b] text-white",
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#93c5fd]",
+    "mb-2 block text-sm font-medium text-[#e2efff]",
+    "mt-3 text-sm leading-6 text-[#cfdbef]",
     "rounded-[1.25rem] border border-sky-300/35 bg-sky-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white",
     "w-full rounded-full border border-sky-300/55 bg-[linear-gradient(90deg,_rgba(56,189,248,0.95),_rgba(37,99,235,0.92))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#06111e] shadow-[0_0_30px_rgba(56,189,248,0.18)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60",
     "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100"
@@ -120,9 +138,12 @@ export const landscapingRequestTheme: RequestPageTheme = {
   chipClassName: "border-emerald-200/12 bg-white/5 text-[#ecfdf5]",
   bulletClassName: "bg-[#4ade80]",
   formTheme: buildFormTheme(
-    "space-y-6 rounded-[2rem] border border-emerald-300/16 bg-[linear-gradient(180deg,rgba(10,26,18,0.98),rgba(5,12,8,0.98))] p-8 shadow-[0_0_60px_rgba(74,222,128,0.12)]",
-    "w-full rounded-[1.25rem] border border-emerald-100/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#a0b9ab] focus:border-emerald-300/60 focus:bg-white/10",
+    "space-y-6 rounded-[2rem] border border-emerald-300/16 bg-[linear-gradient(180deg,rgba(8,30,15,0.98),rgba(4,12,7,0.99))] p-8 shadow-[0_0_60px_rgba(74,222,128,0.14)]",
+    "w-full rounded-[1.25rem] border border-emerald-100/12 bg-[#10311a]/88 px-4 py-3 text-[#f7fff9] outline-none transition placeholder:text-[#9bb3a2] focus:border-emerald-300/60 focus:bg-[#143e21]",
+    "bg-[#0b2412] text-[#f2fff5]",
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#86efac]",
+    "mb-2 block text-sm font-medium text-[#d8f7df]",
+    "mt-3 text-sm leading-6 text-[#cbe3d0]",
     "rounded-[1.25rem] border border-emerald-300/35 bg-emerald-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white",
     "w-full rounded-full border border-emerald-300/50 bg-[linear-gradient(90deg,_rgba(34,197,94,0.95),_rgba(132,204,22,0.92))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#07110b] shadow-[0_0_30px_rgba(74,222,128,0.18)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60",
     "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100"
@@ -142,7 +163,10 @@ export const handymanRequestTheme: RequestPageTheme = {
   formTheme: buildFormTheme(
     "space-y-6 rounded-[2rem] border border-amber-300/18 bg-[linear-gradient(180deg,rgba(28,17,8,0.98),rgba(10,7,4,0.98))] p-8 shadow-[0_0_60px_rgba(245,158,11,0.12)]",
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#c2b7ab] focus:border-amber-300/60 focus:bg-white/10",
+    "bg-[#211408] text-white",
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#fcd34d]",
+    "mb-2 block text-sm font-medium text-[#fff0c8]",
+    "mt-3 text-sm leading-6 text-[#e4d5c0]",
     "rounded-[1.25rem] border border-amber-300/35 bg-amber-500/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white",
     "w-full rounded-full border border-amber-300/55 bg-[linear-gradient(90deg,_rgba(245,158,11,0.95),_rgba(249,115,22,0.92))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#140b05] shadow-[0_0_30px_rgba(245,158,11,0.18)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60",
     "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100"
@@ -162,7 +186,10 @@ export const communitySupportRequestTheme: RequestPageTheme = {
   formTheme: buildFormTheme(
     "space-y-6 rounded-[2rem] border border-[#d4a84f]/16 bg-[linear-gradient(180deg,rgba(16,24,44,0.98),rgba(8,11,21,0.98))] p-8 shadow-[0_0_60px_rgba(212,168,79,0.12)]",
     "w-full rounded-[1.25rem] border border-white/10 bg-white/6 px-4 py-3 text-white outline-none transition placeholder:text-[#afbacf] focus:border-[#d4a84f]/60 focus:bg-white/10",
+    "bg-[#10162a] text-white",
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#f6d596]",
+    "mb-2 block text-sm font-medium text-[#f6edd9]",
+    "mt-3 text-sm leading-6 text-[#d5d8e3]",
     "rounded-[1.25rem] border border-[#d4a84f]/35 bg-[#d4a84f]/10 px-4 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-white",
     "w-full rounded-full border border-[#d4a84f]/55 bg-[linear-gradient(90deg,_rgba(212,168,79,0.95),_rgba(30,58,138,0.92))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(212,168,79,0.18)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60",
     "rounded-[1.25rem] border border-rose-300/40 bg-rose-500/10 px-4 py-3 text-sm text-rose-100"

@@ -36,6 +36,14 @@ export default function DeliveryForm({
   const sectionLabelClassName =
     theme?.sectionLabelClassName ??
     "text-sm font-semibold uppercase tracking-[0.26em] text-[#ffb8f0]";
+  const fieldLabelClassName =
+    theme?.fieldLabelClassName ??
+    "mb-2 block text-sm font-medium text-[#f3e8ff]";
+  const descriptionClassName =
+    theme?.descriptionClassName ??
+    "mt-3 text-sm leading-6 text-[#d9d1e8]";
+  const optionClassName =
+    theme?.optionClassName ?? "bg-[#14061f] text-white";
   const buttonClassName =
     theme?.buttonClassName ??
     "w-full rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.24)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-60";
@@ -127,14 +135,14 @@ export default function DeliveryForm({
         <h2 className="mt-3 text-2xl font-black uppercase tracking-[0.05em] text-white">
           {title}
         </h2>
-        <p className="mt-3 text-sm leading-6 text-[#d9d1e8]">
+        <p className={descriptionClassName}>
           {description}
         </p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="fullName" className={fieldLabelClassName}>
             Full Name
           </label>
           <input
@@ -150,7 +158,7 @@ export default function DeliveryForm({
         </div>
 
         <div>
-          <label htmlFor="phone" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="phone" className={fieldLabelClassName}>
             Phone Number
           </label>
           <input
@@ -166,7 +174,7 @@ export default function DeliveryForm({
         </div>
 
         <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="email" className={fieldLabelClassName}>
             Email Address
           </label>
           <input
@@ -182,7 +190,7 @@ export default function DeliveryForm({
         </div>
 
         <div>
-          <label htmlFor="requestType" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="requestType" className={fieldLabelClassName}>
             Request Type
           </label>
           <select
@@ -192,13 +200,13 @@ export default function DeliveryForm({
             onChange={handleChange}
             className={fieldClassName}
           >
-            <option value="delivery" className="bg-[#14061f] text-white">Delivery</option>
-            <option value="pickup" className="bg-[#14061f] text-white">Pickup</option>
+            <option value="delivery" className={optionClassName}>Delivery</option>
+            <option value="pickup" className={optionClassName}>Pickup</option>
           </select>
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="businessName" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="businessName" className={fieldLabelClassName}>
             Store / Restaurant Name
           </label>
           <input
@@ -214,7 +222,7 @@ export default function DeliveryForm({
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="itemsRequested" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="itemsRequested" className={fieldLabelClassName}>
             Items Requested
           </label>
           <textarea
@@ -230,7 +238,7 @@ export default function DeliveryForm({
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="address" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="address" className={fieldLabelClassName}>
             Delivery Address
           </label>
           <input
@@ -246,7 +254,7 @@ export default function DeliveryForm({
         </div>
 
         <div>
-          <label htmlFor="preferredTime" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="preferredTime" className={fieldLabelClassName}>
             Preferred Time
           </label>
           <input
@@ -261,7 +269,7 @@ export default function DeliveryForm({
         </div>
 
         <div>
-          <label htmlFor="paymentMethod" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="paymentMethod" className={fieldLabelClassName}>
             Payment Method
           </label>
           <select
@@ -271,15 +279,15 @@ export default function DeliveryForm({
             onChange={handleChange}
             className={fieldClassName}
           >
-            <option value="pay_on_delivery" className="bg-[#14061f] text-white">Pay on Delivery</option>
-            <option value="cash" className="bg-[#14061f] text-white">Cash</option>
-            <option value="card" className="bg-[#14061f] text-white">Card</option>
-            <option value="other" className="bg-[#14061f] text-white">Other</option>
+            <option value="pay_on_delivery" className={optionClassName}>Pay on Delivery</option>
+            <option value="cash" className={optionClassName}>Cash</option>
+            <option value="card" className={optionClassName}>Card</option>
+            <option value="other" className={optionClassName}>Other</option>
           </select>
         </div>
 
         <div className="md:col-span-2">
-          <label htmlFor="instructions" className="mb-2 block text-sm font-medium text-[#f3e8ff]">
+          <label htmlFor="instructions" className={fieldLabelClassName}>
             Special Instructions
           </label>
           <textarea
