@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -47,25 +48,10 @@ const requestChecklist = [
   "Size, urgency, or budget notes",
 ];
 
-const quickLinks = [
-  {
-    label: "Services",
-    href: "#services",
-  },
-  {
-    label: "Why Us",
-    href: "#why-us",
-  },
-  {
-    label: "Request",
-    href: "#request",
-  },
-];
-
 export const metadata: Metadata = {
-  title: "Southern Bro Landscaping | Lawn Care & Property Support",
+  title: "Southern Bro Landscaping | Outdoor Services",
   description:
-    "Southern Bro Landscaping is a dedicated green-first landscaping page for lawn care, seasonal cleanup, outdoor maintenance, and recurring property support.",
+    "Dedicated landscaping request page for Southern Bro Landscaping with a fully green outdoor-focused presentation for cleanup, maintenance, and recurring property care.",
 };
 
 export default function LandscapingPage() {
@@ -81,8 +67,14 @@ export default function LandscapingPage() {
       <header className="sticky top-0 z-40 border-b border-emerald-200/10 bg-[#07110a]/88 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4 md:px-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-emerald-300/25 bg-emerald-400/10 text-emerald-200 shadow-[0_0_30px_rgba(74,222,128,0.12)]">
-              <Leaf className="h-6 w-6" />
+            <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-emerald-300/25 bg-black/20 shadow-[0_0_30px_rgba(74,222,128,0.12)]">
+              <Image
+                src={landscapingBrand.logo}
+                alt={`${landscapingBrand.name} logo`}
+                width={48}
+                height={48}
+                className="h-full w-full object-cover"
+              />
             </div>
             <div>
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-emerald-300">
@@ -94,25 +86,19 @@ export default function LandscapingPage() {
             </div>
           </div>
 
-          <div className="hidden flex-wrap items-center gap-6 md:flex">
-            {quickLinks.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm font-bold uppercase tracking-[0.16em] text-[#d9e8db] transition hover:text-white"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
           <div className="flex flex-wrap items-center gap-3">
             <a
               href="#request"
               className="rounded-full border border-emerald-300/35 bg-emerald-400/12 px-5 py-2.5 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-emerald-400/18"
             >
-              Request Estimate
+              Request Service
             </a>
+            <Link
+              href="/"
+              className="rounded-full border border-white/12 bg-white/5 px-5 py-2.5 text-sm font-bold uppercase tracking-[0.16em] text-[#edf7ef] transition hover:bg-white/9"
+            >
+              Main Company Site
+            </Link>
           </div>
         </div>
       </header>
@@ -121,34 +107,38 @@ export default function LandscapingPage() {
         <div className="grid gap-8 xl:grid-cols-[1.08fr_0.92fr] xl:items-start">
           <div className="space-y-6">
             <div className="rounded-[2rem] border border-emerald-200/10 bg-[linear-gradient(180deg,rgba(9,25,15,0.94),rgba(5,13,8,0.98))] p-7 shadow-[0_0_60px_rgba(0,0,0,0.18)] md:p-9">
-              <div className="inline-flex items-center gap-3 rounded-full border border-emerald-300/18 bg-emerald-400/8 px-4 py-2 text-[0.72rem] font-bold uppercase tracking-[0.22em] text-emerald-200">
-                <Leaf className="h-4 w-4" />
-                Outdoor Property Services
-              </div>
-
-              <div className="mt-6 flex items-center gap-4">
-                <div className="flex h-[4.5rem] w-[4.5rem] items-center justify-center rounded-[1.7rem] border border-emerald-300/20 bg-[radial-gradient(circle_at_top,rgba(74,222,128,0.22),transparent_70%),linear-gradient(180deg,rgba(22,101,52,0.42),rgba(8,28,14,0.95))] p-5 text-emerald-100 shadow-[0_0_34px_rgba(34,197,94,0.16)]">
-                  <Leaf className="h-10 w-10" />
-                </div>
+              <div className="grid gap-6 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
                 <div>
-                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-emerald-300">
+                  <p className="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-300">
+                    Outdoor Property Services
+                  </p>
+                  <h1 className="mt-4 max-w-4xl text-4xl font-black uppercase tracking-[0.04em] text-white md:text-6xl">
+                    A dedicated landscaping company page
+                  </h1>
+                  <p className="mt-5 max-w-3xl text-lg leading-8 text-[#d6e5d9]">
+                    This page is built to feel like its own landscaping company, not a
+                    general Southern Bro service form. Everything here is focused on
+                    lawn care, outdoor upkeep, property cleanup, and recurring
+                    maintenance requests.
+                  </p>
+                </div>
+
+                <div className="rounded-[1.8rem] border border-emerald-200/10 bg-[linear-gradient(180deg,rgba(12,30,18,0.88),rgba(6,14,9,0.96))] p-4 shadow-[0_0_40px_rgba(74,222,128,0.08)]">
+                  <div className="overflow-hidden rounded-[1.4rem] border border-white/8 bg-black/20">
+                    <Image
+                      src={landscapingBrand.logo}
+                      alt={`${landscapingBrand.name} logo`}
+                      width={1024}
+                      height={1024}
+                      priority
+                      className="h-auto w-full object-cover"
+                    />
+                  </div>
+                  <p className="mt-4 text-center text-xs font-semibold uppercase tracking-[0.22em] text-emerald-200">
                     Southern Bro Landscaping
                   </p>
-                  <p className="mt-2 text-xl font-black uppercase tracking-[0.05em] text-white md:text-2xl">
-                    Lawn Care, Cleanup, and Property Maintenance
-                  </p>
                 </div>
               </div>
-
-              <h1 className="mt-4 max-w-4xl text-4xl font-black uppercase tracking-[0.04em] text-white md:text-6xl">
-                Built only for landscaping requests
-              </h1>
-              <p className="mt-5 max-w-3xl text-lg leading-8 text-[#d6e5d9]">
-                Request lawn maintenance, seasonal cleanup, outdoor property
-                support, and recurring grounds care from a page dedicated only to
-                landscaping work. The experience here is built around outdoor
-                service needs from top to bottom.
-              </p>
 
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[1.5rem] border border-emerald-200/10 bg-[#11301a]/80 p-5">
@@ -175,7 +165,7 @@ export default function LandscapingPage() {
                   href="#request"
                   className="inline-flex items-center gap-2 rounded-full border border-emerald-300/45 bg-[linear-gradient(90deg,_rgba(34,197,94,0.95),_rgba(132,204,22,0.92))] px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#061009] shadow-[0_0_28px_rgba(74,222,128,0.18)] transition hover:scale-[1.02]"
                 >
-                  Request Landscaping Service
+                  Start Landscaping Request
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
                 {primaryPhone?.href && (
@@ -190,7 +180,7 @@ export default function LandscapingPage() {
               </div>
             </div>
 
-            <div id="services" className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-3">
               {landscapingHighlights.map((item) => {
                 const Icon = item.icon;
 
@@ -213,7 +203,7 @@ export default function LandscapingPage() {
               })}
             </div>
 
-            <div id="why-us" className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
+            <div className="grid gap-4 md:grid-cols-[1.05fr_0.95fr]">
               <div className="rounded-[1.9rem] border border-emerald-200/10 bg-[linear-gradient(180deg,rgba(15,41,23,0.94),rgba(7,17,11,0.98))] p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.28em] text-emerald-300">
                   What This Company Handles
@@ -263,9 +253,9 @@ export default function LandscapingPage() {
                         Property-Ready Intake
                       </p>
                       <p className="mt-3 text-sm leading-7 text-[#d3e3d6]">
-                        Customers land directly in a landscaping-specific intake
-                        flow with no generic routing. The form is locked to
-                        landscaping so the request stays clear from the first click.
+                        This page is designed so customers can immediately tell
+                        they are requesting landscaping, not a generic company
+                        service. The form is locked specifically to landscaping.
                       </p>
                     </div>
                   </div>
@@ -281,11 +271,11 @@ export default function LandscapingPage() {
                   Southern Bro Landscaping
                 </p>
                 <h2 className="mt-3 text-3xl font-black uppercase tracking-[0.04em] text-white">
-                  Request your estimate
+                  Request landscaping services
                 </h2>
                 <p className="mt-4 text-sm leading-7 text-[#cde1d1]">
-                  Fill out this landscaping intake to request lawn maintenance,
-                  outdoor cleanup, recurring property support, or one-time grounds work.
+                  Fill out this page to request lawn maintenance, outdoor cleanup,
+                  recurring property support, or other landscaping work.
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[#eff9f0]">
@@ -304,8 +294,8 @@ export default function LandscapingPage() {
                 defaultCategory={landscapingBrand.requestCategory}
                 lockCategory
                 title="Request Landscaping Services"
-                description="Use this landscaping form to request lawn care, cleanup work, property maintenance, or recurring outdoor support."
-                submitLabel="Send Landscaping Request"
+                description="Use this dedicated landscaping form to request lawn care, cleanup work, property maintenance, or recurring outdoor support."
+                submitLabel="Submit Landscaping Request"
                 sectionLabel="Landscaping Request"
                 theme={landscapingRequestTheme.formTheme}
               />
@@ -313,20 +303,6 @@ export default function LandscapingPage() {
           </div>
         </div>
       </section>
-
-      <footer className="border-t border-emerald-200/10 bg-[#07110a]/90">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-sm text-[#d3e3d6] md:flex-row md:items-center md:justify-between md:px-6">
-          <p className="font-medium">
-            Southern Bro Landscaping
-          </p>
-          <Link
-            href="/"
-            className="font-semibold uppercase tracking-[0.16em] text-emerald-300 transition hover:text-white"
-          >
-            Visit Southern Bro Enterprises
-          </Link>
-        </div>
-      </footer>
     </main>
   );
 }
