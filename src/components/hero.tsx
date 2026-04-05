@@ -72,6 +72,24 @@ export default function Hero() {
           </Link>
         </div>
 
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#f5d483] sm:text-xs">
+            Featured Services
+          </p>
+          <Link
+            href="/landscaping"
+            className="rounded-full border border-emerald-300/45 bg-emerald-400/12 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#f3fff4] transition hover:bg-emerald-400/18"
+          >
+            Landscaping Services
+          </Link>
+          <Link
+            href="/detailing"
+            className="rounded-full border border-[#d4a84f]/40 bg-[#d4a84f]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#fff4da] transition hover:bg-[#d4a84f]/16"
+          >
+            Detailing Services
+          </Link>
+        </div>
+
         <BrandStrip />
       </div>
     </section>

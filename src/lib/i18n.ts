@@ -30,14 +30,14 @@ export const translations = {
     },
     hero: {
       eyebrow: "Southern Bro Enterprises LLC",
-      title: "A Multi-Level Business & Community Support Services Company",
-      tagline: "Putting Our Communities 1st by Southern Hospitality & Care",
+      title: "Business Support, Detailing, and Lawn Care in One Place",
+      tagline: "Licensed, insured, and built around Southern hospitality and care",
       intro:
-        "Southern Bro Enterprises helps local people, businesses, and community partners grow through practical support, stronger service access, and a clear customer path.",
+        "Southern Bro Enterprises helps local people, businesses, and property owners with clear request paths for landscaping, detailing, consulting, and community-focused support.",
       serviceArea: "Service Area: Lynchburg, VA & Virginia Region",
       whatWeDo: "Learn More",
       requestServices: "Request Our Services Here",
-      callUs: "Call Us To Figure Out More",
+      callUs: "Call Us for More Information",
     },
     theme: {
       light: "Light",
@@ -50,7 +50,7 @@ export const translations = {
     },
     footer: {
       brandSummary:
-        "Business support, delivery help, event support, and community-focused programs serving Lynchburg, Virginia and the wider region.",
+        "Business support, landscaping, detailing, and community-focused services serving Lynchburg, Virginia and the wider region.",
       mainPages: "Main Pages",
       morePages: "More Pages",
       contact: "Contact",
@@ -75,11 +75,11 @@ export const translations = {
       overviewEyebrow: "What Do We Do?",
       overviewTitle: "Business support, service requests, and community access in one place",
       overviewMission:
-        "At Southern Bro Enterprises we hold a strong ethical and moral position in helping our communities thrive. We all have a story, including us, and the company is designed to help local people, businesses, and community partners grow with practical support and responsive care.",
+        "Southern Bro Enterprises was built to support local people, businesses, and community partners through dependable service, ethical leadership, and responsive follow-up.",
       overviewOffer:
-        "At Southern Bro Enterprises, we work to support local businesses and community members through a broad mix of services and support paths.",
+        "We organize multiple service lanes under one parent company so customers can quickly understand what we offer, where to go, and how to request help.",
       overviewBrands:
-        "Current brands include the Southern Bro parent company, VA Biz Help business services, VA Recovery Services community support, and Ticket Vibez event services.",
+        "Current service focuses include Southern Bro Landscaping LLC, Detailing Specials, Southern Bro Enterprises consulting and operations support, community-focused programs, and additional branded service lanes.",
       hopeTitle: "The H.O.P.E. Grant Aid",
       hopeFounder: "Established by William Soteria",
       hopeParagraphs: [
@@ -114,15 +114,15 @@ export const translations = {
       contactEyebrow: "Contact Us",
       contactTitle: "Built for Lynchburg, VA and the wider Virginia region",
       contactIntro:
-        "Southern Bro Enterprises connects customers with consulting, detailing, ticketing, delivery, brand services, and community-focused programs through one recognizable brand family.",
+        "Southern Bro Enterprises connects customers with landscaping, detailing, consulting, and community-focused programs through one organized brand family.",
     },
     aboutSection: {
       eyebrow: "About Us",
-      title: "Southern Bro Enterprises is built to organize multiple service lanes professionally",
+      title: "Southern Bro Enterprises organizes multiple service lanes under one professional parent company",
       intro:
-        "Southern Bro Enterprises provides a broad variety of business support services, customer-facing service brands, and community-minded programs under one parent company.",
+        "Southern Bro Enterprises brings together customer-facing service brands, business support, and community-focused programs under one clear structure.",
       body:
-        "The goal is simple: make it easier for customers, partners, and community members to understand what services are available and how to request help quickly and professionally.",
+        "That structure helps customers find the right service faster, submit cleaner requests, and receive more dependable follow-up from the team.",
       ctaPrimary: "Learn What We Do",
       ctaSecondary: "Request a Quote",
       logoBlurb:
@@ -131,7 +131,7 @@ export const translations = {
         {
           title: "Multi-Brand Support",
           description:
-            "One company structure connecting business services, auto detailing, delivery solutions, events, and community initiatives.",
+            "One company structure connecting landscaping, auto detailing, business services, delivery solutions, events, and community initiatives.",
         },
         {
           title: "Locally Grounded",
@@ -147,11 +147,11 @@ export const translations = {
     },
     priorityServices: {
       eyebrow: "Featured Services",
-      title: "Consulting, auto detailing, and ticketing are highlighted front and center",
+      title: "Landscaping, detailing, and business support",
       intro:
-        "These service lanes are positioned for quick action, clear visibility, and a fast path into the request flow.",
+        "Browse the current service lines available for direct booking, quote requests, and project intake.",
       exploreService: "Explore Service",
-      ctas: ["Request Consulting", "Request Detailing", "Request Event Support"],
+      ctas: ["Request Landscaping", "Request Detailing", "Request Consulting"],
     },
     serviceCards: {
       eyebrow: "Full Brand Family",
@@ -203,17 +203,18 @@ export const translations = {
     },
     requestQuotePage: {
       eyebrow: "Request Quote",
-      title: "One professional intake page for Southern Bro services",
+      title: "One professional intake page for Southern Bro service requests",
       intro:
-        "Submit one organized request for consulting, detailing, ticketing, delivery, community support, and other Southern Bro service inquiries.",
+        "Submit one organized request for landscaping, detailing, consulting, delivery, community support, and other Southern Bro service inquiries.",
       benefits: [
-        "One central quote path for consulting, detailing, ticketing, and support services.",
+        "One central quote path for landscaping, detailing, consulting, and support services.",
         "Organized lead capture ready for follow-up and CRM routing.",
         "A professional intake flow for both mobile and desktop visitors.",
       ],
       categoryLabels: [
         "Business Consulting",
         "Detailing Services",
+        "Landscaping Services",
         "Ticket Vibez / Event Support",
         "Delivery Support",
         "VA Recovery Services / Community Support",
@@ -355,7 +356,7 @@ export const translations = {
       overviewOffer:
         "En Southern Bro Enterprises trabajamos para apoyar a negocios locales y miembros de la comunidad mediante una mezcla amplia de servicios y caminos de apoyo.",
       overviewBrands:
-        "Las marcas actuales incluyen la empresa matriz Southern Bro, los servicios empresariales de VA Biz Help, el apoyo comunitario de VA Recovery Services y los servicios de eventos de Ticket Vibez.",
+        "Los enfoques actuales incluyen Southern Bro Landscaping LLC, Detailing Specials, la consultoría y el apoyo operativo de Southern Bro Enterprises, los programas comunitarios y otras líneas de servicio de marca.",
       hopeTitle: "La Ayuda de Subvención H.O.P.E.",
       hopeFounder: "Establecida por William Soteria",
       hopeParagraphs: [
@@ -423,11 +424,11 @@ export const translations = {
     },
     priorityServices: {
       eyebrow: "Servicios Destacados",
-      title: "Consultoría, auto detailing y ticketing aparecen al frente",
+      title: "Landscaping, detailing y apoyo comercial",
       intro:
-        "Estas líneas de servicio están posicionadas para una acción rápida, visibilidad clara y un acceso ágil al flujo de solicitud.",
+        "Revisa las líneas de servicio actuales disponibles para reservas directas, solicitudes de cotización e intake de proyectos.",
       exploreService: "Ver Servicio",
-      ctas: ["Solicitar Consultoría", "Solicitar Detailing", "Solicitar Soporte para Eventos"],
+      ctas: ["Solicitar Landscaping", "Solicitar Detailing", "Solicitar Consultoría"],
     },
     serviceCards: {
       eyebrow: "Familia Completa de Marcas",
@@ -477,15 +478,16 @@ export const translations = {
       eyebrow: "Solicitar Cotización",
       title: "Una página profesional de intake para los servicios de Southern Bro",
       intro:
-        "Envía una solicitud organizada para consultoría, detailing, ticketing, delivery, apoyo comunitario y otras consultas de servicio de Southern Bro.",
+        "Envía una solicitud organizada para landscaping, detailing, consultoría, delivery, apoyo comunitario y otras consultas de servicio de Southern Bro.",
       benefits: [
-        "Una ruta central de cotización para consultoría, detailing, ticketing y servicios de apoyo.",
+        "Una ruta central de cotización para landscaping, detailing, consultoría y servicios de apoyo.",
         "Captura organizada de leads lista para seguimiento y CRM.",
         "Un flujo profesional de intake tanto para visitantes móviles como de escritorio.",
       ],
       categoryLabels: [
         "Consultoría de Negocios",
         "Servicios de Detailing",
+        "Servicios de Landscaping",
         "Ticket Vibez / Soporte para Eventos",
         "Delivery",
         "VA Recovery Services / Apoyo Comunitario",
@@ -627,7 +629,7 @@ export const translations = {
       overviewOffer:
         "Southern Bro Enterprises soutient les entreprises locales et les membres de la communauté grâce à un large mélange de services et de parcours d'accompagnement.",
       overviewBrands:
-        "Les marques actuelles incluent la société mère Southern Bro, les services d'affaires de VA Biz Help, le soutien communautaire de VA Recovery Services et les services événementiels de Ticket Vibez.",
+        "Les activités mises en avant incluent Southern Bro Landscaping LLC, Detailing Specials, le conseil et le soutien opérationnel de Southern Bro Enterprises, les programmes communautaires et d'autres lignes de service de marque.",
       hopeTitle: "L'Aide de Subvention H.O.P.E.",
       hopeFounder: "Établie par William Soteria",
       hopeParagraphs: [
@@ -695,11 +697,11 @@ export const translations = {
     },
     priorityServices: {
       eyebrow: "Services Mis en Avant",
-      title: "Consultation, auto detailing et ticketing sont mis en avant",
+      title: "Landscaping, detailing et soutien commercial",
       intro:
-        "Ces lignes de service sont positionnées pour une action rapide, une visibilité claire et un accès direct au parcours de demande.",
+        "Parcourez les lignes de service actuellement disponibles pour les réservations directes, les demandes de devis et l'intake de projet.",
       exploreService: "Voir le Service",
-      ctas: ["Demander un Conseil", "Demander un Detailing", "Demander un Support Événementiel"],
+      ctas: ["Demander le Landscaping", "Demander un Detailing", "Demander un Conseil"],
     },
     serviceCards: {
       eyebrow: "Famille Complète de Marques",
@@ -749,15 +751,16 @@ export const translations = {
       eyebrow: "Demander un Devis",
       title: "Une page d'intake professionnelle pour les services Southern Bro",
       intro:
-        "Soumettez une demande organisée pour la consultation, le detailing, le ticketing, la livraison, le soutien communautaire et les autres demandes de service Southern Bro.",
+        "Soumettez une demande organisée pour le landscaping, le detailing, le conseil, la livraison, le soutien communautaire et les autres demandes de service Southern Bro.",
       benefits: [
-        "Un parcours central de devis pour la consultation, le detailing, le ticketing et les services de soutien.",
+        "Un parcours central de devis pour le landscaping, le detailing, le conseil et les services de soutien.",
         "Une capture de leads organisée, prête pour le suivi et l'orientation CRM.",
         "Un parcours d'intake professionnel pour mobile et bureau.",
       ],
       categoryLabels: [
         "Conseil aux Entreprises",
         "Services de Detailing",
+        "Services de Landscaping",
         "Ticket Vibez / Support Événementiel",
         "Livraison",
         "VA Recovery Services / Soutien Communautaire",

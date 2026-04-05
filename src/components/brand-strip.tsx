@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
-import { brandProfiles } from "@/lib/brand-data";
+import { brandProfiles, getHomepageBrandRank } from "@/lib/brand-data";
 
 type BrandStripProps = {
   hrefPrefix?: string;
@@ -11,10 +11,15 @@ type BrandStripProps = {
 
 export default function BrandStrip({ hrefPrefix = "" }: BrandStripProps) {
   const { messages } = useLanguage();
+  const orderedBrands = [...brandProfiles].sort(
+    (left, right) =>
+      getHomepageBrandRank(left.id) - getHomepageBrandRank(right.id) ||
+      Number(left.status === "coming-soon") - Number(right.status === "coming-soon")
+  );
 
   return (
     <div className="mt-12 flex w-full gap-4 overflow-x-auto pb-2 snap-x snap-mandatory md:mt-14 md:grid md:max-w-7xl md:grid-cols-2 md:overflow-visible md:pb-0 lg:grid-cols-3 xl:grid-cols-4">
-      {brandProfiles.map((brand) => (
+      {orderedBrands.map((brand) => (
         <Link
           key={brand.id}
           href={hrefPrefix ? `${hrefPrefix}#${brand.id}` : brand.pageHref}

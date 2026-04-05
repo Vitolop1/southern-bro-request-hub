@@ -4,7 +4,7 @@ Major: Computer Science
 Company: Southern Bro Enterprises LLC
 
 Purpose
-This document summarizes the main evidence of the technical work completed during Week 2 of the internship preparation phase.
+This document summarizes the main evidence of the technical work completed during Week 2 of the internship.
 
 Verified Hours
 - Week 2 covers Monday, March 16, 2026 through Sunday, March 22, 2026.

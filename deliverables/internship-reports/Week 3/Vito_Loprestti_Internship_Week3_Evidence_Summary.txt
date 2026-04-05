@@ -1,0 +1,61 @@
+INTERNSHIP WEEK 3 - EVIDENCE SUMMARY
+Student: Vito Loprestti
+Major: Computer Science
+Company: Southern Bro Enterprises LLC
+
+Purpose
+This document summarizes the main evidence of the technical work completed during Week 3 of the internship.
+
+Verified Date Range
+- Week 3 covers Monday, March 23, 2026 through Sunday, March 29, 2026.
+- The Week 3 timesheet totals 25 hours.
+- Logged hours for the week were: Monday - 3 hours, Tuesday - 2 hours, Wednesday - 3 hours, Thursday - 7 hours, Friday - 3 hours, Saturday - 4 hours, and Sunday - 3 hours.
+
+Meeting / Task Alignment
+- The weekly company meeting on March 24, 2026 included action items related to request forms by email, removing the delivery tab, and improving service-form structure.
+- During this week, progress was made directly on those action items through navigation cleanup, request workflow development, preview redesign work, and branded service-page implementation.
+
+Live Website and Preview Evidence
+- Production deployment completed for removing the Delivery header button:
+  a8daf54 - Remove delivery button from header
+- Preview deployments completed for branded request flows and landscaping page refinement:
+  a14a96b - Add branded request flows and internship deliverables
+  4c64583 - Redesign landscaping as standalone green landing
+  f3aed23 - Refine dedicated landscaping landing
+  286f699 - Use landscaping logo on dedicated page
+
+Git Commit Evidence
+- 7d7b694 - Align live site with current services
+- 44214f8 - Use webp team photo paths
+- ae4ebdd - Add detailing logo and team portraits
+- f18d12a - Adjust Antwan team photo crop
+- 266d47d - Update Ciera bio and portrait
+- a8daf54 - Remove delivery button from header
+- a14a96b - Add branded request flows and internship deliverables
+- 4c64583 - Redesign landscaping as standalone green landing
+- f3aed23 - Refine dedicated landscaping landing
+- 286f699 - Use landscaping logo on dedicated page
+
+Technical Work Evidence
+- Updated the live site so listed services better matched the company's current offerings.
+- Added and adjusted team-related visual assets, including logo and profile image updates.
+- Improved team presentation through portrait changes, photo crop correction, and content refinement.
+- Removed an outdated Delivery header button from the production navigation.
+- Created branded service-request flows for multiple services.
+- Added request-form handling connected to email workflow for internal notification and follow-up.
+- Built or refined dedicated service pages for consulting, detailing, delivery, community support, handyman, ticketing, and landscaping.
+- Designed and iterated on a dedicated Landscaping request experience in preview, including layout redesign and logo integration.
+- Continued using the preview deployment workflow so updates could be reviewed before production release.
+
+Computer Science Relevance
+This week's work reflects Computer Science responsibilities in front-end development, UI refinement, deployment workflow, repository management, asset integration, and web-based request system design. The service-form and email-request work especially relates to system flow design, structured input handling, and digital process automation.
+
+Suggested Supporting Attachments
+- Screenshots of production updates
+- Screenshots of preview landscaping page updates
+- Screenshots of GitHub or Vercel deployment history
+- Weekly report document
+- Completed Week 3 timesheet
+
+Prepared by:
+Vito Loprestti

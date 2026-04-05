@@ -74,8 +74,9 @@ export default function RequestQuotePageContent({
                 {messages.common.quickAccess}
               </p>
               <p className="mt-4 text-sm leading-6 text-[#d9d1e8]">
-                Open a service-specific request page when you already know which
-                Southern Bro service you need.
+                Open a service-specific page when you already know which
+                Southern Bro service you need, especially for landscaping and
+                detailing.
               </p>
               <div className="mt-5 flex flex-wrap gap-3">
                 {requestCategoryOptions.slice(0, 6).map((option, index) => (

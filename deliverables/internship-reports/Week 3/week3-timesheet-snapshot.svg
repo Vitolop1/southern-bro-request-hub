@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360">
+  <rect width="1280" height="360" fill="#ffffff" />
+  <rect x="1" y="1" width="1278" height="358" fill="none" stroke="#cfd8cf" stroke-width="2" />
+
+  <defs>
+    <style>
+      .header { font: 700 18px Arial, Helvetica, sans-serif; fill: #1f2937; }
+      .cell { font: 16px Arial, Helvetica, sans-serif; fill: #111827; }
+      .total { font: 700 18px Arial, Helvetica, sans-serif; fill: #111827; }
+      .grid { stroke: #d5ddd5; stroke-width: 1; }
+    </style>
+  </defs>
+
+  <g>
+    <line class="grid" x1="0" y1="40" x2="1280" y2="40" />
+    <line class="grid" x1="0" y1="76" x2="1280" y2="76" />
+    <line class="grid" x1="0" y1="112" x2="1280" y2="112" />
+    <line class="grid" x1="0" y1="148" x2="1280" y2="148" />
+    <line class="grid" x1="0" y1="184" x2="1280" y2="184" />
+    <line class="grid" x1="0" y1="220" x2="1280" y2="220" />
+    <line class="grid" x1="0" y1="256" x2="1280" y2="256" />
+    <line class="grid" x1="0" y1="292" x2="1280" y2="292" />
+    <line class="grid" x1="0" y1="328" x2="1280" y2="328" />
+
+    <line class="grid" x1="130" y1="0" x2="130" y2="360" />
+    <line class="grid" x1="240" y1="0" x2="240" y2="360" />
+    <line class="grid" x1="360" y1="0" x2="360" y2="360" />
+    <line class="grid" x1="470" y1="0" x2="470" y2="360" />
+    <line class="grid" x1="540" y1="0" x2="540" y2="360" />
+    <line class="grid" x1="1280" y1="0" x2="1280" y2="360" />
+  </g>
+
+  <g>
+    <text class="header" x="12" y="27">Date</text>
+    <text class="header" x="145" y="27">Day</text>
+    <text class="header" x="255" y="27">Start Time</text>
+    <text class="header" x="375" y="27">End Time</text>
+    <text class="header" x="484" y="27">Total</text>
+    <text class="header" x="555" y="27">Task / Description</text>
+  </g>
+
+  <g>
+    <text class="cell" x="18" y="63">3/23/2026</text>
+    <text class="cell" x="145" y="63">Monday</text>
+    <text class="cell" x="266" y="63">8:00 PM</text>
+    <text class="cell" x="381" y="63">11:00 PM</text>
+    <text class="cell" x="495" y="63">3</text>
+    <text class="cell" x="555" y="63">Aligned live site with current services and updated team photo paths and visual assets.</text>
+
+    <text class="cell" x="18" y="99">3/24/2026</text>
+    <text class="cell" x="145" y="99">Tuesday</text>
+    <text class="cell" x="266" y="99">9:30 PM</text>
+    <text class="cell" x="381" y="99">11:30 PM</text>
+    <text class="cell" x="495" y="99">2</text>
+    <text class="cell" x="555" y="99">Reviewed weekly meeting action items and removed the Delivery tab from the site header.</text>
+
+    <text class="cell" x="18" y="135">3/25/2026</text>
+    <text class="cell" x="145" y="135">Wednesday</text>
+    <text class="cell" x="266" y="135">8:30 PM</text>
+    <text class="cell" x="381" y="135">11:30 PM</text>
+    <text class="cell" x="495" y="135">3</text>
+    <text class="cell" x="555" y="135">Planned service request workflow updates and reviewed branded service page structure.</text>
+
+    <text class="cell" x="18" y="171">3/26/2026</text>
+    <text class="cell" x="145" y="171">Thursday</text>
+    <text class="cell" x="266" y="171">3:00 PM</text>
+    <text class="cell" x="381" y="171">10:00 PM</text>
+    <text class="cell" x="495" y="171">7</text>
+    <text class="cell" x="555" y="171">Implemented branded request flows and connected service request forms to email routing.</text>
+
+    <text class="cell" x="18" y="207">3/27/2026</text>
+    <text class="cell" x="145" y="207">Friday</text>
+    <text class="cell" x="266" y="207">8:00 PM</text>
+    <text class="cell" x="381" y="207">11:00 PM</text>
+    <text class="cell" x="495" y="207">3</text>
+    <text class="cell" x="555" y="207">Redesigned dedicated service pages and refined the Landscaping page presentation.</text>
+
+    <text class="cell" x="18" y="243">3/28/2026</text>
+    <text class="cell" x="145" y="243">Saturday</text>
+    <text class="cell" x="266" y="243">7:30 PM</text>
+    <text class="cell" x="381" y="243">11:30 PM</text>
+    <text class="cell" x="495" y="243">4</text>
+    <text class="cell" x="555" y="243">Refined the Landscaping landing page integrated the Landscaping logo and reviewed preview deployments.</text>
+
+    <text class="cell" x="18" y="279">3/29/2026</text>
+    <text class="cell" x="145" y="279">Sunday</text>
+    <text class="cell" x="266" y="279">9:00 PM</text>
+    <text class="cell" x="381" y="279">12:00 AM</text>
+    <text class="cell" x="495" y="279">3</text>
+    <text class="cell" x="555" y="279">Documented weekly progress and prepared the internship report and hours summary.</text>
+  </g>
+
+  <g>
+    <text class="total" x="494" y="351">25</text>
+  </g>
+</svg>

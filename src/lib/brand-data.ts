@@ -124,9 +124,10 @@ export const brandProfiles: BrandProfile[] = [
     shortLabel: "Landscaping",
     requestCategory: "Landscaping Services",
     logo: "/LOGOS/SouthernBro-Landscaping-Logo.png",
-    summary: "Outdoor property care with lawn maintenance, cleanup, and recurring service support.",
+    summary:
+      "Licensed and insured lawn care, cleanup, and recurring outdoor property support.",
     description:
-      "Southern Bro Landscaping helps keep outdoor spaces clean, maintained, and service-ready through recurring upkeep and seasonal support.",
+      "Southern Bro Landscaping helps keep outdoor spaces clean, maintained, and service-ready through licensed and insured lawn care, recurring upkeep, and seasonal support.",
     services: [
       "Lawn maintenance",
       "Snow removal and salting",
@@ -206,6 +207,23 @@ export function getRequestRouteForCategory(category: string) {
   }
 
   return `/request-quote?service=${encodeURIComponent(category)}`;
+}
+
+const homepageFeaturedBrandIds = [
+  "southern-bro-landscaping",
+  "detailing-specials",
+] as const;
+
+export function getHomepageBrandRank(brandId: string) {
+  const index = homepageFeaturedBrandIds.indexOf(
+    brandId as (typeof homepageFeaturedBrandIds)[number]
+  );
+
+  if (index === -1) {
+    return homepageFeaturedBrandIds.length;
+  }
+
+  return index;
 }
 
 export const aboutHighlights = [

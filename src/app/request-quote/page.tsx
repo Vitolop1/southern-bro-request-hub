@@ -11,7 +11,7 @@ type RequestQuotePageProps = {
 export const metadata: Metadata = {
   title: "Request a Quote | Southern Bro Enterprises",
   description:
-    "Submit a professional quote request for consulting, detailing, ticketing, community support, or other Southern Bro services.",
+    "Submit a professional quote request for landscaping, detailing, consulting, community support, or other Southern Bro services.",
 };
 
 export default async function RequestQuotePage({

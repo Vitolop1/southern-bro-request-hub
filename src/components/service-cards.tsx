@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "@/components/language-provider";
-import { brandProfiles } from "@/lib/brand-data";
+import { brandProfiles, getHomepageBrandRank } from "@/lib/brand-data";
 
 export default function ServiceCards() {
   const { messages } = useLanguage();
@@ -15,6 +15,7 @@ export default function ServiceCards() {
 
   const sortedBrands = [...brandProfiles].sort(
     (left, right) =>
+      getHomepageBrandRank(left.id) - getHomepageBrandRank(right.id) ||
       brandOrder[left.priorityTier] - brandOrder[right.priorityTier] ||
       Number(left.status === "coming-soon") - Number(right.status === "coming-soon")
   );

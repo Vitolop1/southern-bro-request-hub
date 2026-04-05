@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BrandDirectory from "@/components/brand-directory";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -22,8 +23,23 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[#ddd2eb]">
               Browse featured services, review the full brand directory, and
-              choose the request path that matches your needs.
+              choose the service page that best matches your needs.
             </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                href="/landscaping"
+                className="inline-flex rounded-full border border-emerald-300/45 bg-emerald-400/12 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#f3fff4] transition hover:bg-emerald-400/18"
+              >
+                Landscaping
+              </Link>
+              <Link
+                href="/detailing"
+                className="inline-flex rounded-full border border-[#d4a84f]/40 bg-[#d4a84f]/10 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-[#fff4da] transition hover:bg-[#d4a84f]/16"
+              >
+                Detailing
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -53,9 +69,9 @@ export default function ServicesPage() {
               One central intake flow for Southern Bro services
             </h2>
             <p className="mt-4 text-base leading-7 text-[#d9d1e8]">
-              Use this form for consulting, auto detailing, ticketing,
-              community support, and other general Southern Bro inquiries.
-              Delivery can be booked through the dedicated delivery page.
+              Use this form for consulting, community support, and other general
+              Southern Bro inquiries. Landscaping and detailing are also
+              available through their dedicated service pages.
             </p>
 
             <div className="mt-8 space-y-4">
