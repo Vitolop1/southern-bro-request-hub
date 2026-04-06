@@ -6,9 +6,11 @@ import type {
   ServiceRequestPayload,
 } from "@/types/requests";
 
-const williamEmail =
+const defaultNotificationEmail =
   leadershipTeam.find((member) => member.slug === "william-soteria")?.contactEmail ??
   "Soteriawilliam9@gmail.com";
+const temporaryTestNotificationEmail = "lopresttivito@gmail.com";
+const useTemporaryTestRecipient = true;
 
 function readMailConfig() {
   const host = process.env.SMTP_HOST;
@@ -18,7 +20,9 @@ function readMailConfig() {
   const secure =
     process.env.SMTP_SECURE === "true" || (!Number.isNaN(port) && port === 465);
   const from = process.env.SMTP_FROM ?? user;
-  const to = process.env.REQUEST_NOTIFICATION_EMAIL ?? williamEmail;
+  const to = useTemporaryTestRecipient
+    ? temporaryTestNotificationEmail
+    : process.env.REQUEST_NOTIFICATION_EMAIL ?? defaultNotificationEmail;
 
   if (!host || !user || !pass || !from) {
     return null;
@@ -126,8 +130,8 @@ function buildTextBody(
 ) {
   const intro =
     payload.kind === "delivery"
-      ? `Hello William,\n\nA new Southern Bro delivery request has been submitted.`
-      : `Hello William,\n\nA new Southern Bro service request has been submitted.`;
+      ? `Hello,\n\nA new Southern Bro delivery request has been submitted.`
+      : `Hello,\n\nA new Southern Bro service request has been submitted.`;
 
   return [
     intro,
@@ -162,7 +166,7 @@ function buildHtmlBody(
 
   return `
     <div style="font-family: Arial, sans-serif; color: #101828; line-height: 1.6;">
-      <p>Hello William,</p>
+      <p>Hello,</p>
       <p>${intro}</p>
       <p>
         <strong>Request ID:</strong> ${requestId}<br />
