@@ -9,8 +9,6 @@ import type {
 const defaultNotificationEmail =
   leadershipTeam.find((member) => member.slug === "william-soteria")?.contactEmail ??
   "Soteriawilliam9@gmail.com";
-const temporaryTestNotificationEmail = "lopresttivito@gmail.com";
-const useTemporaryTestRecipient = true;
 
 function readMailConfig() {
   const host = process.env.SMTP_HOST;
@@ -20,9 +18,7 @@ function readMailConfig() {
   const secure =
     process.env.SMTP_SECURE === "true" || (!Number.isNaN(port) && port === 465);
   const from = process.env.SMTP_FROM ?? user;
-  const to = useTemporaryTestRecipient
-    ? temporaryTestNotificationEmail
-    : process.env.REQUEST_NOTIFICATION_EMAIL ?? defaultNotificationEmail;
+  const to = process.env.REQUEST_NOTIFICATION_EMAIL ?? defaultNotificationEmail;
 
   if (!host || !user || !pass || !from) {
     return null;
@@ -105,15 +101,15 @@ function renderSharedDetails(payload: RequestSubmissionPayload, submittedAt: str
 
   const deliveryPayload = payload as DeliveryRequestPayload;
 
-    return {
-      serviceLabel: deliveryPayload.serviceLabel,
-      rows: [
-        ...sharedRows,
-        ["Service", deliveryPayload.serviceLabel],
-        ["Delivery option", deliveryPayload.requestType],
-        ["Pickup location", deliveryPayload.businessName],
-        ["Items requested", deliveryPayload.itemsRequested],
-        ["Delivery address", deliveryPayload.address],
+  return {
+    serviceLabel: deliveryPayload.serviceLabel,
+    rows: [
+      ...sharedRows,
+      ["Service", deliveryPayload.serviceLabel],
+      ["Delivery option", deliveryPayload.requestType],
+      ["Pickup location", deliveryPayload.businessName],
+      ["Items requested", deliveryPayload.itemsRequested],
+      ["Delivery address", deliveryPayload.address],
       ["Preferred time", deliveryPayload.preferredTime || "Not provided"],
       ["Payment method", deliveryPayload.paymentMethod],
       ["Instructions", deliveryPayload.instructions || "Not provided"],

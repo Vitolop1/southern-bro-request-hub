@@ -1,0 +1,20 @@
+Subject: Internship Weekly Report - Week 4
+
+Dear Dr. Ribler,
+
+I hope you are doing well.
+
+Attached is my Week 4 internship report for Southern Bro Enterprises LLC for the week of March 30-April 5, 2026, along with the timesheet and supporting evidence summary.
+
+This week I focused on refining the company website by improving customer-facing presentation, organizing the dedicated Landscaping experience, reviewing request-form and email-routing behavior, moving auto detailing into a more prominent position on the main page, and completing an internal website security review. I also documented the technical work in a separate security audit report.
+
+The attached materials summarize the work completed, the hours logged, and the main technical improvements made during the week.
+
+Please let me know if you would like me to revise or clarify any part of the report or supporting materials.
+
+Thank you for your continued guidance and support.
+
+Best regards,
+Vito Loprestti
+Computer Science
+University of Lynchburg

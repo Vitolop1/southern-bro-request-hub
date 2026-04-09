@@ -14,6 +14,16 @@ export default function PriorityServices({
   compact = false,
 }: PriorityServicesProps) {
   const { messages } = useLanguage();
+  const serviceOrder = {
+    detailing: 0,
+    landscaping: 1,
+    consulting: 2,
+  } as const;
+  const orderedServices = [...priorityServices].sort(
+    (left, right) =>
+      serviceOrder[left.id as keyof typeof serviceOrder] -
+      serviceOrder[right.id as keyof typeof serviceOrder]
+  );
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-14 md:py-18">
@@ -30,7 +40,7 @@ export default function PriorityServices({
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        {priorityServices.map((service, index) => (
+        {orderedServices.map((service) => (
           <article
             key={service.id}
             className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#13071f]/90 p-7 shadow-[0_0_50px_rgba(193,41,255,0.12)]"
@@ -79,7 +89,7 @@ export default function PriorityServices({
                   href={getRequestRouteForCategory(service.quoteCategory)}
                   className="inline-flex rounded-full border border-white/15 bg-white/6 px-5 py-3 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-white/12"
                 >
-                  {messages.priorityServices.ctas[index] ?? service.ctaLabel}
+                  {service.ctaLabel}
                 </Link>
               </div>
             </div>

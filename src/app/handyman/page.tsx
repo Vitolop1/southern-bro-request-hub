@@ -27,7 +27,6 @@ export default function HandymanPage() {
         eyebrow="Southern Bro Handyman Services"
         title="Request handyman support"
         intro="This page gives handyman requests their own service identity, so customers know right away they are requesting repair, installation, or property support."
-        brandName={handymanBrand.name}
         brandSummary={handymanBrand.description}
         logoSrc={handymanBrand.logo}
         logoAlt={`${handymanBrand.name} logo`}

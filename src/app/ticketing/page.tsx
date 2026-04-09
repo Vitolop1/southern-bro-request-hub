@@ -26,7 +26,6 @@ export default function TicketingPage() {
         eyebrow="Ticket Vibez"
         title="Request ticketing and event support"
         intro="This request page makes it clear that customers are inside Ticket Vibez, so event inquiries, access help, and promotional support stay separate from the rest of the company intake."
-        brandName={ticketingBrand.name}
         brandSummary={ticketingBrand.description}
         logoSrc={ticketingBrand.logo}
         logoAlt={`${ticketingBrand.name} logo`}

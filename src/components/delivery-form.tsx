@@ -55,6 +55,7 @@ export default function DeliveryForm({
     fullName: "",
     phone: "",
     email: "",
+    website: "",
     requestType: "delivery",
     businessName: "",
     itemsRequested: "",
@@ -129,6 +130,20 @@ export default function DeliveryForm({
       className={formClassName}
     >
       <div>
+        <label htmlFor="website" className={fieldLabelClassName + " sr-only"}>
+          Website
+        </label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData.website}
+          onChange={handleChange}
+          className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden opacity-0"
+          aria-hidden="true"
+        />
         <p className={sectionLabelClassName}>
           {sectionLabel}
         </p>
@@ -150,6 +165,7 @@ export default function DeliveryForm({
             name="fullName"
             type="text"
             required
+            minLength={2}
             value={formData.fullName}
             onChange={handleChange}
             className={fieldClassName}
@@ -166,6 +182,7 @@ export default function DeliveryForm({
             name="phone"
             type="tel"
             required
+            minLength={7}
             value={formData.phone}
             onChange={handleChange}
             className={fieldClassName}
@@ -214,6 +231,7 @@ export default function DeliveryForm({
             name="businessName"
             type="text"
             required
+            minLength={2}
             value={formData.businessName}
             onChange={handleChange}
             className={fieldClassName}
@@ -230,6 +248,7 @@ export default function DeliveryForm({
             name="itemsRequested"
             required
             rows={4}
+            minLength={2}
             value={formData.itemsRequested}
             onChange={handleChange}
             className={fieldClassName}
@@ -246,6 +265,7 @@ export default function DeliveryForm({
             name="address"
             type="text"
             required
+            minLength={5}
             value={formData.address}
             onChange={handleChange}
             className={fieldClassName}

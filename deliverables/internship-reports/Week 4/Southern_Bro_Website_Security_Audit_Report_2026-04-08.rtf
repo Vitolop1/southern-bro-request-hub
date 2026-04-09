@@ -1,0 +1,70 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Arial;}}
+\fs24
+\b SOUTHERN BRO ENTERPRISES LLC\b0\par
+\b Website Security Audit Report\b0\par
+Audit Date: April 8, 2026\par
+Prepared by: Vito Loprestti\par
+\par
+\b 1. Executive Summary\b0\par
+I completed an internal website security review focused on the Southern Bro Enterprises main website, the dedicated Landscaping experience, the public request forms, and the request-notification email workflow. Based on the areas reviewed, the site's baseline security posture improved during this audit window. No known npm audit vulnerabilities remained after dependency updates and follow-up remediation. I did not identify a confirmed critical vulnerability in the reviewed application paths. However, some operational items still require continued attention, especially around email delivery configuration, domain mapping, and future anti-spam scaling.\par
+\par
+\b 2. Scope of Review\b0\par
+The review covered the following areas:\par
+- Parent website customer-facing pages and service-priority presentation.\par
+- Dedicated Landscaping page, contact page, and thank-you path.\par
+- Request-form submission flow for service and delivery requests.\par
+- Server-side request validation and notification routing.\par
+- Application headers, middleware behavior, and dependency health.\par
+\par
+\b 3. Remediation and Improvements Completed\b0\par
+\b Dedicated Landscaping Isolation\b0\par
+- Added middleware logic so the Landscaping domain can resolve to Landscaping-only routes rather than defaulting to the parent-site home page once the custom-domain mapping is finalized.\par
+- Added a landscaping-specific thank-you page to keep the experience visually and functionally separated from the general site.\par
+\par
+\b Request Intake Hardening\b0\par
+- Strengthened form validation for core contact and request fields.\par
+- Added a hidden honeypot field to reduce simple spam submissions.\par
+- Added request-origin checking for the service request API.\par
+- Added a basic in-memory rate limiter to reduce repeat submission abuse from a single connection.\par
+\par
+\b Security Headers\b0\par
+- Added Strict-Transport-Security.\par
+- Added X-Content-Type-Options.\par
+- Added X-Frame-Options.\par
+- Added Referrer-Policy.\par
+- Added Permissions-Policy.\par
+- Added a baseline Content-Security-Policy focused on form action, frame ancestors, object blocking, and insecure-request upgrading.\par
+\par
+\b Dependency and Build Review\b0\par
+- Updated Next.js from 16.1.6 to 16.2.3.\par
+- Updated Nodemailer from 8.0.4 to 8.0.5.\par
+- Updated the ESLint configuration package to align with the newer Next.js version.\par
+- Ran npm audit fix and confirmed zero remaining known vulnerabilities in the audited dependency graph.\par
+- Updated the local build command to use Webpack so builds remain stable in the current Windows environment where native Turbopack bindings are blocked by application control policy.\par
+\par
+\b 4. Verification Results\b0\par
+- npm audit: 0 vulnerabilities.\par
+- npm run lint: completed successfully.\par
+- npm run build: completed successfully using next build --webpack.\par
+\par
+\b 5. Residual Risks and Open Items\b0\par
+- The current rate limiter is in-memory, so it is a baseline protection rather than a distributed production-grade abuse control.\par
+- The request system still depends on correct SMTP credentials and healthy mail-service configuration in the deployment environment.\par
+- There is not yet a CAPTCHA or Turnstile-style challenge on public forms, so spam resistance is improved but not final.\par
+- The dedicated Landscaping domain still requires final DNS / domain mapping in Squarespace and Vercel for full isolation in production.\par
+- This review was an internal application review, not a third-party penetration test.\par
+\par
+\b 6. Overall Assessment\b0\par
+Based on the reviewed scope, the website is in a materially better state than before the audit window. Baseline request security, dependency health, and routing behavior were improved. I would describe the current reviewed posture as improved and workable for continued deployment, with moderate operational follow-up still needed around mail delivery reliability, domain configuration, and future anti-spam hardening.\par
+\par
+\b 7. Recommended Next Actions\b0\par
+1. Finalize the Landscaping custom-domain mapping so the dedicated site behavior is fully active in production.\par
+2. Verify live SMTP credentials and confirm successful end-to-end request delivery to management.\par
+3. Add a stronger anti-spam layer such as CAPTCHA or Turnstile if public traffic increases.\par
+4. Continue reviewing customer-facing wording and service-priority positioning as the company's seasonal focus changes.\par
+5. Consider periodic dependency audits and deployment checks as part of normal maintenance.\par
+\par
+Prepared for Southern Bro Enterprises LLC\par
+Vito Loprestti\par
+}

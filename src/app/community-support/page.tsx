@@ -27,7 +27,6 @@ export default function CommunitySupportPage() {
         eyebrow="VA Recovery Services"
         title="Request community support"
         intro="This page creates a clearer, separate intake path for VA Recovery Services so community-focused requests do not feel mixed into the general business forms."
-        brandName={communityBrand.name}
         brandSummary={communityBrand.description}
         logoSrc={communityBrand.logo}
         logoAlt={`${communityBrand.name} logo`}

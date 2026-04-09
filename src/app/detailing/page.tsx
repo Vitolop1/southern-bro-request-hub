@@ -24,9 +24,8 @@ export default function DetailingPage() {
       <Navbar />
       <RequestPageShell
         eyebrow="Detailing Specials"
-        title="Request detailing services"
-        intro="This page is specifically for auto detailing requests, so customers can immediately see they are booking the detailing lane and not a general Southern Bro form."
-        brandName={detailingBrand.name}
+        title="Auto detailing services"
+        intro="Detailing Specials provides a focused request path for interior cleaning, exterior detailing, vehicle refresh packages, and scheduled service support."
         brandSummary={detailingBrand.description}
         logoSrc={detailingBrand.logo}
         logoAlt={`${detailingBrand.name} logo`}
@@ -44,7 +43,7 @@ export default function DetailingPage() {
           "Include budget expectations or special conditions.",
         ]}
         audience={detailingBrand.audience}
-        requestNote="Customers on this page are clearly inside the Detailing Specials request flow, with the service logo and form tied directly to detailing."
+        requestNote="Submit vehicle details, service preferences, and scheduling notes so the team can review the request and respond with the next step."
         theme={detailingRequestTheme}
       >
         <ServiceForm

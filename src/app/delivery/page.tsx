@@ -19,7 +19,6 @@ export default function DeliveryPage() {
         eyebrow="Southern Bro Delivery"
         title="Request delivery or pickup"
         intro="This page is dedicated to Southern Bro Delivery so customers clearly see they are requesting delivery support, not a general Southern Bro quote."
-        brandName={deliveryBrand.name}
         brandSummary={deliveryBrand.description}
         logoSrc={deliveryBrand.logo}
         logoAlt={`${deliveryBrand.name} logo`}

@@ -1,0 +1,64 @@
+INTERNSHIP WEEK 4 - EVIDENCE SUMMARY
+Student: Vito Loprestti
+Major: Computer Science
+Company: Southern Bro Enterprises LLC
+
+Purpose
+This document summarizes the main technical evidence for the work completed during Week 4 of the internship.
+
+Verified Date Range
+- Week 4 covers Monday, March 30, 2026 through Sunday, April 5, 2026.
+- The Week 4 timesheet totals 25 hours.
+- Logged hours for the week were: Monday - 3 hours, Tuesday - 3 hours, Wednesday - 4 hours, Thursday - 5 hours, Friday - 4 hours, Saturday - 3 hours, and Sunday - 3 hours.
+
+Main Work Themes
+- Refined customer-facing website copy and reviewed grammar and presentation on the parent site.
+- Continued organizing Southern Bro Landscaping as a more standalone digital experience with a dedicated home, contact, and thank-you path.
+- Reviewed and tested request-form behavior, email-routing logic, and service-request intake flow.
+- Moved auto detailing into a more prominent customer-facing position on the main website.
+- Performed a website security review and implemented baseline hardening improvements.
+
+Technical Evidence
+- Added dedicated-host middleware so the landscaping domain can resolve to the Landscaping-only experience instead of the parent-site home page once the domain mapping is finalized.
+- Added a landscaping-specific thank-you page for request completions.
+- Added security headers in the Next.js configuration, including Strict-Transport-Security, frame protection, referrer policy, permissions policy, and a baseline content security policy.
+- Strengthened request-form validation on both service and delivery forms.
+- Added a honeypot field to reduce bot-style form spam.
+- Added basic request-origin checking and in-memory rate limiting to the service request API route.
+- Updated Next.js and Nodemailer to newer secure versions and completed a follow-up dependency audit.
+
+Verification Results
+- npm audit returned 0 vulnerabilities after dependency updates and audit fixes.
+- npm run lint completed successfully with no remaining warnings.
+- npm run build completed successfully using the Webpack build path for local Windows compatibility.
+
+Files Most Directly Involved
+- next.config.ts
+- middleware.ts
+- src/app/api/service-requests/route.ts
+- src/app/landscaping/page.tsx
+- src/app/landscaping/contact/page.tsx
+- src/app/landscaping/thank-you/page.tsx
+- src/components/service-form.tsx
+- src/components/delivery-form.tsx
+- src/components/hero.tsx
+- src/components/priority-services.tsx
+- src/lib/request-notifications.ts
+- src/lib/site-content.ts
+- src/lib/brand-data.ts
+- package.json
+- package-lock.json
+
+Computer Science Relevance
+This week's work reflects Computer Science responsibilities in front-end development, application routing, web security hardening, dependency management, input validation, request processing, and deployment-oriented quality assurance. The request-form and security-review work especially relates to practical software engineering because it connects interface behavior, server-side validation, and operational reliability.
+
+Suggested Supporting Attachments
+- Week 4 timesheet
+- Week 4 report document
+- Security audit report
+- Screenshots of the Landscaping landing page and contact page
+- Screenshots of request-form behavior
+- Screenshots of build / audit verification if needed
+
+Prepared by:
+Vito Loprestti

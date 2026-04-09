@@ -118,9 +118,9 @@ export const priorityServices: PriorityService[] = [
 ];
 
 export const requestCategoryOptions = [
-  "Business Consulting",
   "Detailing Services",
   "Landscaping Services",
+  "Business Consulting",
   "Ticket Vibez / Event Support",
   "Delivery Support",
   "VA Recovery Services / Community Support",

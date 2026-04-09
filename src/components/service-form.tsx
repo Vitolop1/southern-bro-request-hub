@@ -90,6 +90,7 @@ export default function ServiceForm({
     companyName: "",
     phone: "",
     email: "",
+    website: "",
     category: defaultCategory,
     description: "",
     address: "",
@@ -163,6 +164,20 @@ export default function ServiceForm({
       className={formClassName}
     >
       <div>
+        <label htmlFor="website" className="sr-only">
+          Website
+        </label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={formData.website}
+          onChange={handleChange}
+          className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden opacity-0"
+          aria-hidden="true"
+        />
         <p className={sectionLabelClassName}>
           {resolvedSectionLabel}
         </p>
@@ -184,6 +199,7 @@ export default function ServiceForm({
             name="fullName"
             type="text"
             required
+            minLength={2}
             value={formData.fullName}
             onChange={handleChange}
             className={fieldClassName}
@@ -215,6 +231,7 @@ export default function ServiceForm({
             name="phone"
             type="tel"
             required
+            minLength={7}
             value={formData.phone}
             onChange={handleChange}
             className={fieldClassName}
@@ -272,6 +289,7 @@ export default function ServiceForm({
             name="description"
             required
             rows={5}
+            minLength={10}
             value={formData.description}
             onChange={handleChange}
             className={fieldClassName}

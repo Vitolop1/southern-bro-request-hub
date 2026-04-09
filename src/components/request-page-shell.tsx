@@ -15,7 +15,6 @@ type RequestPageShellProps = {
   eyebrow: string;
   title: string;
   intro: string;
-  brandName: string;
   brandSummary: string;
   logoSrc: string;
   logoAlt: string;
@@ -32,7 +31,6 @@ export default function RequestPageShell({
   eyebrow,
   title,
   intro,
-  brandName,
   brandSummary,
   logoSrc,
   logoAlt,
@@ -96,7 +94,7 @@ export default function RequestPageShell({
                   </div>
                   <div>
                     <div className={`inline-flex rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] ${badgeClassName}`}>
-                      Official {brandName} request page
+                      Direct Service Request
                     </div>
                     <p className="mt-4 text-base leading-7 text-[#f5efff]">
                       {brandSummary}

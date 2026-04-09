@@ -59,7 +59,7 @@ export default function Hero() {
             {messages.hero.whatWeDo}
           </Link>
           <Link
-            href="/request-quote"
+            href="/detailing"
             className="rounded-full border border-fuchsia-300/60 bg-[linear-gradient(90deg,_rgba(193,41,255,0.95),_rgba(142,43,255,0.95))] px-6 py-3.5 text-center text-sm font-bold uppercase tracking-[0.16em] text-white shadow-[0_0_30px_rgba(193,41,255,0.35)] transition hover:scale-[1.02] hover:shadow-[0_0_36px_rgba(255,79,216,0.45)]"
           >
             {messages.hero.requestServices}
@@ -77,16 +77,16 @@ export default function Hero() {
             Featured Services
           </p>
           <Link
-            href="/landscaping"
-            className="rounded-full border border-emerald-300/45 bg-emerald-400/12 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#f3fff4] transition hover:bg-emerald-400/18"
-          >
-            Landscaping Services
-          </Link>
-          <Link
             href="/detailing"
             className="rounded-full border border-[#d4a84f]/40 bg-[#d4a84f]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#fff4da] transition hover:bg-[#d4a84f]/16"
           >
             Detailing Services
+          </Link>
+          <Link
+            href="/landscaping"
+            className="rounded-full border border-emerald-300/45 bg-emerald-400/12 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#f3fff4] transition hover:bg-emerald-400/18"
+          >
+            Landscaping Services
           </Link>
         </div>
 

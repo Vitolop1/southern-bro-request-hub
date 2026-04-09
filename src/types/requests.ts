@@ -17,6 +17,7 @@ export type DeliveryFormData = {
   fullName: string;
   phone: string;
   email: string;
+  website: string;
   requestType: string;
   businessName: string;
   itemsRequested: string;
@@ -31,6 +32,7 @@ export type ServiceFormData = {
   companyName: string;
   phone: string;
   email: string;
+  website: string;
   category: string;
   description: string;
   address: string;

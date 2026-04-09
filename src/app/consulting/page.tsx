@@ -26,7 +26,6 @@ export default function ConsultingPage() {
         eyebrow="Business Consulting"
         title="Request business consulting"
         intro="You are on the dedicated consulting request page for Southern Bro Enterprises. This intake flow is built to make it obvious that you are requesting business support, startup help, or operational guidance."
-        brandName={consultingBrand.name}
         brandSummary={consultingBrand.description}
         logoSrc={consultingBrand.logo}
         logoAlt={`${consultingBrand.name} logo`}

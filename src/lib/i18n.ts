@@ -30,13 +30,13 @@ export const translations = {
     },
     hero: {
       eyebrow: "Southern Bro Enterprises LLC",
-      title: "Business Support, Detailing, and Lawn Care in One Place",
+      title: "Detailing, Landscaping, and Business Support in One Place",
       tagline: "Licensed, insured, and built around Southern hospitality and care",
       intro:
-        "Southern Bro Enterprises helps local people, businesses, and property owners with clear request paths for landscaping, detailing, consulting, and community-focused support.",
+        "Southern Bro Enterprises helps local people, businesses, and property owners with clear request paths for detailing, landscaping, consulting, and community-focused support.",
       serviceArea: "Service Area: Lynchburg, VA & Virginia Region",
       whatWeDo: "Learn More",
-      requestServices: "Request Our Services Here",
+      requestServices: "Request Detailing",
       callUs: "Call Us for More Information",
     },
     theme: {
@@ -147,9 +147,9 @@ export const translations = {
     },
     priorityServices: {
       eyebrow: "Featured Services",
-      title: "Landscaping, detailing, and business support",
+      title: "Auto detailing, landscaping, and business support",
       intro:
-        "Browse the current service lines available for direct booking, quote requests, and project intake.",
+        "Browse the current service lines available for direct booking, quote requests, and project intake, with detailing positioned as the primary customer focus.",
       exploreService: "Explore Service",
       ctas: ["Request Landscaping", "Request Detailing", "Request Consulting"],
     },

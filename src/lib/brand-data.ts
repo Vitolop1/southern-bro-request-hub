@@ -210,8 +210,8 @@ export function getRequestRouteForCategory(category: string) {
 }
 
 const homepageFeaturedBrandIds = [
-  "southern-bro-landscaping",
   "detailing-specials",
+  "southern-bro-landscaping",
 ] as const;
 
 export function getHomepageBrandRank(brandId: string) {
